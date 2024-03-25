@@ -1,0 +1,1 @@
+cmd_/home/vjxzhan/tdx_dump_test/dump_dev1.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/vjxzhan/tdx_dump_test/dump_dev1.ko /home/vjxzhan/tdx_dump_test/dump_dev1.o /home/vjxzhan/tdx_dump_test/dump_dev1.mod.o;  true
