@@ -14,7 +14,7 @@ extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
 #define AES_BLOCK_SIZE 16
 static const unsigned char aes_key[AES_KEY_SIZE] = "0123456789abcdef";
 
-#define DUMP_SIZE 32
+#define DUMP_SIZE 4096
 static unsigned char data_share[DUMP_SIZE];
 
 static int aes_encrypt(const unsigned char *input, unsigned char *output){
@@ -136,8 +136,9 @@ void work_dump(unsigned char *data_crypto){
     */
 }
 
-void work_map(unsigned char data_page[DUMP_SIZE]){
-    static unsigned char data_crypto[DUMP_SIZE];
+void work_map(void){
+    unsigned char data_crypto[DUMP_SIZE];
+    unsigned char data_page[DUMP_SIZE]="hello,world!thiswork";
     //unsigned char data_d[DUMP_SIZE];
     work_encrypt(data_page,data_crypto);
     printk("en:");

@@ -46,9 +46,8 @@ __attribute__((aligned(4096))) uint8_t pp1[4096] = {0x0};
 __attribute__((aligned(4096))) uint8_t data_tr[4096] = {0};
 __attribute__((aligned(4096))) uint8_t end[1000] = {0};
 __attribute__((aligned(4096))) uint8_t test[4096] = {0};
-#define DUMP_SIZE 32
 extern unsigned long trampoline(unsigned long pi,unsigned long app_baseaddr,unsigned long app_size);
-extern void work_map(unsigned char data_page[DUMP_SIZE]);
+extern void work_map(void);
 //extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
 
 unsigned long urdtsc(void)
@@ -152,8 +151,8 @@ static ssize_t dump_dev_read(struct file *filp, char __user *buf, size_t size, l
     app_size=pp[2];
     clear_ifg();
     trampoline(pi,data_page,app_size);
-    unsigned char data[DUMP_SIZE]="hello,world!thiswork";
-    work_map(data);
+   // unsigned char data[DUMP_SIZE]="hello,world!thiswork";
+    work_map();
     start_ifg();
     //int u_cpu = get_cpu();
     //printk("normal cpu:%d\n",u_cpu);

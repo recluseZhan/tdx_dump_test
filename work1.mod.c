@@ -26,7 +26,7 @@ __section(".gnu.linkonce.this_module") = {
 MODULE_INFO(retpoline, "Y");
 #endif
 
-SYMBOL_CRC(work_map, 0xc388df6d, "");
+SYMBOL_CRC(work_map, 0x2bb34e48, "");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
@@ -51,4 +51,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "limit1");
 
 
-MODULE_INFO(srcversion, "72ECF9719EB4470C0098457");
+MODULE_INFO(srcversion, "2AD9AE867A6086E1086E694");

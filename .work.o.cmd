@@ -1080,4 +1080,4 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
 $(deps_/home/vjxzhan/tdx_dump_test/work.o):
 
 /home/vjxzhan/tdx_dump_test/work.o: $(wildcard ./tools/objtool/objtool)
-#SYMVER work_map 0xc388df6d
+#SYMVER work_map 0x2bb34e48

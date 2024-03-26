@@ -38,7 +38,7 @@ __used __section("__versions") = {
 	{ 0x122c3a7e, "_printk" },
 	{ 0xa19b956, "__stack_chk_fail" },
 	{ 0x7682ba4e, "__copy_overflow" },
-	{ 0xc388df6d, "work_map" },
+	{ 0x2bb34e48, "work_map" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
 	{ 0x25f7aec2, "__register_chrdev" },
 	{ 0x6bc3fbc0, "__unregister_chrdev" },
@@ -48,4 +48,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "limit1,work1");
 
 
-MODULE_INFO(srcversion, "43CAF609CB40882D387C1F8");
+MODULE_INFO(srcversion, "60A97099146E1655D95FF7E");

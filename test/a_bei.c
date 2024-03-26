@@ -11,13 +11,18 @@ void main(){
     
     pid_t pid=getpid();
     unsigned long va = a;
-    unsigned long pp[3] = {pid,va,1};
+    char pp[1]= {'0'};
+    //fd = open(DEVNAME,O_RDWR);
+    //printf("fd:%d\n",fd);
+    //read(fd,pp,sizeof(pp));
+    //close(fd);  
+    
     fd = open(DEVNAME,O_RDWR);
     printf("fd:%d\n",fd);
-    read(fd,pp,sizeof(pp));
-    close(fd);  
+    write(fd,pp,sizeof(pp));
+    close(fd); 
     
-    //getchar();
-    //printf("%d\n",a);
+    getchar();
+    printf("%d\n",a);
     return 0;
 }
