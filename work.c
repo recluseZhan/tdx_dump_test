@@ -9,7 +9,7 @@
 #include<crypto/skcipher.h>
 
 MODULE_LICENSE("GPL");
-
+extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
 #define AES_KEY_SIZE 16
 #define AES_BLOCK_SIZE 16
 static const unsigned char aes_key[AES_KEY_SIZE] = "0123456789abcdef";
@@ -118,25 +118,51 @@ void work_decrypt(const unsigned char *input, unsigned char *output){
 }
 
 void work_dump(unsigned char *data_crypto){
-    memcpy(data_share,data_crypto,DUMP_SIZE);
+    unsigned long opcode = 0x10001;
+    unsigned long gpa = v2p(data_crypto,(unsigned long)current->pid);
+    unsigned long ret;
+    printk("gpa=%lx\n",gpa);
+    /*
+    asm(
+        "movq %1,%%r11;\n\t"
+        "movq %2,%%r12;\n\t"
+        "movq %3,%%r13;\n\t"
+        "tdcall;\n\t"
+        "movq %%r10,%0;\n\t"
+        :"=r"(ret)
+        :"r"(opcode),"r"(gpa),"r"(DUMP_SIZE):
+    );
+    printk("ret=%lx\n",ret);
+    */
+}
+
+void work_map(unsigned char data_page[DUMP_SIZE]){
+    static unsigned char data_crypto[DUMP_SIZE];
+    //unsigned char data_d[DUMP_SIZE];
+    work_encrypt(data_page,data_crypto);
+    printk("en:");
+    for(int i = 0; i < DUMP_SIZE; i++)
+        printk(KERN_CONT"%02x ",data_crypto[i]);
+    work_dump(data_crypto);
+    
 }
 
 static int __init work_init(void)
 {
-    unsigned char data[DUMP_SIZE]="hello,world!thiswork";
-    unsigned char data_crypto[DUMP_SIZE];
-    unsigned char data_d[DUMP_SIZE];
+    //unsigned char data[DUMP_SIZE]="hello,world!thiswork";
+    //unsigned char data_crypto[DUMP_SIZE];
+    //unsigned char data_d[DUMP_SIZE];
     
-    work_encrypt(data, data_crypto);
-    printk("en:");
-    for(int i = 0; i < DUMP_SIZE; i++)
-        printk(KERN_CONT"%02x ",data_crypto[i]);
+    //work_encrypt(data, data_crypto);
+    //printk("en:");
+    //for(int i = 0; i < DUMP_SIZE; i++)
+    //    printk(KERN_CONT"%02x ",data_crypto[i]);
     
     
-    work_decrypt(data_crypto, data_d);
-    printk("de:  ");
-    for(int i=0; i < DUMP_SIZE; i++)
-        printk(KERN_CONT"%c ",data_d[i]);
+    //work_decrypt(data_crypto, data_d);
+    //printk("de:  ");
+    //for(int i=0; i < DUMP_SIZE; i++)
+    //    printk(KERN_CONT"%c ",data_d[i]);
         
     
     printk(KERN_ALERT"work module is entering..\n");
@@ -148,7 +174,7 @@ static void __exit work_exit(void)
     printk(KERN_ALERT"work module is leaving..\n");
     
 }
-EXPORT_SYMBOL(work_encrypt);
+EXPORT_SYMBOL(work_map);
 
 module_init(work_init);
 module_exit(work_exit);

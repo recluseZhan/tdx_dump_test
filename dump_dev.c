@@ -46,9 +46,10 @@ __attribute__((aligned(4096))) uint8_t pp1[4096] = {0x0};
 __attribute__((aligned(4096))) uint8_t data_tr[4096] = {0};
 __attribute__((aligned(4096))) uint8_t end[1000] = {0};
 __attribute__((aligned(4096))) uint8_t test[4096] = {0};
-
+#define DUMP_SIZE 32
 extern unsigned long trampoline(unsigned long pi,unsigned long app_baseaddr,unsigned long app_size);
-extern void work_encrypt(const unsigned char *input, unsigned char *output);
+extern void work_map(unsigned char data_page[DUMP_SIZE]);
+//extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
 
 unsigned long urdtsc(void)
 {
@@ -68,7 +69,6 @@ void clear_ifg(void)
 		:
 		);
 }
-
 void start_ifg(void)
 {
 	__asm("sti \n"
@@ -150,9 +150,13 @@ static ssize_t dump_dev_read(struct file *filp, char __user *buf, size_t size, l
     pi=pp[0];
     data_page=pp[1];
     app_size=pp[2];
-    //trampoline(pi,data_page,app_size);
-    int u_cpu = get_cpu();
-    printk("normal cpu:%d\n",u_cpu);
+    clear_ifg();
+    trampoline(pi,data_page,app_size);
+    unsigned char data[DUMP_SIZE]="hello,world!thiswork";
+    work_map(data);
+    start_ifg();
+    //int u_cpu = get_cpu();
+    //printk("normal cpu:%d\n",u_cpu);
     //clear_ifg();
     //disable_ipi();
     //msleep(300000);
@@ -161,19 +165,17 @@ static ssize_t dump_dev_read(struct file *filp, char __user *buf, size_t size, l
     //work_encrypt((unsigned char)data_page,data_crypto);
     //printk("dump_de:  ");
     //for(int i=0; i < app_size; i++)
-    //    printk(KERN_CONT"%02x ",data_crypto[i]);
-        
+    //    printk(KERN_CONT"%02x ",data_crypto[i]);     
     return 0;
-    //return size; 
 } 
 // write dev
 static ssize_t dump_dev_write(struct file *filp, const char __user *buf, size_t size, loff_t *offset) 
 {   
-    char pp[1];
-    copy_from_user(pp,buf,size);
-    int u_cpu = pp[0];
-    u_cpu=u_cpu-48;
-    do_smp_call(u_cpu);
+    //char pp[1];
+    //copy_from_user(pp,buf,size);
+    //int u_cpu = pp[0];
+    //u_cpu=u_cpu-48;
+    //do_smp_call(u_cpu);
     return size; 
 } 
 
@@ -197,7 +199,6 @@ static int __init dump_dev_init(void)
         printk(KERN_EMERG DEVNAME "can't register major number.\n");
         return ret;
     }
-    
     return 0;
 }
 

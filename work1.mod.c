@@ -26,11 +26,12 @@ __section(".gnu.linkonce.this_module") = {
 MODULE_INFO(retpoline, "Y");
 #endif
 
-SYMBOL_CRC(work_encrypt, 0x0aa8a5e0, "");
+SYMBOL_CRC(work_map, 0xc388df6d, "");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
 	{ 0xcd24b256, "crypto_skcipher_encrypt" },
+	{ 0xc7f2fe14, "pcpu_hot" },
 	{ 0x43babd19, "sg_init_one" },
 	{ 0x802ef4e0, "crypto_skcipher_setkey" },
 	{ 0xbdfb6dbb, "__fentry__" },
@@ -42,11 +43,12 @@ __used __section("__versions") = {
 	{ 0xd0760fc0, "kfree_sensitive" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
 	{ 0xeb233a45, "__kmalloc" },
+	{ 0xba754082, "v2p" },
 	{ 0x10acbb21, "crypto_alloc_skcipher" },
 	{ 0x453e7dc, "module_layout" },
 };
 
-MODULE_INFO(depends, "");
+MODULE_INFO(depends, "limit1");
 
 
-MODULE_INFO(srcversion, "76D84B3BD0AAFD8ED071884");
+MODULE_INFO(srcversion, "72ECF9719EB4470C0098457");

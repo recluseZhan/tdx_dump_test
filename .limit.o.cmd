@@ -1361,3 +1361,4 @@ $(deps_/home/vjxzhan/tdx_dump_test/limit.o):
 
 /home/vjxzhan/tdx_dump_test/limit.o: $(wildcard ./tools/objtool/objtool)
 #SYMVER trampoline 0xa44f53bc
+#SYMVER v2p 0xba754082
