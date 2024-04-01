@@ -5,22 +5,18 @@
 #include <sys/types.h>
 
 void main(){
-    unsigned char a[20]="hello,world!thiswork";
-    printf("%lx\n",a);
+    //unsigned char a[20]="hello,world!thiswork";
+    //printf("%lx\n",a);
     int fd = 0;
-    /*
     pid_t pid=getpid();
-    unsigned long va = a;
-    unsigned long pp[3] = {pid,va,1};
-    fd = open(DEVNAME,O_RDWR);
-    printf("fd:%d\n",fd);
-    read(fd,pp,sizeof(pp));
-    close(fd);  
-    */
-    //getchar();
-    printf("%d\n",a);
-    getchar();
-    printf("%d\n",a);
+    unsigned long pp[3]={pid,&main,1};
+    for(int i=0;i<10;i++){
+        pp[1] = &main+i;
+        fd = open(DEVNAME,O_RDWR);
+        printf("fd:%d\n",fd);
+        read(fd,pp,sizeof(pp));
+        close(fd);  
+    }
     getchar();
     return 0;
 }

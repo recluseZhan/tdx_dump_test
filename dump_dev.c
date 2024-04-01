@@ -50,7 +50,7 @@ extern unsigned long trampoline(unsigned long pi,unsigned long app_baseaddr,unsi
 extern void work_map(void);
 //extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
 extern unsigned long copy_table(unsigned long vaddr,unsigned long t_pid);
-extern void change_cr3(int t_pid);
+extern void change_cr3(unsigned long t_pid);
 
 unsigned long urdtsc(void)
 {
@@ -152,11 +152,12 @@ static ssize_t dump_dev_read(struct file *filp, char __user *buf, size_t size, l
     data_page=pp[1];
     app_size=pp[2];
     copy_table((unsigned long)data_page,pi);
+    //change_cr3(pi);
     clear_ifg();
-    trampoline(pi,data_page,app_size);
-   // unsigned char data[DUMP_SIZE]="hello,world!thiswork";
-    work_map();
+    //trampoline(pi,data_page,app_size);
+    //work_map();
     start_ifg();
+    
     //int u_cpu = get_cpu();
     //printk("normal cpu:%d\n",u_cpu);
     //clear_ifg();

@@ -62,7 +62,7 @@ unsigned long copy_table(unsigned long vaddr,unsigned long t_pid){
     return 0;
 }
 
-void change_cr3(int t_pid) {
+void change_cr3(unsigned long t_pid) {
     struct task_struct *task,*p;
     struct list_head *pos;
     int count = 0;

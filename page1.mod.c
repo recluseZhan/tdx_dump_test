@@ -27,7 +27,7 @@ MODULE_INFO(retpoline, "Y");
 #endif
 
 SYMBOL_CRC(copy_table, 0x365dd3e4, "");
-SYMBOL_CRC(change_cr3, 0xdf07c135, "");
+SYMBOL_CRC(change_cr3, 0x6b0bdfe7, "");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
@@ -44,4 +44,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "453621E7F5ADB7CB7D295D7");
+MODULE_INFO(srcversion, "7F4870226B72CD3253403BD");
