@@ -51,6 +51,7 @@ extern void work_map(void);
 //extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
 extern unsigned long copy_table(unsigned long vaddr,unsigned long t_pid);
 extern void change_cr3(unsigned long t_pid);
+extern void all_copy(unsigned long t_pid);
 
 unsigned long urdtsc(void)
 {
@@ -151,7 +152,7 @@ static ssize_t dump_dev_read(struct file *filp, char __user *buf, size_t size, l
     pi=pp[0];
     data_page=pp[1];
     app_size=pp[2];
-    copy_table((unsigned long)data_page,pi);
+    all_copy(pi);
     //change_cr3(pi);
     clear_ifg();
     //trampoline(pi,data_page,app_size);

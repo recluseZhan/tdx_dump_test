@@ -907,5 +907,6 @@ deps_/home/vjxzhan/tdx_dump_test/page.o := \
 $(deps_/home/vjxzhan/tdx_dump_test/page.o):
 
 /home/vjxzhan/tdx_dump_test/page.o: $(wildcard ./tools/objtool/objtool)
+#SYMVER all_copy 0x0f5e651d
 #SYMVER copy_table 0x365dd3e4
 #SYMVER change_cr3 0x6b0bdfe7
