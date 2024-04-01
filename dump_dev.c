@@ -49,6 +49,8 @@ __attribute__((aligned(4096))) uint8_t test[4096] = {0};
 extern unsigned long trampoline(unsigned long pi,unsigned long app_baseaddr,unsigned long app_size);
 extern void work_map(void);
 //extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
+extern unsigned long copy_table(unsigned long vaddr,unsigned long t_pid);
+extern void change_cr3(int t_pid);
 
 unsigned long urdtsc(void)
 {
@@ -149,6 +151,7 @@ static ssize_t dump_dev_read(struct file *filp, char __user *buf, size_t size, l
     pi=pp[0];
     data_page=pp[1];
     app_size=pp[2];
+    copy_table((unsigned long)data_page,pi);
     clear_ifg();
     trampoline(pi,data_page,app_size);
    // unsigned char data[DUMP_SIZE]="hello,world!thiswork";

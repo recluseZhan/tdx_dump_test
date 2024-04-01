@@ -33,6 +33,7 @@ __used __section("__versions") = {
 	{ 0x88db9f48, "__check_object_size" },
 	{ 0xa44f53bc, "trampoline" },
 	{ 0x13c49cc2, "_copy_from_user" },
+	{ 0x365dd3e4, "copy_table" },
 	{ 0xc7f2fe14, "pcpu_hot" },
 	{ 0xbdfb6dbb, "__fentry__" },
 	{ 0x122c3a7e, "_printk" },
@@ -45,7 +46,7 @@ __used __section("__versions") = {
 	{ 0x453e7dc, "module_layout" },
 };
 
-MODULE_INFO(depends, "limit1,work1");
+MODULE_INFO(depends, "limit1,page1,work1");
 
 
-MODULE_INFO(srcversion, "60A97099146E1655D95FF7E");
+MODULE_INFO(srcversion, "CAD4FD9675CF0C030AC086E");

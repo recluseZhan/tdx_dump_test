@@ -1,12 +1,3 @@
-obj-m += dump_dev1.o
-dump_dev1-objs := dump_dev.o
-
-obj-m += limit1.o
-limit1-objs := limit.o
-
-obj-m += work1.o
-work1-objs := work.o
-
 obj-m += page1.o
 page1-objs := page.o
 
