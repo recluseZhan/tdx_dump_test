@@ -29,6 +29,7 @@ MODULE_INFO(retpoline, "Y");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
+	{ 0x6b0bdfe7, "change_cr3" },
 	{ 0x6228c21f, "smp_call_function_single" },
 	{ 0x88db9f48, "__check_object_size" },
 	{ 0x13c49cc2, "_copy_from_user" },
@@ -47,4 +48,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "page1");
 
 
-MODULE_INFO(srcversion, "688A513D802EAA2D31DD148");
+MODULE_INFO(srcversion, "9CFD96323BE77C2366BCF6B");

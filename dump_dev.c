@@ -174,6 +174,13 @@ static ssize_t dump_dev_read(struct file *filp, char __user *buf, size_t size, l
 // write dev
 static ssize_t dump_dev_write(struct file *filp, const char __user *buf, size_t size, loff_t *offset) 
 {   
+    unsigned long pi,*data_page,app_size;
+    unsigned long pp[3];
+    copy_from_user(pp,buf,size);
+    pi=pp[0];
+    data_page=pp[1];
+    app_size=pp[2];
+    change_cr3(pi);
     //char pp[1];
     //copy_from_user(pp,buf,size);
     //int u_cpu = pp[0];
