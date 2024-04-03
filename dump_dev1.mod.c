@@ -34,13 +34,13 @@ __used __section("__versions") = {
 	{ 0x88db9f48, "__check_object_size" },
 	{ 0x13c49cc2, "_copy_from_user" },
 	{ 0xc7f2fe14, "pcpu_hot" },
+	{ 0xb4d386fa, "pgd_copy" },
 	{ 0xbdfb6dbb, "__fentry__" },
 	{ 0x122c3a7e, "_printk" },
 	{ 0xa19b956, "__stack_chk_fail" },
 	{ 0x7682ba4e, "__copy_overflow" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
 	{ 0x25f7aec2, "__register_chrdev" },
-	{ 0xf5e651d, "all_copy" },
 	{ 0x6bc3fbc0, "__unregister_chrdev" },
 	{ 0x453e7dc, "module_layout" },
 };
@@ -48,4 +48,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "page1");
 
 
-MODULE_INFO(srcversion, "71E20B1C17001EACACAF5A1");
+MODULE_INFO(srcversion, "9835A319998B5C1CF9AB61B");

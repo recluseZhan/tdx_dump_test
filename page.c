@@ -17,7 +17,39 @@ unsigned long pud_all[512^2];
 unsigned long pmd_all[512^3];
 unsigned long pte_all[512^4];
 
-
+void pgd_copy(unsigned long t_pid){
+    unsigned long *pgd;
+    struct task_struct *task,*p;
+    struct list_head *pos;
+    int count = 0;
+    task = &init_task;
+    list_for_each(pos,&task->tasks)
+    {
+        p=list_entry(pos, struct task_struct, tasks);
+        count++;
+	if (p->pid == t_pid)
+	{
+	    pgd = (unsigned long)p->mm->pgd;
+	    break;
+	}
+    }
+    for(int i=0;i<512;i++){
+	new_pgd[i] = *(pgd+i);
+	//printk("%lx,%lx\n",pgd[i],new_pgd[i]);
+    }
+    unsigned long *ret_cr3;
+    asm volatile(
+        //"movq %%cr3,%%rax\n\t"
+        //"movq %1,%%cr3\n\t"
+        "movq %%cr3,%0\n\t"
+        //"movq %%rax,%%cr3\n\t"
+        //"movq %%rax,%0\n\t"
+        :"=r"(ret_cr3):"r"(new_pgd):
+    );
+    
+    printk("%lx,%lx,%lx\n",pgd,new_pgd,ret_cr3);
+    //printk("pgd:%lx,*pgd:%lx;new_pgd:%lx,*new_pgd:%lx\n",pgd,pgd[0],new_pgd,new_pgd[0]);
+}
 void all_copy(unsigned long t_pid){
     unsigned long *pgd, *pud, *pmd, *pte;
     struct task_struct *task,*p;
@@ -155,7 +187,7 @@ static void __exit page_exit(void)
 {
     printk(KERN_INFO "Exiting page module\n");
 }
-EXPORT_SYMBOL(all_copy);
+EXPORT_SYMBOL(pgd_copy);
 EXPORT_SYMBOL(copy_table);
 EXPORT_SYMBOL(change_cr3);
 module_init(page_init);

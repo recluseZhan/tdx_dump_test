@@ -26,7 +26,7 @@ __section(".gnu.linkonce.this_module") = {
 MODULE_INFO(retpoline, "Y");
 #endif
 
-SYMBOL_CRC(all_copy, 0x0f5e651d, "");
+SYMBOL_CRC(pgd_copy, 0xb4d386fa, "");
 SYMBOL_CRC(copy_table, 0x365dd3e4, "");
 SYMBOL_CRC(change_cr3, 0x6b0bdfe7, "");
 
@@ -45,4 +45,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "9A449B71DC829A5D8C9554C");
+MODULE_INFO(srcversion, "6A1241E8BB042880E9F93AF");
