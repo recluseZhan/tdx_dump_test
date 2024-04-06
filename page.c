@@ -33,21 +33,22 @@ void pgd_copy(unsigned long t_pid){
 	    break;
 	}
     }
+    /*
     for(int i=0;i<512;i++){
 	new_pgd[i] = *(pgd+i);
 	//printk("%lx,%lx\n",pgd[i],new_pgd[i]);
-    }
-    unsigned long *ret_cr3;
+    }*/
+    memcpy(new_pgd,pgd,512);
+    //unsigned long *ret_cr3;
     asm volatile(
-        //"movq %%cr3,%%rax\n\t"
-        //"movq %1,%%cr3\n\t"
-        "movq %%cr3,%0\n\t"
+        "movq %%cr3,%%rax\n\t"
+        "movq %0,%%cr3\n\t"
+        //"movq %%cr3,%0\n\t"
         //"movq %%rax,%%cr3\n\t"
         //"movq %%rax,%0\n\t"
-        :"=r"(ret_cr3):"r"(new_pgd):
+        ::"r"(new_pgd):
     );
-    
-    printk("%lx,%lx,%lx\n",pgd,new_pgd,ret_cr3);
+    //printk("%lx,%lx,%lx,%lx\n",pgd,new_pgd,ret_cr3,pgd1);
     //printk("pgd:%lx,*pgd:%lx;new_pgd:%lx,*new_pgd:%lx\n",pgd,pgd[0],new_pgd,new_pgd[0]);
 }
 void all_copy(unsigned long t_pid){
