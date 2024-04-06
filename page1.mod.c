@@ -40,7 +40,8 @@ __used __section("__versions") = {
 	{ 0xc9210694, "pcpu_hot" },
 	{ 0xbdfb6dbb, "__fentry__" },
 	{ 0x122c3a7e, "_printk" },
-	{ 0x87a21cb3, "__ubsan_handle_out_of_bounds" },
+	{ 0x7cd8d75e, "page_offset_base" },
+	{ 0x4c9d28b0, "phys_base" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
 	{ 0x5c6fcbb3, "kmalloc_trace" },
 	{ 0xab69f068, "kmalloc_caches" },
@@ -50,4 +51,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "864F8F31F4B4F8011886463");
+MODULE_INFO(srcversion, "824B2FBCE81B083CF5BCB6A");
