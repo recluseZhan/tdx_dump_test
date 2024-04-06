@@ -1,4 +1,4 @@
-limit.o: /home/vjxzhan/tdx_dump_test/limit.c \
+limit.o: /home/hjxzhan/tdx_dump_test/limit.c \
  include/linux/compiler-version.h include/linux/kconfig.h \
  include/generated/autoconf.h include/linux/compiler_types.h \
  include/linux/compiler_attributes.h include/linux/compiler-gcc.h \
@@ -16,24 +16,21 @@ limit.o: /home/vjxzhan/tdx_dump_test/limit.c \
  arch/x86/include/uapi/asm/posix_types_64.h \
  include/uapi/asm-generic/posix_types.h include/linux/kcsan-checks.h \
  include/linux/stringify.h include/linux/module.h include/linux/list.h \
- include/linux/container_of.h include/linux/err.h \
- arch/x86/include/generated/uapi/asm/errno.h \
- include/uapi/asm-generic/errno.h include/uapi/asm-generic/errno-base.h \
- include/linux/poison.h include/linux/const.h include/vdso/const.h \
- include/uapi/linux/const.h arch/x86/include/asm/barrier.h \
- arch/x86/include/asm/alternative.h arch/x86/include/asm/asm.h \
- arch/x86/include/asm/extable_fixup_types.h arch/x86/include/asm/nops.h \
- include/asm-generic/barrier.h include/linux/stat.h \
- arch/x86/include/uapi/asm/stat.h include/uapi/linux/stat.h \
- include/linux/time.h include/linux/cache.h include/uapi/linux/kernel.h \
- include/uapi/linux/sysinfo.h arch/x86/include/asm/cache.h \
- include/linux/linkage.h include/linux/export.h \
- arch/x86/include/asm/linkage.h arch/x86/include/asm/ibt.h \
- include/linux/math64.h include/linux/math.h arch/x86/include/asm/div64.h \
- include/asm-generic/div64.h include/vdso/math64.h include/linux/time64.h \
- include/vdso/time64.h include/uapi/linux/time.h \
- include/uapi/linux/time_types.h include/linux/time32.h \
- include/linux/timex.h include/uapi/linux/timex.h \
+ include/linux/container_of.h include/linux/poison.h \
+ include/linux/const.h include/vdso/const.h include/uapi/linux/const.h \
+ arch/x86/include/asm/barrier.h arch/x86/include/asm/alternative.h \
+ arch/x86/include/asm/asm.h arch/x86/include/asm/extable_fixup_types.h \
+ arch/x86/include/asm/nops.h include/asm-generic/barrier.h \
+ include/linux/stat.h arch/x86/include/uapi/asm/stat.h \
+ include/uapi/linux/stat.h include/linux/time.h include/linux/cache.h \
+ include/uapi/linux/kernel.h include/uapi/linux/sysinfo.h \
+ arch/x86/include/asm/cache.h include/linux/linkage.h \
+ include/linux/export.h arch/x86/include/asm/linkage.h \
+ arch/x86/include/asm/ibt.h include/linux/math64.h include/linux/math.h \
+ arch/x86/include/asm/div64.h include/asm-generic/div64.h \
+ include/vdso/math64.h include/linux/time64.h include/vdso/time64.h \
+ include/uapi/linux/time.h include/uapi/linux/time_types.h \
+ include/linux/time32.h include/linux/timex.h include/uapi/linux/timex.h \
  include/uapi/linux/param.h arch/x86/include/generated/uapi/asm/param.h \
  include/asm-generic/param.h include/uapi/asm-generic/param.h \
  arch/x86/include/asm/timex.h arch/x86/include/asm/processor.h \
@@ -57,7 +54,8 @@ limit.o: /home/vjxzhan/tdx_dump_test/limit.c \
  arch/x86/include/asm/pgtable_64_types.h arch/x86/include/asm/sparsemem.h \
  arch/x86/include/asm/nospec-branch.h include/linux/static_key.h \
  include/linux/jump_label.h arch/x86/include/asm/jump_label.h \
- include/linux/objtool.h arch/x86/include/asm/cpufeatures.h \
+ include/linux/objtool.h include/linux/objtool_types.h \
+ arch/x86/include/asm/cpufeatures.h \
  arch/x86/include/asm/required-features.h \
  arch/x86/include/asm/disabled-features.h \
  arch/x86/include/asm/msr-index.h include/linux/bits.h \
@@ -79,9 +77,9 @@ limit.o: /home/vjxzhan/tdx_dump_test/limit.c \
  include/asm-generic/bitops/instrumented-non-atomic.h \
  include/asm-generic/bitops/instrumented-lock.h \
  include/asm-generic/bitops/le.h \
- include/asm-generic/bitops/ext2-atomic-setbit.h include/linux/kstrtox.h \
- include/linux/log2.h include/linux/minmax.h include/linux/panic.h \
- include/linux/printk.h include/linux/kern_levels.h \
+ include/asm-generic/bitops/ext2-atomic-setbit.h include/linux/hex.h \
+ include/linux/kstrtox.h include/linux/log2.h include/linux/minmax.h \
+ include/linux/panic.h include/linux/printk.h include/linux/kern_levels.h \
  include/linux/ratelimit_types.h include/linux/spinlock_types_raw.h \
  arch/x86/include/asm/spinlock_types.h \
  include/asm-generic/qspinlock_types.h \
@@ -98,11 +96,14 @@ limit.o: /home/vjxzhan/tdx_dump_test/limit.c \
  include/linux/bug.h arch/x86/include/asm/bug.h \
  include/linux/instrumentation.h include/asm-generic/bug.h \
  include/linux/cpumask.h include/linux/bitmap.h include/linux/find.h \
- include/linux/string.h include/linux/errno.h include/uapi/linux/errno.h \
- include/uapi/linux/string.h include/linux/fortify-string.h \
- include/linux/atomic.h arch/x86/include/asm/atomic.h \
- arch/x86/include/asm/cmpxchg.h arch/x86/include/asm/cmpxchg_64.h \
- arch/x86/include/asm/atomic64_64.h \
+ include/linux/string.h include/linux/err.h \
+ arch/x86/include/generated/uapi/asm/errno.h \
+ include/uapi/asm-generic/errno.h include/uapi/asm-generic/errno-base.h \
+ include/linux/errno.h include/uapi/linux/errno.h \
+ include/linux/overflow.h include/uapi/linux/string.h \
+ include/linux/fortify-string.h include/linux/atomic.h \
+ arch/x86/include/asm/atomic.h arch/x86/include/asm/cmpxchg.h \
+ arch/x86/include/asm/cmpxchg_64.h arch/x86/include/asm/atomic64_64.h \
  include/linux/atomic/atomic-arch-fallback.h \
  include/linux/atomic/atomic-long.h \
  include/linux/atomic/atomic-instrumented.h include/linux/gfp_types.h \
@@ -114,12 +115,13 @@ limit.o: /home/vjxzhan/tdx_dump_test/limit.c \
  arch/x86/include/asm/cpumask.h arch/x86/include/uapi/asm/msr.h \
  arch/x86/include/asm/shared/msr.h include/linux/tracepoint-defs.h \
  arch/x86/include/asm/special_insns.h include/linux/irqflags.h \
- arch/x86/include/asm/irqflags.h arch/x86/include/asm/fpu/types.h \
- arch/x86/include/asm/vmxfeatures.h arch/x86/include/asm/vdso/processor.h \
- include/linux/personality.h include/uapi/linux/personality.h \
- arch/x86/include/asm/tsc.h arch/x86/include/asm/cpufeature.h \
- include/vdso/time32.h include/vdso/time.h include/linux/uidgid.h \
- include/linux/highuid.h include/linux/buildid.h include/linux/mm_types.h \
+ include/linux/cleanup.h arch/x86/include/asm/irqflags.h \
+ arch/x86/include/asm/fpu/types.h arch/x86/include/asm/vmxfeatures.h \
+ arch/x86/include/asm/vdso/processor.h include/linux/personality.h \
+ include/uapi/linux/personality.h arch/x86/include/asm/tsc.h \
+ arch/x86/include/asm/cpufeature.h include/vdso/time32.h \
+ include/vdso/time.h include/linux/uidgid.h include/linux/highuid.h \
+ include/linux/buildid.h include/linux/mm_types.h \
  include/linux/mm_types_task.h arch/x86/include/asm/tlbbatch.h \
  include/linux/auxvec.h include/uapi/linux/auxvec.h \
  arch/x86/include/uapi/asm/auxvec.h include/linux/kref.h \
@@ -153,8 +155,9 @@ limit.o: /home/vjxzhan/tdx_dump_test/limit.c \
  include/linux/seqlock.h include/linux/percpu_counter.h \
  include/linux/percpu.h include/linux/mmdebug.h \
  arch/x86/include/asm/mmu.h include/linux/kmod.h include/linux/umh.h \
- include/linux/gfp.h include/linux/mmzone.h include/linux/nodemask.h \
- include/linux/random.h include/uapi/linux/random.h include/linux/irqnr.h \
+ include/linux/gfp.h include/linux/mmzone.h include/linux/list_nulls.h \
+ include/linux/nodemask.h include/linux/random.h \
+ include/uapi/linux/random.h include/linux/irqnr.h \
  include/uapi/linux/irqnr.h include/linux/prandom.h include/linux/once.h \
  include/linux/pageblock-flags.h include/linux/page-flags.h \
  include/linux/local_lock.h include/linux/local_lock_internal.h \
@@ -203,26 +206,27 @@ limit.o: /home/vjxzhan/tdx_dump_test/limit.c \
  include/linux/syscall_user_dispatch.h include/linux/task_io_accounting.h \
  include/linux/posix-timers.h include/linux/alarmtimer.h \
  include/uapi/linux/rseq.h include/linux/kcsan.h include/linux/rv.h \
+ include/linux/livepatch_sched.h \
  arch/x86/include/generated/asm/kmap_size.h \
  include/asm-generic/kmap_size.h include/linux/sync_core.h \
- arch/x86/include/asm/sync_core.h include/linux/ioasid.h \
- include/linux/kobject_ns.h include/linux/moduleparam.h \
- include/linux/rbtree_latch.h include/linux/error-injection.h \
- include/asm-generic/error-injection.h arch/x86/include/asm/module.h \
- include/asm-generic/module.h arch/x86/include/asm/orc_types.h \
- include/linux/mm.h include/linux/mmap_lock.h \
- include/linux/percpu-refcount.h include/linux/bit_spinlock.h \
- include/linux/shrinker.h include/linux/page_ext.h \
- include/linux/stacktrace.h include/linux/stackdepot.h \
- include/linux/page_ref.h include/linux/overflow.h include/linux/sizes.h \
- include/linux/pgtable.h arch/x86/include/asm/pgtable.h \
- arch/x86/include/asm/pkru.h arch/x86/include/asm/fpu/api.h \
- arch/x86/include/asm/coco.h include/asm-generic/pgtable_uffd.h \
- include/linux/page_table_check.h arch/x86/include/asm/pgtable_64.h \
- arch/x86/include/asm/fixmap.h arch/x86/include/uapi/asm/vsyscall.h \
- include/asm-generic/fixmap.h arch/x86/include/asm/pgtable-invert.h \
- include/linux/kasan.h include/linux/kasan-enabled.h \
- include/linux/memremap.h include/linux/ioport.h include/linux/huge_mm.h \
+ arch/x86/include/asm/sync_core.h include/linux/kobject_ns.h \
+ include/linux/moduleparam.h include/linux/rbtree_latch.h \
+ include/linux/error-injection.h include/asm-generic/error-injection.h \
+ arch/x86/include/asm/module.h include/asm-generic/module.h \
+ arch/x86/include/asm/orc_types.h include/linux/mm.h \
+ include/linux/mmap_lock.h include/linux/percpu-refcount.h \
+ include/linux/bit_spinlock.h include/linux/shrinker.h \
+ include/linux/page_ext.h include/linux/stacktrace.h \
+ include/linux/stackdepot.h include/linux/page_ref.h \
+ include/linux/sizes.h include/linux/pgtable.h \
+ arch/x86/include/asm/pgtable.h arch/x86/include/asm/pkru.h \
+ arch/x86/include/asm/fpu/api.h arch/x86/include/asm/coco.h \
+ include/asm-generic/pgtable_uffd.h include/linux/page_table_check.h \
+ arch/x86/include/asm/pgtable_64.h arch/x86/include/asm/fixmap.h \
+ arch/x86/include/uapi/asm/vsyscall.h include/asm-generic/fixmap.h \
+ arch/x86/include/asm/pgtable-invert.h include/linux/kasan.h \
+ include/linux/kasan-enabled.h include/linux/memremap.h \
+ include/linux/ioport.h include/linux/slab.h include/linux/huge_mm.h \
  include/linux/sched/coredump.h include/linux/fs.h \
  include/linux/wait_bit.h include/linux/kdev_t.h \
  include/uapi/linux/kdev_t.h include/linux/dcache.h \
@@ -239,20 +243,20 @@ limit.o: /home/vjxzhan/tdx_dump_test/limit.c \
  include/linux/sched/task.h include/linux/uaccess.h \
  include/linux/fault-inject-usercopy.h arch/x86/include/asm/uaccess.h \
  arch/x86/include/asm/smap.h arch/x86/include/asm/extable.h \
- include/asm-generic/access_ok.h arch/x86/include/asm/uaccess_64.h \
- include/linux/cred.h include/linux/key.h include/linux/assoc_array.h \
- include/linux/sched/user.h include/linux/ratelimit.h \
- include/linux/rcu_sync.h include/linux/delayed_call.h \
- include/linux/uuid.h include/uapi/linux/uuid.h include/linux/errseq.h \
+ arch/x86/include/asm/tlbflush.h arch/x86/include/asm/invpcid.h \
+ arch/x86/include/asm/pti.h arch/x86/include/asm/uaccess_64.h \
+ include/asm-generic/access_ok.h include/linux/cred.h include/linux/key.h \
+ include/linux/assoc_array.h include/linux/sched/user.h \
+ include/linux/ratelimit.h include/linux/rcu_sync.h \
+ include/linux/delayed_call.h include/linux/uuid.h include/linux/errseq.h \
  include/linux/ioprio.h include/linux/sched/rt.h \
  include/linux/iocontext.h include/uapi/linux/ioprio.h \
  include/linux/fs_types.h include/linux/mount.h \
- include/linux/mnt_idmapping.h include/linux/slab.h \
- include/uapi/linux/fs.h include/linux/quota.h \
- include/uapi/linux/dqblk_xfs.h include/linux/dqblk_v1.h \
- include/linux/dqblk_v2.h include/linux/dqblk_qtree.h \
- include/linux/projid.h include/uapi/linux/quota.h \
- include/linux/nfs_fs_i.h include/linux/vmstat.h \
+ include/linux/mnt_idmapping.h include/uapi/linux/fs.h \
+ include/linux/quota.h include/uapi/linux/dqblk_xfs.h \
+ include/linux/dqblk_v1.h include/linux/dqblk_v2.h \
+ include/linux/dqblk_qtree.h include/linux/projid.h \
+ include/uapi/linux/quota.h include/linux/vmstat.h \
  include/linux/vm_event_item.h include/linux/init_task.h \
  include/linux/utsname.h include/linux/nsproxy.h \
  include/linux/ns_common.h include/uapi/linux/utsname.h \
@@ -280,21 +284,20 @@ limit.o: /home/vjxzhan/tdx_dump_test/limit.c \
  include/linux/user_namespace.h include/linux/securebits.h \
  include/uapi/linux/securebits.h include/linux/sched/autogroup.h \
  include/net/net_namespace.h include/net/flow.h include/linux/in6.h \
- include/uapi/linux/in6.h include/net/flow_dissector.h \
- include/linux/siphash.h include/uapi/linux/if_ether.h \
- include/net/netns/core.h include/net/netns/mib.h include/net/snmp.h \
- include/uapi/linux/snmp.h include/linux/u64_stats_sync.h \
- arch/x86/include/generated/asm/local64.h include/asm-generic/local64.h \
- arch/x86/include/asm/local.h include/net/netns/unix.h \
- include/net/netns/packet.h include/net/netns/ipv4.h \
- include/net/inet_frag.h include/net/dropreason.h \
+ include/uapi/linux/in6.h include/net/netns/core.h \
+ include/net/netns/mib.h include/net/snmp.h include/uapi/linux/snmp.h \
+ include/linux/u64_stats_sync.h arch/x86/include/generated/asm/local64.h \
+ include/asm-generic/local64.h arch/x86/include/asm/local.h \
+ include/net/netns/unix.h include/net/netns/packet.h \
+ include/net/netns/ipv4.h include/net/inet_frag.h \
+ include/net/dropreason-core.h include/linux/siphash.h \
  include/net/netns/ipv6.h include/net/dst_ops.h \
  include/uapi/linux/icmpv6.h include/net/netns/nexthop.h \
  include/net/netns/ieee802154_6lowpan.h include/net/netns/sctp.h \
  include/net/netns/netfilter.h include/linux/netfilter_defs.h \
  include/uapi/linux/netfilter.h include/linux/in.h \
  include/uapi/linux/in.h include/net/netns/conntrack.h \
- include/linux/list_nulls.h include/linux/netfilter/nf_conntrack_tcp.h \
+ include/linux/netfilter/nf_conntrack_tcp.h \
  include/uapi/linux/netfilter/nf_conntrack_tcp.h \
  include/linux/netfilter/nf_conntrack_dccp.h \
  include/uapi/linux/netfilter/nf_conntrack_tuple_common.h \
@@ -311,28 +314,26 @@ limit.o: /home/vjxzhan/tdx_dump_test/limit.c \
  include/linux/cacheflush.h arch/x86/include/asm/cacheflush.h \
  include/asm-generic/cacheflush.h include/linux/kmsan.h \
  include/linux/dma-direction.h include/linux/highmem-internal.h \
- include/linux/net.h include/linux/sockptr.h include/uapi/linux/net.h \
- include/linux/textsearch.h include/net/checksum.h \
- arch/x86/include/asm/checksum.h arch/x86/include/asm/checksum_64.h \
- include/linux/dma-mapping.h include/linux/device.h \
- include/linux/dev_printk.h include/linux/energy_model.h \
- include/linux/sched/cpufreq.h include/linux/sched/topology.h \
- include/linux/sched/idle.h include/linux/sched/sd_flags.h \
- include/linux/klist.h include/linux/pm.h include/linux/device/bus.h \
- include/linux/device/class.h include/linux/device/driver.h \
- arch/x86/include/asm/device.h include/linux/pm_wakeup.h \
- include/linux/scatterlist.h arch/x86/include/asm/io.h \
- arch/x86/include/generated/asm/early_ioremap.h \
+ include/net/checksum.h arch/x86/include/asm/checksum.h \
+ arch/x86/include/asm/checksum_64.h include/linux/dma-mapping.h \
+ include/linux/device.h include/linux/dev_printk.h \
+ include/linux/energy_model.h include/linux/sched/cpufreq.h \
+ include/linux/sched/topology.h include/linux/sched/idle.h \
+ include/linux/sched/sd_flags.h include/linux/klist.h include/linux/pm.h \
+ include/linux/device/bus.h include/linux/device/class.h \
+ include/linux/device/driver.h arch/x86/include/asm/device.h \
+ include/linux/pm_wakeup.h include/linux/scatterlist.h \
+ arch/x86/include/asm/io.h arch/x86/include/generated/asm/early_ioremap.h \
  include/asm-generic/early_ioremap.h arch/x86/include/asm/shared/io.h \
  include/asm-generic/iomap.h include/asm-generic/pci_iomap.h \
  include/asm-generic/io.h include/linux/logic_pio.h \
  include/linux/fwnode.h include/linux/vmalloc.h \
  arch/x86/include/asm/vmalloc.h arch/x86/include/asm/pgtable_areas.h \
- include/linux/netdev_features.h include/linux/sched/clock.h \
- include/linux/splice.h include/linux/pipe_fs_i.h \
- include/uapi/linux/if_packet.h include/net/page_pool.h \
- include/linux/ptr_ring.h include/net/net_debug.h \
+ include/linux/netdev_features.h include/net/flow_dissector.h \
+ include/uapi/linux/if_ether.h include/uapi/linux/if_packet.h \
+ include/net/page_pool.h include/linux/ptr_ring.h include/net/net_debug.h \
  include/linux/seq_file_net.h include/linux/seq_file.h \
  include/linux/string_helpers.h include/linux/ctype.h \
- include/linux/livepatch.h include/linux/delay.h \
- arch/x86/include/asm/delay.h include/asm-generic/delay.h
+ include/linux/string_choices.h include/linux/livepatch.h \
+ include/linux/delay.h arch/x86/include/asm/delay.h \
+ include/asm-generic/delay.h
