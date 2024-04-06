@@ -33,11 +33,12 @@ void pgd_copy(unsigned long t_pid){
     for(int i=0;i<PGD_SIZE;i++){
         printk("%lx %lx\n",*(old_pgd+i),*(new_pgd+i));
     }
+    //task->mm->pgd = new_pgd;
     phys_addr_t ret_cr3,in_cr3;
     in_cr3 = virt_to_phys(new_pgd);
     unsigned long *vcr3;
     asm volatile(
-        "movq %%cr3,%%rax\n\t"
+        //"movq %%cr3,%%rax\n\t"
         "movq %1,%%cr3\n\t"
         "movq %%rax,%0\n\t"
         :"=r"(ret_cr3):"r"(in_cr3):
