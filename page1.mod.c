@@ -32,26 +32,22 @@ MODULE_INFO(retpoline, "Y");
 #endif
 
 KSYMTAB_FUNC(pgd_copy, "", "");
-KSYMTAB_FUNC(copy_table, "", "");
-KSYMTAB_FUNC(change_cr3, "", "");
 
 SYMBOL_CRC(pgd_copy, 0xb4d386fa, "");
-SYMBOL_CRC(copy_table, 0x365dd3e4, "");
-SYMBOL_CRC(change_cr3, 0x6b0bdfe7, "");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
+	{ 0xc9210694, "pcpu_hot" },
 	{ 0xbdfb6dbb, "__fentry__" },
 	{ 0x122c3a7e, "_printk" },
-	{ 0x533ff826, "init_task" },
 	{ 0x87a21cb3, "__ubsan_handle_out_of_bounds" },
-	{ 0x7cd8d75e, "page_offset_base" },
-	{ 0x1d19f77b, "physical_mask" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
+	{ 0x5c6fcbb3, "kmalloc_trace" },
+	{ 0xab69f068, "kmalloc_caches" },
 	{ 0x6ab589bc, "module_layout" },
 };
 
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "42B9D22594D580514A3F999");
+MODULE_INFO(srcversion, "864F8F31F4B4F8011886463");

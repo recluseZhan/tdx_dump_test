@@ -927,6 +927,31 @@ deps_/home/hjxzhan/tdx_dump_test/page.o := \
     $(wildcard include/config/KASAN_STACK) \
     $(wildcard include/config/KASAN_VMALLOC) \
   include/linux/kasan-enabled.h \
+  arch/x86/include/asm/io.h \
+    $(wildcard include/config/MTRR) \
+    $(wildcard include/config/X86_PAT) \
+  arch/x86/include/generated/asm/early_ioremap.h \
+  include/asm-generic/early_ioremap.h \
+    $(wildcard include/config/GENERIC_EARLY_IOREMAP) \
+  arch/x86/include/asm/shared/io.h \
+  include/asm-generic/iomap.h \
+    $(wildcard include/config/HAS_IOPORT_MAP) \
+  include/asm-generic/pci_iomap.h \
+    $(wildcard include/config/PCI) \
+    $(wildcard include/config/NO_GENERIC_PCI_IOPORT_MAP) \
+    $(wildcard include/config/GENERIC_PCI_IOMAP) \
+  include/asm-generic/io.h \
+    $(wildcard include/config/GENERIC_IOMAP) \
+    $(wildcard include/config/TRACE_MMIO_ACCESS) \
+    $(wildcard include/config/GENERIC_IOREMAP) \
+  include/linux/logic_pio.h \
+    $(wildcard include/config/INDIRECT_PIO) \
+  include/linux/fwnode.h \
+  include/linux/vmalloc.h \
+    $(wildcard include/config/HAVE_ARCH_HUGE_VMALLOC) \
+  arch/x86/include/asm/vmalloc.h \
+    $(wildcard include/config/HAVE_ARCH_HUGE_VMAP) \
+  arch/x86/include/asm/pgtable_areas.h \
 
 /home/hjxzhan/tdx_dump_test/page.o: $(deps_/home/hjxzhan/tdx_dump_test/page.o)
 
@@ -934,5 +959,3 @@ $(deps_/home/hjxzhan/tdx_dump_test/page.o):
 
 /home/hjxzhan/tdx_dump_test/page.o: $(wildcard ./tools/objtool/objtool)
 #SYMVER pgd_copy 0xb4d386fa
-#SYMVER copy_table 0x365dd3e4
-#SYMVER change_cr3 0x6b0bdfe7

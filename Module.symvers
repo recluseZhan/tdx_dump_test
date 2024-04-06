@@ -2,5 +2,3 @@
 0xba754082	v2p	/home/hjxzhan/tdx_dump_test/limit1	EXPORT_SYMBOL	
 0x2bb34e48	work_map	/home/hjxzhan/tdx_dump_test/work1	EXPORT_SYMBOL	
 0xb4d386fa	pgd_copy	/home/hjxzhan/tdx_dump_test/page1	EXPORT_SYMBOL	
-0x365dd3e4	copy_table	/home/hjxzhan/tdx_dump_test/page1	EXPORT_SYMBOL	
-0x6b0bdfe7	change_cr3	/home/hjxzhan/tdx_dump_test/page1	EXPORT_SYMBOL	

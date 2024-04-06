@@ -4,10 +4,10 @@
 #include <linux/sched/signal.h>
 #include <linux/sched.h>
 #include <linux/slab.h>
-
+#include <asm/io.h>
 MODULE_LICENSE("GPL");
 
-unsigned long new_pgd[512];
+//unsigned long new_pgd[512];
 unsigned long new_pud[512];
 unsigned long new_pmd[512];
 unsigned long new_pte[512];
@@ -16,41 +16,45 @@ unsigned long pgd_all[512];
 unsigned long pud_all[512^2];
 unsigned long pmd_all[512^3];
 unsigned long pte_all[512^4];
+#define PGD_SIZE (sizeof(pgd_t) * PTRS_PER_PGD)
+#define NEW_STACK_SIZE 8192
+unsigned long *cr3;
+pgd_t* new_pgd[4096];
+pgd_t* old_pgd;
 
 void pgd_copy(unsigned long t_pid){
-    unsigned long *pgd;
-    struct task_struct *task,*p;
-    struct list_head *pos;
-    int count = 0;
-    task = &init_task;
-    list_for_each(pos,&task->tasks)
-    {
-        p=list_entry(pos, struct task_struct, tasks);
-        count++;
-	if (p->pid == t_pid)
-	{
-	    pgd = (unsigned long)p->mm->pgd;
-	    break;
-	}
+    struct task_struct *task=current;
+    old_pgd = task->mm->pgd;
+    //memcpy(new_pgd1,old_pgd,PGD_SIZE);
+
+    for(int i=0;i<PGD_SIZE;i++){
+        //new_pgd[i]=old_pgd[i];
+        //if(new_pgd[i]!=0)
+        new_pgd[i]=old_pgd+i;
+        printk("%d %lx %lx\n",i,new_pgd[i],old_pgd+i);
     }
+    printk("%d\n",PGD_SIZE);
+    task->mm->pgd = new_pgd[0];
+    
     /*
-    for(int i=0;i<512;i++){
-	new_pgd[i] = *(pgd+i);
-	//printk("%lx,%lx\n",pgd[i],new_pgd[i]);
-    }*/
-    memcpy(new_pgd,pgd,512);
-    //unsigned long *ret_cr3;
     asm volatile(
         "movq %%cr3,%%rax\n\t"
         "movq %0,%%cr3\n\t"
-        //"movq %%cr3,%0\n\t"
-        //"movq %%rax,%%cr3\n\t"
-        //"movq %%rax,%0\n\t"
-        ::"r"(new_pgd):
-    );
-    //printk("%lx,%lx,%lx,%lx\n",pgd,new_pgd,ret_cr3,pgd1);
-    //printk("pgd:%lx,*pgd:%lx;new_pgd:%lx,*new_pgd:%lx\n",pgd,pgd[0],new_pgd,new_pgd[0]);
+        ::"r"(new_pgd_t):
+    );*/
+    unsigned long *old_stack_start;
+    unsigned long *new_stack_start;
+    unsigned char *new_stack;
+    old_stack_start = task->mm->start_stack;
+    new_stack = kmalloc(NEW_STACK_SIZE,GFP_KERNEL);
+    new_stack_start = (unsigned long*)new_stack + NEW_STACK_SIZE;
+    memcpy(new_stack,old_stack_start,NEW_STACK_SIZE);
+    //printk("%lx\n",&a);
+    //task->thread.sp=new_stack_start;
+    //asm volatile("mov %0, %%rsp" :: "r"(new_stack_start));
+    //printk("%lx\n",&a);
 }
+/*
 void all_copy(unsigned long t_pid){
     unsigned long *pgd, *pud, *pmd, *pte;
     struct task_struct *task,*p;
@@ -161,7 +165,7 @@ void change_cr3(unsigned long t_pid) {
             break;
 	}
     }
-}
+}*/
 
 static int __init page_init(void)
 {
@@ -189,8 +193,9 @@ static void __exit page_exit(void)
     printk(KERN_INFO "Exiting page module\n");
 }
 EXPORT_SYMBOL(pgd_copy);
+/*
 EXPORT_SYMBOL(copy_table);
-EXPORT_SYMBOL(change_cr3);
+EXPORT_SYMBOL(change_cr3);*/
 module_init(page_init);
 module_exit(page_exit);
 

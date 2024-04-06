@@ -231,4 +231,10 @@ page.o: /home/hjxzhan/tdx_dump_test/page.c \
  include/linux/key.h include/linux/assoc_array.h \
  include/linux/sched/user.h include/linux/ratelimit.h \
  include/linux/slab.h include/linux/percpu-refcount.h \
- include/linux/kasan.h include/linux/kasan-enabled.h
+ include/linux/kasan.h include/linux/kasan-enabled.h \
+ arch/x86/include/asm/io.h arch/x86/include/generated/asm/early_ioremap.h \
+ include/asm-generic/early_ioremap.h arch/x86/include/asm/shared/io.h \
+ include/asm-generic/iomap.h include/asm-generic/pci_iomap.h \
+ include/asm-generic/io.h include/linux/logic_pio.h \
+ include/linux/fwnode.h include/linux/vmalloc.h \
+ arch/x86/include/asm/vmalloc.h arch/x86/include/asm/pgtable_areas.h
