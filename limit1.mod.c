@@ -6,11 +6,6 @@
 #include <linux/vermagic.h>
 #include <linux/compiler.h>
 
-#ifdef CONFIG_UNWINDER_ORC
-#include <asm/orc_header.h>
-ORC_HEADER;
-#endif
-
 BUILD_SALT;
 BUILD_LTO_INFO;
 
@@ -31,23 +26,20 @@ __section(".gnu.linkonce.this_module") = {
 MODULE_INFO(retpoline, "Y");
 #endif
 
-KSYMTAB_FUNC(trampoline, "", "");
-KSYMTAB_FUNC(v2p, "", "");
-
 SYMBOL_CRC(trampoline, 0xa44f53bc, "");
 SYMBOL_CRC(v2p, 0xba754082, "");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
-	{ 0xc9210694, "pcpu_hot" },
+	{ 0xc7f2fe14, "pcpu_hot" },
 	{ 0xbdfb6dbb, "__fentry__" },
 	{ 0x122c3a7e, "_printk" },
-	{ 0x533ff826, "init_task" },
+	{ 0x854ad34a, "init_task" },
 	{ 0x7cd8d75e, "page_offset_base" },
 	{ 0x1d19f77b, "physical_mask" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
-	{ 0x91e2cb22, "pv_ops" },
-	{ 0x6ab589bc, "module_layout" },
+	{ 0xbec1f61d, "pv_ops" },
+	{ 0x453e7dc, "module_layout" },
 };
 
 MODULE_INFO(depends, "");

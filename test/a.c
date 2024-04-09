@@ -9,6 +9,7 @@ void main(){
     //printf("%lx\n",a);
     int fd = 0;
     pid_t pid=getpid();
+
     unsigned long pp[3]={pid,&main,1};
     //for(int i=0;i<4096;i++){
         //pp[1] = &main+i;

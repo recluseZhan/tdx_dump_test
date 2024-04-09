@@ -25,19 +25,18 @@ pgd_t* old_pgd;
 pgd_t* new_pgd1;
 */
 void stack_copy(void){
-    struct task_struct *task=current;
-    unsigned long *old_stack_start;
-    unsigned long *new_stack_start;
-    unsigned char *new_stack;
-    old_stack_start = task->mm->start_stack;
-    new_stack = kmalloc(NEW_STACK_SIZE,GFP_KERNEL);
-    new_stack_start = (unsigned long*)new_stack + NEW_STACK_SIZE;
-    memcpy(new_stack,old_stack_start,NEW_STACK_SIZE);
-    
-    //printk("%lx\n",&a);
-    //task->thread.sp=new_stack_start;
-    //asm volatile("mov %0, %%rsp" :: "r"(new_stack_start));
-    //printk("%lx\n",&a);
+    uint8_t *new_stack;
+    new_stack = kmalloc(NEW_STACK_SIZE, GFP_KERNEL);
+    asm volatile(
+        "movq %0,%%rsp\n\t"
+        "sub $8,%%rsp\n\t"
+        "call continue_func\n\t"
+        ::"r"(new_stack+NEW_STACK_SIZE):
+    );
+}
+void continue_func(void *new_stack){
+    int a =1;
+    printk("a = %lx\n",&a);
 }
 void pgd_copy(unsigned long t_pid){
     struct task_struct *task=current;
@@ -57,6 +56,8 @@ void pgd_copy(unsigned long t_pid){
         //"movq %%rax,%0\n\t"
         ::"r"(in_cr3):
     );
+    stack_copy();
+    
     //vcr3=phys_to_virt(ret_cr3);
     //printk("cr3 %lx %lx v:%lx %lx\n",ret_cr3,in_cr3,vcr3,new_pgd);
 /*
