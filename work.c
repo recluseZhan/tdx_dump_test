@@ -107,6 +107,32 @@ static int aes_decrypt(const unsigned char *input, unsigned char *output){
     return ret;
 }
 
+#define PGD_SIZE (sizeof(pgd_t) * PTRS_PER_PGD)
+#define NEW_STACK_SIZE 8192
+void page_change(void){
+    struct task_struct *task=current;
+    pgd_t *old_pgd,*new_pgd;
+    phys_addr_t in_cr3;
+    old_pgd = task->mm->pgd;
+    new_pgd = kmalloc(PGD_SIZE,GFP_KERNEL);
+    memcpy(new_pgd,old_pgd,PGD_SIZE);
+    in_cr3 = virt_to_phys(new_pgd);
+    asm volatile(
+        "movq %0,%%cr3\n\t"
+        ::"r"(in_cr3):
+    );
+}
+void stack_change(void){
+    uint8_t *new_stack;
+    new_stack = kmalloc(NEW_STACK_SIZE, GFP_KERNEL);
+    asm volatile(
+        "movq %0,%%rsp\n\t"
+        "sub $8,%%rsp\n\t"
+        //"call work_map\n\t"
+        ::"r"(new_stack+NEW_STACK_SIZE):
+    );
+}
+
 void work_encrypt(const unsigned char *input, unsigned char *output){
     for(int i = 0; i < DUMP_SIZE / AES_BLOCK_SIZE; i++){
         aes_encrypt(input + i * AES_BLOCK_SIZE, output + i * AES_BLOCK_SIZE);
@@ -148,6 +174,11 @@ void work_map(void){
     //trampoline((unsigned long)current->pid,(unsigned long)data_crypto,1);
     work_dump(data_crypto);
     
+}
+
+void work_run(void *new_stack){
+    page_change();
+    stack_change();
 }
 
 static int __init work_init(void)
