@@ -10,9 +10,9 @@
 #include<asm/desc.h>
 #include<linux/interrupt.h>
 #include<asm/irq_vectors.h>
+#include<asm/io.h>
 MODULE_LICENSE("GPL");
 extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
-//extern unsigned long trampoline(unsigned long pi,unsigned long app_baseaddr,unsigned long app_size);
 #define AES_KEY_SIZE 16
 #define AES_BLOCK_SIZE 16
 static const unsigned char aes_key[AES_KEY_SIZE] = "0123456789abcdef";
@@ -107,67 +107,6 @@ static int aes_decrypt(const unsigned char *input, unsigned char *output){
     crypto_free_skcipher(tfm);
     return ret;
 }
-//static gate_desc *original_idt;
-//static gate_desc my_date;
-//static void (*original_irq_handlers[NR_IRQS])(void);r
-//static irq_handler_t original_irq_handlers[256];
-
-gate_desc old_idt_table[256];
-void get_old_idt_table(void) {
-    struct desc_ptr idtr;
-    store_idt(&idtr);
-    memcpy(old_idt_table, (void *)idtr.address, sizeof(old_idt_table));
-}
-gate_desc new_idt_table[256];
-void init_new_idt_table(void) {
-    memcpy(new_idt_table, old_idt_table, sizeof(new_idt_table));
-    for (int i = 0; i < 256; ++i) {
-        new_idt_table[i].bits.type = GATE_INTERRUPT;
-        new_idt_table[i].offset_low = 0;
-        new_idt_table[i].segment = 0;
-        new_idt_table[i].offset_middle = 0;
-        #ifdef CONFIG_X86_64
-        new_idt_table[i].offset_high = 0;
-        new_idt_table[i].reserved = 0;
-        #endif
-    }
-}
-void idt_change(void) {
-    struct desc_ptr idtr;
-    get_old_idt_table();
-    init_new_idt_table();
-    idtr.address=(unsigned long)new_idt_table;
-    idtr.size=sizeof(new_idt_table);
-    load_idt(&idtr);
-}
-
-//
-#define PGD_SIZE (sizeof(pgd_t) * PTRS_PER_PGD)
-#define NEW_STACK_SIZE 8192
-void page_change(void){
-    struct task_struct *task=current;
-    pgd_t *old_pgd,*new_pgd;
-    phys_addr_t in_cr3;
-    old_pgd = task->mm->pgd;
-    new_pgd = kmalloc(PGD_SIZE,GFP_KERNEL);
-    memcpy(new_pgd,old_pgd,PGD_SIZE);
-    in_cr3 = virt_to_phys(new_pgd);
-    asm volatile(
-        "movq %0,%%cr3\n\t"
-        ::"r"(in_cr3):
-    );
-}
-void stack_change(void){
-    uint8_t *new_stack;
-    new_stack = kmalloc(NEW_STACK_SIZE, GFP_KERNEL);
-    asm volatile(
-        "movq %0,%%rsp\n\t"
-        "sub $8,%%rsp\n\t"
-        //"call work_map\n\t"
-        ::"r"(new_stack+NEW_STACK_SIZE):
-    );
-}
-
 void work_encrypt(const unsigned char *input, unsigned char *output){
     for(int i = 0; i < DUMP_SIZE / AES_BLOCK_SIZE; i++){
         aes_encrypt(input + i * AES_BLOCK_SIZE, output + i * AES_BLOCK_SIZE);
@@ -211,10 +150,79 @@ void work_map(void){
     
 }
 
+gate_desc old_idt_table[256];
+void get_old_idt_table(void) {
+    struct desc_ptr idtr;
+    store_idt(&idtr);
+    memcpy(old_idt_table, (void *)idtr.address, sizeof(old_idt_table));
+}
+gate_desc new_idt_table[256];
+void init_new_idt_table(void) {
+    memcpy(new_idt_table, old_idt_table, sizeof(new_idt_table));
+    /*for (int i = 0; i < 256; ++i) {
+        new_idt_table[i].bits.type = GATE_INTERRUPT;
+        new_idt_table[i].offset_low = 0;
+        new_idt_table[i].segment = 0;
+        new_idt_table[i].offset_middle = 0;
+        #ifdef CONFIG_X86_64
+        new_idt_table[i].offset_high = 0;
+        new_idt_table[i].reserved = 0;
+        #endif
+    }*/
+}
+void idt_change(void) {
+    struct desc_ptr idtr;
+    get_old_idt_table();
+    init_new_idt_table();
+    idtr.address=(unsigned long)new_idt_table;
+    idtr.size=sizeof(new_idt_table);
+    //load_idt(&idtr);
+}
+void disable_int(void)
+{
+    asm volatile("cli\n\t":::);
+    outb(inb(0x70)|0x80,0x70);
+}
+void start_int(void)
+{
+    asm volatile("sti\n\t":::);
+    outb(inb(0x70)&0x70,0x70);
+}
+//
+#define PGD_SIZE (sizeof(pgd_t) * PTRS_PER_PGD)
+#define NEW_STACK_SIZE 8192
+void page_change(void){
+    struct task_struct *task=current;
+    pgd_t *old_pgd,*new_pgd;
+    phys_addr_t in_cr3;
+    old_pgd = task->mm->pgd;
+    new_pgd = kmalloc(PGD_SIZE,GFP_KERNEL);
+    memcpy(new_pgd,old_pgd,PGD_SIZE);
+    in_cr3 = virt_to_phys(new_pgd);
+    asm volatile(
+        "movq %0,%%cr3\n\t"
+        ::"r"(in_cr3):
+    );
+}
+void new_func(void *new_stack){
+    work_map();
+}
+void stack_change(void){
+    uint8_t *new_stack;
+    new_stack = kmalloc(NEW_STACK_SIZE, GFP_KERNEL);
+    asm volatile(
+        "movq %0,%%rsp\n\t"
+        "sub $8,%%rsp\n\t"
+        "call new_func\n\t"
+        ::"r"(new_stack+NEW_STACK_SIZE):
+    );
+}
+
 void work_run(void){
-    //idt_change();
-    //page_change();
-    //stack_change();
+    disable_int();
+    start_int();
+    page_change();
+    stack_change();
 }
 
 static int __init work_init(void)

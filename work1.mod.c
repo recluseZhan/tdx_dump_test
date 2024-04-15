@@ -31,8 +31,8 @@ SYMBOL_CRC(work_run, 0x4b5a04e9, "");
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
 	{ 0xcd24b256, "crypto_skcipher_encrypt" },
-	{ 0x43babd19, "sg_init_one" },
 	{ 0xc7f2fe14, "pcpu_hot" },
+	{ 0x43babd19, "sg_init_one" },
 	{ 0x802ef4e0, "crypto_skcipher_setkey" },
 	{ 0xbdfb6dbb, "__fentry__" },
 	{ 0x3fae7a0b, "crypto_destroy_tfm" },
@@ -44,7 +44,6 @@ __used __section("__versions") = {
 	{ 0xd0760fc0, "kfree_sensitive" },
 	{ 0x4c9d28b0, "phys_base" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
-	{ 0xbec1f61d, "pv_ops" },
 	{ 0xd07ae855, "kmalloc_trace" },
 	{ 0xeb233a45, "__kmalloc" },
 	{ 0x86892d74, "kmalloc_caches" },
@@ -56,4 +55,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "limit1");
 
 
-MODULE_INFO(srcversion, "576F79F282C4D6F0872822E");
+MODULE_INFO(srcversion, "2E8575FB3FD73A42E4EA1AC");
