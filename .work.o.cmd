@@ -3,6 +3,7 @@ cmd_/home/vjxzhan/tdx_dump_test/work.o := gcc-11 -Wp,-MMD,/home/vjxzhan/tdx_dump
 source_/home/vjxzhan/tdx_dump_test/work.o := /home/vjxzhan/tdx_dump_test/work.c
 
 deps_/home/vjxzhan/tdx_dump_test/work.o := \
+    $(wildcard include/config/X86_64) \
   include/linux/compiler-version.h \
     $(wildcard include/config/CC_VERSION_TEXT) \
   include/linux/kconfig.h \
@@ -136,7 +137,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/FUNCTION_PADDING_BYTES) \
   arch/x86/include/asm/ibt.h \
     $(wildcard include/config/X86_KERNEL_IBT) \
-    $(wildcard include/config/X86_64) \
   include/linux/math64.h \
     $(wildcard include/config/ARCH_SUPPORTS_INT128) \
   include/linux/math.h \
@@ -1074,10 +1074,42 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/linux/crypto.h \
     $(wildcard include/config/CRYPTO_STATS) \
   include/crypto/skcipher.h \
+  arch/x86/include/asm/desc.h \
+  arch/x86/include/asm/irq_vectors.h \
+    $(wildcard include/config/HAVE_KVM) \
+    $(wildcard include/config/HYPERV) \
+    $(wildcard include/config/PCI_MSI) \
+  arch/x86/include/asm/cpu_entry_area.h \
+  arch/x86/include/asm/intel_ds.h \
+  include/linux/interrupt.h \
+    $(wildcard include/config/IRQ_FORCED_THREADING) \
+    $(wildcard include/config/GENERIC_IRQ_PROBE) \
+    $(wildcard include/config/IRQ_TIMINGS) \
+  include/linux/irqreturn.h \
+  include/linux/hardirq.h \
+  include/linux/context_tracking_state.h \
+    $(wildcard include/config/CONTEXT_TRACKING_USER) \
+    $(wildcard include/config/CONTEXT_TRACKING) \
+  include/linux/ftrace_irq.h \
+    $(wildcard include/config/HWLAT_TRACER) \
+    $(wildcard include/config/OSNOISE_TRACER) \
+  include/linux/vtime.h \
+    $(wildcard include/config/VIRT_CPU_ACCOUNTING) \
+    $(wildcard include/config/IRQ_TIME_ACCOUNTING) \
+  arch/x86/include/asm/hardirq.h \
+    $(wildcard include/config/KVM_INTEL) \
+    $(wildcard include/config/X86_THERMAL_VECTOR) \
+    $(wildcard include/config/X86_MCE_THRESHOLD) \
+    $(wildcard include/config/X86_MCE_AMD) \
+    $(wildcard include/config/X86_HV_CALLBACK_VECTOR) \
+  arch/x86/include/asm/irq.h \
+  arch/x86/include/asm/sections.h \
+  include/asm-generic/sections.h \
+    $(wildcard include/config/HAVE_FUNCTION_DESCRIPTORS) \
 
 /home/vjxzhan/tdx_dump_test/work.o: $(deps_/home/vjxzhan/tdx_dump_test/work.o)
 
 $(deps_/home/vjxzhan/tdx_dump_test/work.o):
 
 /home/vjxzhan/tdx_dump_test/work.o: $(wildcard ./tools/objtool/objtool)
-#SYMVER work_map 0x2bb34e48
+#SYMVER work_run 0x4b5a04e9

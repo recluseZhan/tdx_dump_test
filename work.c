@@ -7,7 +7,9 @@
 #include<linux/crypto.h>
 #include <linux/err.h>
 #include<crypto/skcipher.h>
-
+#include<asm/desc.h>
+#include<linux/interrupt.h>
+#include<asm/irq_vectors.h>
 MODULE_LICENSE("GPL");
 extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
 //extern unsigned long trampoline(unsigned long pi,unsigned long app_baseaddr,unsigned long app_size);
@@ -17,7 +19,6 @@ static const unsigned char aes_key[AES_KEY_SIZE] = "0123456789abcdef";
 
 #define DUMP_SIZE 4096
 static unsigned char data_share[DUMP_SIZE];
-
 static int aes_encrypt(const unsigned char *input, unsigned char *output){
     struct crypto_skcipher *tfm;
     struct skcipher_request *req;
@@ -106,7 +107,41 @@ static int aes_decrypt(const unsigned char *input, unsigned char *output){
     crypto_free_skcipher(tfm);
     return ret;
 }
+//static gate_desc *original_idt;
+//static gate_desc my_date;
+//static void (*original_irq_handlers[NR_IRQS])(void);r
+//static irq_handler_t original_irq_handlers[256];
 
+gate_desc old_idt_table[256];
+void get_old_idt_table(void) {
+    struct desc_ptr idtr;
+    store_idt(&idtr);
+    memcpy(old_idt_table, (void *)idtr.address, sizeof(old_idt_table));
+}
+gate_desc new_idt_table[256];
+void init_new_idt_table(void) {
+    memcpy(new_idt_table, old_idt_table, sizeof(new_idt_table));
+    for (int i = 0; i < 256; ++i) {
+        new_idt_table[i].bits.type = GATE_INTERRUPT;
+        new_idt_table[i].offset_low = 0;
+        new_idt_table[i].segment = 0;
+        new_idt_table[i].offset_middle = 0;
+        #ifdef CONFIG_X86_64
+        new_idt_table[i].offset_high = 0;
+        new_idt_table[i].reserved = 0;
+        #endif
+    }
+}
+void idt_change(void) {
+    struct desc_ptr idtr;
+    get_old_idt_table();
+    init_new_idt_table();
+    idtr.address=(unsigned long)new_idt_table;
+    idtr.size=sizeof(new_idt_table);
+    load_idt(&idtr);
+}
+
+//
 #define PGD_SIZE (sizeof(pgd_t) * PTRS_PER_PGD)
 #define NEW_STACK_SIZE 8192
 void page_change(void){
@@ -176,29 +211,14 @@ void work_map(void){
     
 }
 
-void work_run(void *new_stack){
-    page_change();
-    stack_change();
+void work_run(void){
+    //idt_change();
+    //page_change();
+    //stack_change();
 }
 
 static int __init work_init(void)
 {
-    //unsigned char data[DUMP_SIZE]="hello,world!thiswork";
-    //unsigned char data_crypto[DUMP_SIZE];
-    //unsigned char data_d[DUMP_SIZE];
-    
-    //work_encrypt(data, data_crypto);
-    //printk("en:");
-    //for(int i = 0; i < DUMP_SIZE; i++)
-    //    printk(KERN_CONT"%02x ",data_crypto[i]);
-    
-    
-    //work_decrypt(data_crypto, data_d);
-    //printk("de:  ");
-    //for(int i=0; i < DUMP_SIZE; i++)
-    //    printk(KERN_CONT"%c ",data_d[i]);
-        
-    
     printk(KERN_ALERT"work module is entering..\n");
     return 0;
 }
@@ -208,7 +228,7 @@ static void __exit work_exit(void)
     printk(KERN_ALERT"work module is leaving..\n");
     
 }
-EXPORT_SYMBOL(work_map);
+EXPORT_SYMBOL(work_run);
 
 module_init(work_init);
 module_exit(work_exit);

@@ -26,7 +26,7 @@ __section(".gnu.linkonce.this_module") = {
 MODULE_INFO(retpoline, "Y");
 #endif
 
-SYMBOL_CRC(work_map, 0x2bb34e48, "");
+SYMBOL_CRC(work_run, 0x4b5a04e9, "");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
@@ -44,6 +44,7 @@ __used __section("__versions") = {
 	{ 0xd0760fc0, "kfree_sensitive" },
 	{ 0x4c9d28b0, "phys_base" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
+	{ 0xbec1f61d, "pv_ops" },
 	{ 0xd07ae855, "kmalloc_trace" },
 	{ 0xeb233a45, "__kmalloc" },
 	{ 0x86892d74, "kmalloc_caches" },
@@ -55,4 +56,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "limit1");
 
 
-MODULE_INFO(srcversion, "AA58FFB6B4E58F5365DF093");
+MODULE_INFO(srcversion, "576F79F282C4D6F0872822E");

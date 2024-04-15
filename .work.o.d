@@ -260,4 +260,11 @@ work.o: /home/vjxzhan/tdx_dump_test/work.c \
  include/asm-generic/io.h include/linux/logic_pio.h \
  include/linux/fwnode.h include/linux/vmalloc.h \
  arch/x86/include/asm/vmalloc.h arch/x86/include/asm/pgtable_areas.h \
- include/linux/crypto.h include/crypto/skcipher.h
+ include/linux/crypto.h include/crypto/skcipher.h \
+ arch/x86/include/asm/desc.h arch/x86/include/asm/irq_vectors.h \
+ arch/x86/include/asm/cpu_entry_area.h arch/x86/include/asm/intel_ds.h \
+ include/linux/interrupt.h include/linux/irqreturn.h \
+ include/linux/hardirq.h include/linux/context_tracking_state.h \
+ include/linux/ftrace_irq.h include/linux/vtime.h \
+ arch/x86/include/asm/hardirq.h arch/x86/include/asm/irq.h \
+ arch/x86/include/asm/sections.h include/asm-generic/sections.h
