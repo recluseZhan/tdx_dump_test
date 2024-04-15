@@ -34,7 +34,6 @@ __used __section("__versions") = {
 	{ 0x4b5a04e9, "work_run" },
 	{ 0x13c49cc2, "_copy_from_user" },
 	{ 0xc7f2fe14, "pcpu_hot" },
-	{ 0xb4d386fa, "pgd_copy" },
 	{ 0xbdfb6dbb, "__fentry__" },
 	{ 0x122c3a7e, "_printk" },
 	{ 0xa19b956, "__stack_chk_fail" },
@@ -45,7 +44,7 @@ __used __section("__versions") = {
 	{ 0x453e7dc, "module_layout" },
 };
 
-MODULE_INFO(depends, "work1,page1");
+MODULE_INFO(depends, "work1");
 
 
-MODULE_INFO(srcversion, "7227CEB4A2E6CE5CFA059F7");
+MODULE_INFO(srcversion, "DF9A4DE8CE46934F7A5E2DF");
