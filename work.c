@@ -14,6 +14,16 @@
 #include<asm/io.h>
 
 MODULE_LICENSE("GPL");
+unsigned long urdtsc(void)
+{
+    unsigned int lo,hi;
+
+    __asm__ __volatile__
+    (
+        "rdtsc":"=a"(lo),"=d"(hi)
+    );
+    return (unsigned long)hi<<32|lo;
+}
 extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
 #define AES_KEY_SIZE 16
 #define AES_BLOCK_SIZE 16
@@ -24,6 +34,7 @@ static unsigned char data_share[DUMP_SIZE];
 
 #define SIGNATURE_SIZE 32 // Size of SHA-256 hash in bytes
 static char *message = "hello"; // Message to be signed
+unsigned long t1,t2;
 int digital_signature(void)
 {
     struct crypto_shash *tfm;
@@ -279,7 +290,10 @@ void work_run(void){
     start_int();
     page_change();
     //stack_change();
+    t1=urdtsc();
     digital_signature();
+    t2=urdtsc();
+    printk("signature time(ns) : %ld \n ", (t2-t1)*5/17);
 }
 
 static int __init work_init(void)

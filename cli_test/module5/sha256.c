@@ -8,7 +8,7 @@
 
 #define SIGNATURE_SIZE 32 // Size of SHA-256 hash in bytes
 
-static char *message = "hello"; // Message to be signed
+static char *message = "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohello"; // Message to be signed
 
 static int __init digital_signature_init(void)
 {
