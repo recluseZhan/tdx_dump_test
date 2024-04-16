@@ -1073,6 +1073,15 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   arch/x86/include/asm/pgtable_areas.h \
   include/linux/crypto.h \
     $(wildcard include/config/CRYPTO_STATS) \
+  include/crypto/sha256_base.h \
+  include/crypto/internal/hash.h \
+  include/crypto/algapi.h \
+    $(wildcard include/config/HAVE_EFFICIENT_UNALIGNED_ACCESS) \
+  arch/x86/include/generated/asm/unaligned.h \
+  include/asm-generic/unaligned.h \
+  include/linux/unaligned/packed_struct.h \
+  include/crypto/hash.h \
+  include/crypto/sha2.h \
   include/crypto/skcipher.h \
   arch/x86/include/asm/desc.h \
   arch/x86/include/asm/irq_vectors.h \

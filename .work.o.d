@@ -260,7 +260,11 @@ work.o: /home/vjxzhan/tdx_dump_test/work.c \
  include/asm-generic/io.h include/linux/logic_pio.h \
  include/linux/fwnode.h include/linux/vmalloc.h \
  arch/x86/include/asm/vmalloc.h arch/x86/include/asm/pgtable_areas.h \
- include/linux/crypto.h include/crypto/skcipher.h \
+ include/linux/crypto.h include/crypto/sha256_base.h \
+ include/crypto/internal/hash.h include/crypto/algapi.h \
+ arch/x86/include/generated/asm/unaligned.h \
+ include/asm-generic/unaligned.h include/linux/unaligned/packed_struct.h \
+ include/crypto/hash.h include/crypto/sha2.h include/crypto/skcipher.h \
  arch/x86/include/asm/desc.h arch/x86/include/asm/irq_vectors.h \
  arch/x86/include/asm/cpu_entry_area.h arch/x86/include/asm/intel_ds.h \
  include/linux/interrupt.h include/linux/irqreturn.h \

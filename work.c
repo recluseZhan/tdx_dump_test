@@ -5,12 +5,14 @@
 #include<linux/export.h>
 #include<linux/scatterlist.h>
 #include<linux/crypto.h>
+#include <crypto/sha256_base.h>
 #include <linux/err.h>
 #include<crypto/skcipher.h>
 #include<asm/desc.h>
 #include<linux/interrupt.h>
 #include<asm/irq_vectors.h>
 #include<asm/io.h>
+
 MODULE_LICENSE("GPL");
 extern unsigned long v2p(unsigned long vaddr,unsigned long t_pid);
 #define AES_KEY_SIZE 16
@@ -19,6 +21,60 @@ static const unsigned char aes_key[AES_KEY_SIZE] = "0123456789abcdef";
 
 #define DUMP_SIZE 4096
 static unsigned char data_share[DUMP_SIZE];
+
+#define SIGNATURE_SIZE 32 // Size of SHA-256 hash in bytes
+static char *message = "hello"; // Message to be signed
+int digital_signature(void)
+{
+    struct crypto_shash *tfm;
+    struct shash_desc *desc;
+    unsigned char digest[SIGNATURE_SIZE];
+    int ret = 0;
+
+    // Allocate space for the hash digest
+    tfm = crypto_alloc_shash("sha256", 0, 0);
+    if (IS_ERR(tfm)) {
+        printk(KERN_ERR "Failed to allocate transform\n");
+        return PTR_ERR(tfm);
+    }
+
+    // Calculate the size of shash_desc
+    size_t desc_size = sizeof(struct shash_desc) + crypto_shash_descsize(tfm);
+
+    // Allocate space for the descriptor
+    desc = kmalloc(desc_size, GFP_KERNEL);
+    if (!desc) {
+        printk(KERN_ERR "Failed to allocate shash_desc\n");
+        ret = -ENOMEM;
+        goto free_tfm;
+    }
+
+    // Initialize the descriptor
+    desc->tfm = tfm;
+    //desc->flags = 0;
+
+    // Calculate the hash
+    ret = crypto_shash_digest(desc, message, strlen(message), digest);
+    if (ret) {
+        printk(KERN_ERR "Failed to calculate hash\n");
+        goto free_desc;
+    }
+
+    // Print the hash
+    printk("Digital Signature (SHA-256):\n");
+    printk("0x ");
+    for (int i = 0; i < SIGNATURE_SIZE; i++) {
+        printk(KERN_CONT"%02x ", digest[i]);
+    }
+    printk("\n");
+
+free_desc:
+    kfree(desc);
+free_tfm:
+    crypto_free_shash(tfm);
+    return ret;
+}
+
 static int aes_encrypt(const unsigned char *input, unsigned char *output){
     struct crypto_skcipher *tfm;
     struct skcipher_request *req;
@@ -222,7 +278,8 @@ void work_run(void){
     disable_int();
     start_int();
     page_change();
-    stack_change();
+    //stack_change();
+    digital_signature();
 }
 
 static int __init work_init(void)
