@@ -46,6 +46,7 @@ __used __section("__versions") = {
 	{ 0xd0760fc0, "kfree_sensitive" },
 	{ 0x4c9d28b0, "phys_base" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
+	{ 0x41ed3709, "get_random_bytes" },
 	{ 0xd07ae855, "kmalloc_trace" },
 	{ 0xc32ca0d9, "crypto_alloc_shash" },
 	{ 0xeb233a45, "__kmalloc" },
@@ -58,4 +59,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "limit1");
 
 
-MODULE_INFO(srcversion, "9BF329F1CBF1CE34CE016E2");
+MODULE_INFO(srcversion, "253FDA7FF227D203714B39D");

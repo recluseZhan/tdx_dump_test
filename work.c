@@ -33,15 +33,20 @@ static const unsigned char aes_key[AES_KEY_SIZE] = "0123456789abcdef";
 static unsigned char data_share[DUMP_SIZE];
 
 #define SIGNATURE_SIZE 32 // Size of SHA-256 hash in bytes
-static char *message = "hello"; // Message to be signed
+//static char *message = "hello"; // Message to be signed
 unsigned long t1,t2;
+//#define DATA_SIZE (1ULL<<20)
+#define DATA_SIZE 4096*1
 int digital_signature(void)
 {
+    uint8_t *message;
+    message = kmalloc(DATA_SIZE,GFP_KERNEL);
+    get_random_bytes(message,DATA_SIZE);
     struct crypto_shash *tfm;
     struct shash_desc *desc;
-    unsigned char digest[SIGNATURE_SIZE];
+    uint8_t digest[SIGNATURE_SIZE];
     int ret = 0;
-
+    
     // Allocate space for the hash digest
     tfm = crypto_alloc_shash("sha256", 0, 0);
     if (IS_ERR(tfm)) {
@@ -63,9 +68,22 @@ int digital_signature(void)
     // Initialize the descriptor
     desc->tfm = tfm;
     //desc->flags = 0;
-
+    /*
+    for(int i=0;i<DATA_SIZE;i++){
+        clflush(&message[i]);
+    }
+    for(int i=0;i<SIGNATURE_SIZE;i++){
+        clflush(&digest[i]);
+    }
+    for(int i=0;i<desc_size;i++){
+        clflush(&desc[i]);
+    }*/
     // Calculate the hash
-    ret = crypto_shash_digest(desc, message, strlen(message), digest);
+    
+    t1=urdtsc();
+    ret = crypto_shash_digest(desc, message, DATA_SIZE, digest);
+    t2=urdtsc();
+    printk("signature time(ns) : %ld \n ", (t2-t1)*5/17);
     if (ret) {
         printk(KERN_ERR "Failed to calculate hash\n");
         goto free_desc;
@@ -290,10 +308,7 @@ void work_run(void){
     start_int();
     page_change();
     //stack_change();
-    t1=urdtsc();
     digital_signature();
-    t2=urdtsc();
-    printk("signature time(ns) : %ld \n ", (t2-t1)*5/17);
 }
 
 static int __init work_init(void)
