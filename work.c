@@ -36,7 +36,7 @@ static unsigned char data_share[DUMP_SIZE];
 //static char *message = "hello"; // Message to be signed
 unsigned long t1,t2;
 //#define DATA_SIZE (1ULL<<20)
-#define DATA_SIZE 4096*1
+#define DATA_SIZE 4096
 int digital_signature(void)
 {
     uint8_t *message;
