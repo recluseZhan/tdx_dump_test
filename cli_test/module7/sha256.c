@@ -85,40 +85,163 @@ const char *pub_key =
     "\x33\xBD\x6E\xE7\xC5\xBB\x2A\x28\x32\x13\x62\x39\x37\x87\x40\xE7"
     "\x59\xF8\x94\xAD\xC4\x2E\xAF\x23\xF4\x98\xCD\x90\x27\x96\x41\xC6"
     "\x4A\xCD\x6D\x56\xFD\x5B\x02\x03\x01\x00\x01";
-const int pub_key_len = 139;
 
-const char *msg = "\x54\x85\x9b\x34\x2c\x49\xea\x2a\x54\x85\x9b\x34\x2c\x49\xea\x2a\x54\x85\x9b\x34\x2c\x49\xea\x2a";
-const int msg_len = 24;
  
-#define DATA_SIZE 4096
-void enrsa(void){
-    uint8_t *message;
-    message = kmalloc(DATA_SIZE,GFP_KERNEL);
-    unsigned char *input;
-    unsigned char *output;
-    
-    struct crypto_akcipher *tfm;
-    struct akcipher_request *req;
-    struct scatterlist src, dst;
-    unsigned int out_len_max;
-    
-    //tfm = crypto_alloc_skcipher("rsa", 0, 0);
-    /*
-    req = akcipher_request_alloc(tfm, GFP_KERNEL);
-    crypto_akcipher_set_pub_key(tfm, pub_key, pub_key_len);
-    crypto_akcipher_set_priv_key(tfm, priv_key, priv_key_len);
-    
-    out_len_max = crypto_akcipher_maxsize(tfm);
-    sg_init_one(&src, input, DATA_SIZE);
-    sg_init_one(&dst, output, out_len_max);
-    akcipher_request_set_crypt(req, &src, &dst, DATA_SIZE, out_len_max);
-    *///crypto_akcipher_encrypt(req);
+char *crypted = NULL;
+int crypted_len = 0;
+ 
+struct tcrypt_result {
+    struct completion completion;
+    int err;
+};
+ 
+struct akcipher_testvec {
+    unsigned char *key;
+    unsigned char *msg;
+    unsigned int key_size;
+    unsigned int msg_size;
+};
+ 
+static inline  void hexdump(unsigned char *buf,unsigned int len) {
+    while(len--)
+        printk(KERN_CONT "%02x",*buf++);
+    printk("\n");
 }
+ 
+static void tcrypt_complete(struct crypto_async_request *req, int err)
+{
+    struct tcrypt_result *res = req->data;
+ 
+    if (err == -EINPROGRESS)
+        return;
+ 
+    res->err = err;
+    complete(&res->completion);
+}
+ 
+static int wait_async_op(struct tcrypt_result *tr, int ret)
+{
+    if (ret == -EINPROGRESS || ret == -EBUSY) {
+        wait_for_completion(&tr->completion);
+        reinit_completion(&tr->completion);
+        ret = tr->err;
+    }
+    return ret;
+}
+ 
+static int uf_akcrypto(struct crypto_akcipher *tfm,
+                         void *data, int datalen, int phase)
+{
+    void *xbuf = NULL;
+    struct akcipher_request *req;
+    void *outbuf = NULL;
+    struct tcrypt_result result;
+    unsigned int out_len_max = 0;
+    struct scatterlist src, dst;
+    const int pub_key_len = strlen(pub_key);
+    //const int priv_key_len = strlen(priv_key);
+    int err = -ENOMEM;
+    xbuf = kmalloc(PAGE_SIZE, GFP_KERNEL);
+    if (!xbuf)
+         return err;
+ 
+    req = akcipher_request_alloc(tfm, GFP_KERNEL);
+    if (!req)
+         goto free_xbuf;
+ 
+    init_completion(&result.completion);
+ 
+    if (!phase){  //test
+         err = crypto_akcipher_set_pub_key(tfm, pub_key, pub_key_len);
+    }else{
+         err = crypto_akcipher_set_priv_key(tfm, priv_key, priv_key_len);
+    }
+//  err = crypto_akcipher_set_priv_key(tfm, priv_key, priv_key_len);
+    if (err){
+        printk("set key error! %d,,,,,%d\n", err,phase);
+        goto free_req;
+    }
+ 
+    err = -ENOMEM;
+    out_len_max = crypto_akcipher_maxsize(tfm);
+    outbuf = kzalloc(out_len_max, GFP_KERNEL);
+    if (!outbuf)
+         goto free_req;
+ 
+    if (WARN_ON(datalen > PAGE_SIZE))
+         goto free_all;
+ 
+    memcpy(xbuf, data, datalen);
+    sg_init_one(&src, xbuf, datalen);
+    sg_init_one(&dst, outbuf, out_len_max);
+    akcipher_request_set_crypt(req, &src, &dst, datalen, out_len_max);
+    akcipher_request_set_callback(req, CRYPTO_TFM_REQ_MAY_BACKLOG,tcrypt_complete, &result);
+ 
+    unsigned long t1,t2;
+    int en_ret;
+    if (phase){
+        t1=urdtsc();
+        en_ret=crypto_akcipher_encrypt(req);
+        t2=urdtsc();
+        printk("signature time(ns) : %ld \n ", (t2-t1)*5/17);
+        err = wait_async_op(&result, en_ret);
+        if (err) {
+            pr_err("alg: akcipher: encrypt test failed. err %d\n", err);
+            goto free_all;
+        }
+        memcpy(crypted,outbuf,out_len_max);
+        crypted_len = out_len_max;
+        hexdump(crypted, out_len_max);
+    }else{
+        err = wait_async_op(&result, crypto_akcipher_decrypt(req));
+        if (err) {
+            pr_err("alg: akcipher: decrypt test failed. err %d\n", err);
+            goto free_all;
+        }
+        hexdump(outbuf, out_len_max);
+    }
+ 
+free_all:
+    kfree(outbuf);
+free_req:
+    akcipher_request_free(req);
+free_xbuf:
+    kfree(xbuf);
+    return err;
+}
+ 
+ 
+static int userfaultfd_akcrypto(void *data, int datalen, int phase)
+{
+     struct crypto_akcipher *tfm;
+     int err = 0;
+ 
+     tfm = crypto_alloc_akcipher("rsa", CRYPTO_ALG_INTERNAL, 0);
+     if (IS_ERR(tfm)) {
+             pr_err("alg: akcipher: Failed to load tfm for rsa: %ld\n", PTR_ERR(tfm));
+             return PTR_ERR(tfm);
+     }
+     err = uf_akcrypto(tfm,data,datalen,phase);
+ 
+     crypto_free_akcipher(tfm);
+     return err;
+}
+#define DATA_SIZE 4096
 static int __init test_init(void)
 {  
-    enrsa();
-    
-    
+    crypted = kmalloc(PAGE_SIZE, GFP_KERNEL);
+    if (!crypted){
+        printk("crypted kmalloc error\n");
+        return -1;
+    }
+    //const char *msg = "\x54\x85\x9b\x34\x2c\x49\xea\x2a\x54\x85\x9b\x34\x2c\x49\xea\x2a\x54\x85\x9b\x34\x2c\x49\xea\x2a";
+    uint8_t *msg;
+    msg = kmalloc(DATA_SIZE,GFP_KERNEL);
+    get_random_bytes(msg,DATA_SIZE);
+    const int msg_len = strlen(msg);
+    userfaultfd_akcrypto(msg,msg_len,1);
+    //userfaultfd_akcrypto(crypted,crypted_len,0);
+    kfree(crypted);
     return 0;
 }
  

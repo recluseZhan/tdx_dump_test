@@ -29,17 +29,32 @@ MODULE_INFO(retpoline, "Y");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
+	{ 0xbf54c473, "crypto_stats_get" },
+	{ 0xa6257a2f, "complete" },
+	{ 0x608741b5, "__init_swait_queue_head" },
+	{ 0x69acdf38, "memcpy" },
+	{ 0x37a0cba, "kfree" },
+	{ 0x43babd19, "sg_init_one" },
+	{ 0xcbd4898c, "fortify_panic" },
 	{ 0xbdfb6dbb, "__fentry__" },
+	{ 0x3fae7a0b, "crypto_destroy_tfm" },
+	{ 0x65487097, "__x86_indirect_thunk_rax" },
 	{ 0x122c3a7e, "_printk" },
 	{ 0xa19b956, "__stack_chk_fail" },
+	{ 0xa916b694, "strnlen" },
+	{ 0xd0760fc0, "kfree_sensitive" },
+	{ 0x3b776cab, "crypto_alloc_akcipher" },
+	{ 0x25974000, "wait_for_completion" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
-	{ 0xa648e561, "__ubsan_handle_shift_out_of_bounds" },
+	{ 0xfc1013a2, "crypto_stats_akcipher_encrypt" },
 	{ 0x41ed3709, "get_random_bytes" },
+	{ 0xd07ae855, "kmalloc_trace" },
 	{ 0xeb233a45, "__kmalloc" },
+	{ 0x86892d74, "kmalloc_caches" },
 	{ 0x453e7dc, "module_layout" },
 };
 
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "73059422E01439FC05812B9");
+MODULE_INFO(srcversion, "63FCD357072B938CC393C4A");
