@@ -84,8 +84,8 @@ const char *pub_key =
     "\xF0\xD1\x9D\x09\x35\xAC\x95\xE2\xE4\x8E\x5B\x7C\x34\x93\x39\x4F"
     "\x33\xBD\x6E\xE7\xC5\xBB\x2A\x28\x32\x13\x62\x39\x37\x87\x40\xE7"
     "\x59\xF8\x94\xAD\xC4\x2E\xAF\x23\xF4\x98\xCD\x90\x27\x96\x41\xC6"
-    "\x4A\xCD\x6D\x56\xFD\x5B\x02\x03\x01\x00\x01";
-const int pub_key_len = 139;
+    "\x4A\xCD\x6D\x56\xFD\x5B\x02\x03\x01\x51\x01";
+//const int pub_key_len = 144;
  
 char *crypted = NULL;
 int crypted_len = 0;
@@ -138,7 +138,7 @@ static int uf_akcrypto(struct crypto_akcipher *tfm,
     struct tcrypt_result result;
     unsigned int out_len_max = 0;
     struct scatterlist src, dst;
-    //int pub_key_len = strlen(pub_key);
+    int pub_key_len = strlen(pub_key);
    // int priv_key_len = strlen(priv_key);
     //priv_key_len=609;
     //printk("pub:%d\n",pub_key_len);
@@ -249,7 +249,7 @@ static int __init test_init(void)
 
     int msg_len = strlen(msg);
     userfaultfd_akcrypto(msg,msg_len,1);
-    //userfaultfd_akcrypto(crypted,crypted_len,0);
+    //userfaultfd_akcrypto(crypted,crypted_len,1);
     kfree(crypted);
     return 0;
 }
