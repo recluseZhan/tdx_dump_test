@@ -1,1 +1,0 @@
-cmd_/home/vjxzhan/tdx_dump_test/cli_test/module7/Module.symvers :=  scripts/mod/modpost -m -a     -o /home/vjxzhan/tdx_dump_test/cli_test/module7/Module.symvers -T /home/vjxzhan/tdx_dump_test/cli_test/module7/modules.order -i Module.symvers -e 

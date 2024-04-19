@@ -6,6 +6,11 @@
 #include <linux/vermagic.h>
 #include <linux/compiler.h>
 
+#ifdef CONFIG_UNWINDER_ORC
+#include <asm/orc_header.h>
+ORC_HEADER;
+#endif
+
 BUILD_SALT;
 BUILD_LTO_INFO;
 
@@ -27,21 +32,22 @@ MODULE_INFO(retpoline, "Y");
 #endif
 
 
+
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
 	{ 0x6228c21f, "smp_call_function_single" },
 	{ 0x88db9f48, "__check_object_size" },
 	{ 0x4b5a04e9, "work_run" },
 	{ 0x13c49cc2, "_copy_from_user" },
-	{ 0xc7f2fe14, "pcpu_hot" },
+	{ 0xc9210694, "pcpu_hot" },
 	{ 0xbdfb6dbb, "__fentry__" },
 	{ 0x122c3a7e, "_printk" },
-	{ 0xa19b956, "__stack_chk_fail" },
+	{ 0xf0fdf6cb, "__stack_chk_fail" },
 	{ 0x7682ba4e, "__copy_overflow" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
-	{ 0x25f7aec2, "__register_chrdev" },
+	{ 0x2ce21352, "__register_chrdev" },
 	{ 0x6bc3fbc0, "__unregister_chrdev" },
-	{ 0x453e7dc, "module_layout" },
+	{ 0x6ab589bc, "module_layout" },
 };
 
 MODULE_INFO(depends, "work1");

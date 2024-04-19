@@ -1,8 +1,8 @@
-cmd_/home/vjxzhan/tdx_dump_test/work.o := gcc-11 -Wp,-MMD,/home/vjxzhan/tdx_dump_test/.work.o.d -nostdinc -I./arch/x86/include -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./arch/x86/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/compiler-version.h -include ./include/linux/kconfig.h -I./ubuntu/include -include ./include/linux/compiler_types.h -D__KERNEL__ -fmacro-prefix-map=./= -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Wno-format-security -funsigned-char -std=gnu11 -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fcf-protection=none -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -Wno-frame-address -Wno-format-truncation -Wno-format-overflow -Wno-address-of-packed-member -O2 -fno-allow-store-data-races -Wframe-larger-than=1024 -fstack-protector-strong -Wno-main -Wno-unused-but-set-variable -Wno-unused-const-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-stack-clash-protection -fzero-call-used-regs=used-gpr -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -falign-functions=16 -Wdeclaration-after-statement -Wvla -Wno-pointer-sign -Wcast-function-type -Wno-stringop-truncation -Wno-stringop-overflow -Wno-restrict -Wno-maybe-uninitialized -Wno-array-bounds -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -fno-strict-overflow -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wno-packed-not-aligned -g -gdwarf-5  -fsanitize=bounds -fsanitize=shift -fsanitize=bool -fsanitize=enum  -DMODULE  -DKBUILD_BASENAME='"work"' -DKBUILD_MODNAME='"work1"' -D__KBUILD_MODNAME=kmod_work1 -c -o /home/vjxzhan/tdx_dump_test/work.o /home/vjxzhan/tdx_dump_test/work.c   ; ./tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --retpoline --rethunk --sls --stackval --static-call --uaccess --prefix=16   --module /home/vjxzhan/tdx_dump_test/work.o
+savedcmd_/home/hjxzhan/tdx_dump_test/work.o := gcc-12 -Wp,-MMD,/home/hjxzhan/tdx_dump_test/.work.o.d -nostdinc -I./arch/x86/include -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./arch/x86/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/compiler-version.h -include ./include/linux/kconfig.h -I./ubuntu/include -include ./include/linux/compiler_types.h -D__KERNEL__ -fmacro-prefix-map=./= -std=gnu11 -fshort-wchar -funsigned-char -fno-common -fno-PIE -fno-strict-aliasing -Wall -Wundef -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Werror=strict-prototypes -Wno-format-security -Wno-trigraphs -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fcf-protection=none -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -Wno-frame-address -Wno-format-truncation -Wno-format-overflow -Wno-address-of-packed-member -O2 -fno-allow-store-data-races -Wframe-larger-than=1024 -fstack-protector-strong -Wno-main -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-dangling-pointer -fno-omit-frame-pointer -fno-optimize-sibling-calls -ftrivial-auto-var-init=zero -fno-stack-clash-protection -fzero-call-used-regs=used-gpr -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -falign-functions=16 -Wvla -Wno-pointer-sign -Wcast-function-type -Wno-stringop-truncation -Wno-stringop-overflow -Wno-restrict -Wno-maybe-uninitialized -Wno-array-bounds -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -fno-strict-overflow -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wno-packed-not-aligned -g -gdwarf-5  -fsanitize=bounds-strict -fsanitize=shift -fsanitize=bool -fsanitize=enum  -DMODULE  -DKBUILD_BASENAME='"work"' -DKBUILD_MODNAME='"work1"' -D__KBUILD_MODNAME=kmod_work1 -c -o /home/hjxzhan/tdx_dump_test/work.o /home/hjxzhan/tdx_dump_test/work.c   ; ./tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --retpoline --rethunk --sls --stackval --static-call --uaccess --prefix=16   --module /home/hjxzhan/tdx_dump_test/work.o
 
-source_/home/vjxzhan/tdx_dump_test/work.o := /home/vjxzhan/tdx_dump_test/work.c
+source_/home/hjxzhan/tdx_dump_test/work.o := /home/hjxzhan/tdx_dump_test/work.c
 
-deps_/home/vjxzhan/tdx_dump_test/work.o := \
+deps_/home/hjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/X86_64) \
   include/linux/compiler-version.h \
     $(wildcard include/config/CC_VERSION_TEXT) \
@@ -33,7 +33,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/TRACE_BRANCH_PROFILING) \
     $(wildcard include/config/PROFILE_ALL_BRANCHES) \
     $(wildcard include/config/OBJTOOL) \
-  include/linux/compiler_types.h \
   arch/x86/include/generated/asm/rwonce.h \
   include/asm-generic/rwonce.h \
   include/linux/kasan-checks.h \
@@ -74,7 +73,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/STACKTRACE_BUILD_ID) \
     $(wildcard include/config/ARCH_USES_CFI_TRAPS) \
     $(wildcard include/config/MODULE_SIG) \
-    $(wildcard include/config/ARCH_WANTS_MODULES_DATA_IN_VMALLOC) \
     $(wildcard include/config/GENERIC_BUG) \
     $(wildcard include/config/KALLSYMS) \
     $(wildcard include/config/SMP) \
@@ -93,13 +91,10 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/MODULE_UNLOAD) \
     $(wildcard include/config/CONSTRUCTORS) \
     $(wildcard include/config/FUNCTION_ERROR_INJECTION) \
+    $(wildcard include/config/DYNAMIC_DEBUG_CORE) \
   include/linux/list.h \
     $(wildcard include/config/DEBUG_LIST) \
   include/linux/container_of.h \
-  include/linux/err.h \
-  arch/x86/include/generated/uapi/asm/errno.h \
-  include/uapi/asm-generic/errno.h \
-  include/uapi/asm-generic/errno-base.h \
   include/linux/poison.h \
     $(wildcard include/config/ILLEGAL_POINTER_VALUE) \
   include/linux/const.h \
@@ -129,12 +124,12 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/ARCH_USE_SYM_ANNOTATIONS) \
   include/linux/export.h \
     $(wildcard include/config/MODVERSIONS) \
-    $(wildcard include/config/TRIM_UNUSED_KSYMS) \
   arch/x86/include/asm/linkage.h \
     $(wildcard include/config/CALL_PADDING) \
     $(wildcard include/config/RETHUNK) \
     $(wildcard include/config/SLS) \
     $(wildcard include/config/FUNCTION_PADDING_BYTES) \
+    $(wildcard include/config/UML) \
   arch/x86/include/asm/ibt.h \
     $(wildcard include/config/X86_KERNEL_IBT) \
   include/linux/math64.h \
@@ -232,6 +227,7 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   arch/x86/include/asm/nospec-branch.h \
     $(wildcard include/config/CALL_THUNKS_DEBUG) \
     $(wildcard include/config/CALL_DEPTH_TRACKING) \
+    $(wildcard include/config/NOINSTR_VALIDATION) \
     $(wildcard include/config/CPU_UNRET_ENTRY) \
     $(wildcard include/config/CPU_SRSO) \
     $(wildcard include/config/CPU_IBPB_ENTRY) \
@@ -242,6 +238,7 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/HAVE_JUMP_LABEL_HACK) \
   include/linux/objtool.h \
     $(wildcard include/config/FRAME_POINTER) \
+  include/linux/objtool_types.h \
   arch/x86/include/asm/cpufeatures.h \
   arch/x86/include/asm/required-features.h \
     $(wildcard include/config/X86_MINIMUM_CPU_FAMILY) \
@@ -252,6 +249,7 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/MATOM) \
   arch/x86/include/asm/disabled-features.h \
     $(wildcard include/config/X86_UMIP) \
+    $(wildcard include/config/ADDRESS_MASKING) \
     $(wildcard include/config/INTEL_IOMMU_SVM) \
     $(wildcard include/config/INTEL_TDX_GUEST) \
   arch/x86/include/asm/msr-index.h \
@@ -298,6 +296,7 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/asm-generic/bitops/instrumented-lock.h \
   include/asm-generic/bitops/le.h \
   include/asm-generic/bitops/ext2-atomic-setbit.h \
+  include/linux/hex.h \
   include/linux/kstrtox.h \
   include/linux/log2.h \
     $(wildcard include/config/ARCH_HAS_ILOG2_U32) \
@@ -312,7 +311,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/EARLY_PRINTK) \
     $(wildcard include/config/PRINTK) \
     $(wildcard include/config/DYNAMIC_DEBUG) \
-    $(wildcard include/config/DYNAMIC_DEBUG_CORE) \
   include/linux/kern_levels.h \
   include/linux/ratelimit_types.h \
   include/linux/spinlock_types_raw.h \
@@ -357,7 +355,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   arch/x86/include/asm/bug.h \
     $(wildcard include/config/DEBUG_BUGVERBOSE) \
   include/linux/instrumentation.h \
-    $(wildcard include/config/NOINSTR_VALIDATION) \
   include/asm-generic/bug.h \
     $(wildcard include/config/BUG) \
     $(wildcard include/config/GENERIC_BUG_RELATIVE_POINTERS) \
@@ -371,8 +368,13 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/linux/string.h \
     $(wildcard include/config/BINARY_PRINTF) \
     $(wildcard include/config/FORTIFY_SOURCE) \
+  include/linux/err.h \
+  arch/x86/include/generated/uapi/asm/errno.h \
+  include/uapi/asm-generic/errno.h \
+  include/uapi/asm-generic/errno-base.h \
   include/linux/errno.h \
   include/uapi/linux/errno.h \
+  include/linux/overflow.h \
   include/uapi/linux/string.h \
   include/linux/fortify-string.h \
   include/linux/atomic.h \
@@ -394,15 +396,14 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   arch/x86/include/asm/page.h \
   arch/x86/include/asm/page_64.h \
     $(wildcard include/config/DEBUG_VIRTUAL) \
-    $(wildcard include/config/FLATMEM) \
     $(wildcard include/config/X86_VSYSCALL_EMULATION) \
   include/linux/range.h \
   include/asm-generic/memory_model.h \
+    $(wildcard include/config/FLATMEM) \
     $(wildcard include/config/SPARSEMEM_VMEMMAP) \
   include/linux/pfn.h \
   include/asm-generic/getorder.h \
   arch/x86/include/asm/msr.h \
-  arch/x86/include/asm/msr-index.h \
   arch/x86/include/asm/cpumask.h \
   arch/x86/include/uapi/asm/msr.h \
   arch/x86/include/asm/shared/msr.h \
@@ -415,6 +416,7 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/PREEMPT_TRACER) \
     $(wildcard include/config/DEBUG_IRQFLAGS) \
     $(wildcard include/config/TRACE_IRQFLAGS_SUPPORT) \
+  include/linux/cleanup.h \
   arch/x86/include/asm/irqflags.h \
   arch/x86/include/asm/fpu/types.h \
   arch/x86/include/asm/vmxfeatures.h \
@@ -423,7 +425,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/uapi/linux/personality.h \
   arch/x86/include/asm/tsc.h \
   arch/x86/include/asm/cpufeature.h \
-    $(wildcard include/config/X86_FEATURE_NAMES) \
   include/vdso/time32.h \
   include/vdso/time.h \
   include/linux/uidgid.h \
@@ -436,14 +437,16 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/HAVE_ALIGNED_STRUCT_PAGE) \
     $(wildcard include/config/MEMCG) \
     $(wildcard include/config/USERFAULTFD) \
+    $(wildcard include/config/PER_VMA_LOCK) \
     $(wildcard include/config/ANON_VMA_NAME) \
     $(wildcard include/config/SWAP) \
+    $(wildcard include/config/NUMA_BALANCING) \
+    $(wildcard include/config/SCHED_MM_CID) \
     $(wildcard include/config/HAVE_ARCH_COMPAT_MMAP_BASES) \
     $(wildcard include/config/MEMBARRIER) \
     $(wildcard include/config/AIO) \
     $(wildcard include/config/MMU_NOTIFIER) \
     $(wildcard include/config/TRANSPARENT_HUGEPAGE) \
-    $(wildcard include/config/NUMA_BALANCING) \
     $(wildcard include/config/ARCH_WANT_BATCHED_UNMAP_TLB_FLUSH) \
     $(wildcard include/config/HUGETLB_PAGE) \
     $(wildcard include/config/IOMMU_SVA) \
@@ -469,6 +472,7 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/GENERIC_ENTRY) \
     $(wildcard include/config/HAVE_ARCH_WITHIN_STACK_FRAMES) \
     $(wildcard include/config/HARDENED_USERCOPY) \
+    $(wildcard include/config/SH) \
   include/linux/restart_block.h \
   arch/x86/include/asm/thread_info.h \
     $(wildcard include/config/COMPAT) \
@@ -551,7 +555,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/linux/rcutree.h \
   include/linux/maple_tree.h \
     $(wildcard include/config/MAPLE_RCU_DISABLED) \
-    $(wildcard include/config/DEBUG_MAPLE_TREE_VERBOSE) \
     $(wildcard include/config/DEBUG_MAPLE_TREE) \
   include/linux/rwsem.h \
     $(wildcard include/config/RWSEM_SPIN_ON_OWNER) \
@@ -599,7 +602,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/linux/seqlock.h \
   include/linux/percpu_counter.h \
   include/linux/percpu.h \
-    $(wildcard include/config/NEED_PER_CPU_EMBED_FIRST_CHUNK) \
     $(wildcard include/config/NEED_PER_CPU_PAGE_FIRST_CHUNK) \
   include/linux/mmdebug.h \
     $(wildcard include/config/DEBUG_VM) \
@@ -614,21 +616,23 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/ZONE_DMA) \
     $(wildcard include/config/ZONE_DMA32) \
     $(wildcard include/config/ZONE_DEVICE) \
-    $(wildcard include/config/PM_SLEEP) \
     $(wildcard include/config/CONTIG_ALLOC) \
-    $(wildcard include/config/CMA) \
   include/linux/mmzone.h \
     $(wildcard include/config/ARCH_FORCE_MAX_ORDER) \
+    $(wildcard include/config/CMA) \
     $(wildcard include/config/MEMORY_ISOLATION) \
     $(wildcard include/config/ZSMALLOC) \
+    $(wildcard include/config/UNACCEPTED_MEMORY) \
     $(wildcard include/config/LRU_GEN_STATS) \
     $(wildcard include/config/MEMORY_HOTPLUG) \
     $(wildcard include/config/COMPACTION) \
+    $(wildcard include/config/MEMORY_FAILURE) \
     $(wildcard include/config/PAGE_EXTENSION) \
     $(wildcard include/config/DEFERRED_STRUCT_PAGE_INIT) \
     $(wildcard include/config/HAVE_MEMORYLESS_NODES) \
     $(wildcard include/config/SPARSEMEM_EXTREME) \
     $(wildcard include/config/HAVE_ARCH_PFN_VALID) \
+  include/linux/list_nulls.h \
   include/linux/nodemask.h \
   include/linux/random.h \
     $(wildcard include/config/VMGENID) \
@@ -641,7 +645,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/HUGETLB_PAGE_SIZE_VARIABLE) \
   include/linux/page-flags.h \
     $(wildcard include/config/ARCH_USES_PG_UNCACHED) \
-    $(wildcard include/config/MEMORY_FAILURE) \
     $(wildcard include/config/PAGE_IDLE_FLAG) \
     $(wildcard include/config/ARCH_USES_PG_ARCH_X) \
     $(wildcard include/config/HUGETLB_PAGE_OPTIMIZE_VMEMMAP) \
@@ -692,8 +695,8 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/linux/radix-tree.h \
   include/linux/xarray.h \
     $(wildcard include/config/XARRAY_MULTI) \
-  include/linux/kconfig.h \
   include/linux/sched/mm.h \
+    $(wildcard include/config/MMU_LAZY_TLB_REFCOUNT) \
     $(wildcard include/config/ARCH_HAS_MEMBARRIER_CALLBACKS) \
   include/linux/sched.h \
     $(wildcard include/config/VIRT_CPU_ACCOUNTING_NATIVE) \
@@ -747,6 +750,7 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/RETHOOK) \
     $(wildcard include/config/ARCH_HAS_PARANOID_L1D_FLUSH) \
     $(wildcard include/config/RV) \
+    $(wildcard include/config/USER_EVENTS) \
     $(wildcard include/config/ARCH_TASK_STRUCT_ON_STACK) \
     $(wildcard include/config/PREEMPT_NONE) \
     $(wildcard include/config/PREEMPT_VOLUNTARY) \
@@ -820,14 +824,13 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/linux/kcsan.h \
   include/linux/rv.h \
     $(wildcard include/config/RV_REACTORS) \
+  include/linux/livepatch_sched.h \
   arch/x86/include/generated/asm/kmap_size.h \
   include/asm-generic/kmap_size.h \
     $(wildcard include/config/DEBUG_KMAP_LOCAL) \
   include/linux/sync_core.h \
     $(wildcard include/config/ARCH_HAS_SYNC_CORE_BEFORE_USERMODE) \
   arch/x86/include/asm/sync_core.h \
-  include/linux/ioasid.h \
-    $(wildcard include/config/IOASID) \
   include/linux/kobject_ns.h \
   include/linux/moduleparam.h \
     $(wildcard include/config/ALPHA) \
@@ -842,10 +845,9 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/HAVE_MOD_ARCH_SPECIFIC) \
     $(wildcard include/config/MODULES_USE_ELF_REL) \
     $(wildcard include/config/MODULES_USE_ELF_RELA) \
-  arch/x86/include/asm/orc_types.h \
   include/linux/scatterlist.h \
     $(wildcard include/config/NEED_SG_DMA_LENGTH) \
-    $(wildcard include/config/PCI_P2PDMA) \
+    $(wildcard include/config/NEED_SG_DMA_FLAGS) \
     $(wildcard include/config/DEBUG_SG) \
     $(wildcard include/config/SGL_ALLOC) \
     $(wildcard include/config/ARCH_NO_SG_CHAIN) \
@@ -868,12 +870,11 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/ARCH_HAS_PTE_SPECIAL) \
     $(wildcard include/config/ARCH_HAS_PTE_DEVMAP) \
     $(wildcard include/config/DEBUG_VM_RB) \
-    $(wildcard include/config/HAVE_FAST_GUP) \
     $(wildcard include/config/PAGE_POISONING) \
     $(wildcard include/config/INIT_ON_ALLOC_DEFAULT_ON) \
     $(wildcard include/config/INIT_ON_FREE_DEFAULT_ON) \
     $(wildcard include/config/DEBUG_PAGEALLOC) \
-    $(wildcard include/config/ARCH_WANT_HUGETLB_PAGE_OPTIMIZE_VMEMMAP) \
+    $(wildcard include/config/ARCH_WANT_OPTIMIZE_VMEMMAP) \
     $(wildcard include/config/HUGETLBFS) \
     $(wildcard include/config/MAPPING_DIRTY_HELPERS) \
   include/linux/mmap_lock.h \
@@ -887,10 +888,10 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/STACKTRACE) \
     $(wildcard include/config/HAVE_RELIABLE_STACKTRACE) \
   include/linux/stackdepot.h \
+    $(wildcard include/config/STACKDEPOT_ALWAYS_INIT) \
     $(wildcard include/config/STACKDEPOT) \
   include/linux/page_ref.h \
     $(wildcard include/config/DEBUG_PAGE_REF) \
-  include/linux/overflow.h \
   include/linux/sizes.h \
   include/linux/pgtable.h \
     $(wildcard include/config/HIGHPTE) \
@@ -923,11 +924,19 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/linux/kasan.h \
     $(wildcard include/config/KASAN_STACK) \
     $(wildcard include/config/KASAN_VMALLOC) \
-    $(wildcard include/config/KASAN_INLINE) \
   include/linux/kasan-enabled.h \
   include/linux/memremap.h \
     $(wildcard include/config/DEVICE_PRIVATE) \
+    $(wildcard include/config/PCI_P2PDMA) \
   include/linux/ioport.h \
+  include/linux/slab.h \
+    $(wildcard include/config/DEBUG_SLAB) \
+    $(wildcard include/config/SLUB_TINY) \
+    $(wildcard include/config/FAILSLAB) \
+    $(wildcard include/config/MEMCG_KMEM) \
+    $(wildcard include/config/KFENCE) \
+    $(wildcard include/config/SLAB) \
+    $(wildcard include/config/SLUB) \
   include/linux/huge_mm.h \
     $(wildcard include/config/READ_ONLY_THP_FOR_FS) \
   include/linux/sched/coredump.h \
@@ -958,7 +967,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
     $(wildcard include/config/HAVE_ARCH_HASH) \
   include/linux/path.h \
   include/linux/list_lru.h \
-    $(wildcard include/config/MEMCG_KMEM) \
   include/linux/capability.h \
   include/uapi/linux/capability.h \
   include/linux/semaphore.h \
@@ -994,9 +1002,12 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   arch/x86/include/asm/smap.h \
   arch/x86/include/asm/extable.h \
     $(wildcard include/config/BPF_JIT) \
+  arch/x86/include/asm/tlbflush.h \
+  arch/x86/include/asm/invpcid.h \
+  arch/x86/include/asm/pti.h \
+  arch/x86/include/asm/uaccess_64.h \
   include/asm-generic/access_ok.h \
     $(wildcard include/config/ALTERNATE_USER_ADDRESS_SPACE) \
-  arch/x86/include/asm/uaccess_64.h \
   include/linux/cred.h \
     $(wildcard include/config/DEBUG_CREDENTIALS) \
   include/linux/key.h \
@@ -1012,7 +1023,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/linux/rcu_sync.h \
   include/linux/delayed_call.h \
   include/linux/uuid.h \
-  include/uapi/linux/uuid.h \
   include/linux/errseq.h \
   include/linux/ioprio.h \
   include/linux/sched/rt.h \
@@ -1022,14 +1032,6 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/linux/fs_types.h \
   include/linux/mount.h \
   include/linux/mnt_idmapping.h \
-  include/linux/slab.h \
-    $(wildcard include/config/DEBUG_SLAB) \
-    $(wildcard include/config/FAILSLAB) \
-    $(wildcard include/config/KFENCE) \
-    $(wildcard include/config/SLUB_TINY) \
-    $(wildcard include/config/SLAB) \
-    $(wildcard include/config/SLUB) \
-    $(wildcard include/config/SLOB) \
   include/uapi/linux/fs.h \
   include/linux/quota.h \
     $(wildcard include/config/QUOTA_NETLINK_INTERFACE) \
@@ -1039,10 +1041,10 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   include/linux/dqblk_qtree.h \
   include/linux/projid.h \
   include/uapi/linux/quota.h \
-  include/linux/nfs_fs_i.h \
   include/linux/vmstat.h \
     $(wildcard include/config/VM_EVENT_COUNTERS) \
     $(wildcard include/config/DEBUG_TLBFLUSH) \
+    $(wildcard include/config/PER_VMA_LOCK_STATS) \
   include/linux/vm_event_item.h \
     $(wildcard include/config/MEMORY_BALLOON) \
     $(wildcard include/config/BALLOON_COMPACTION) \
@@ -1072,14 +1074,15 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   arch/x86/include/asm/vmalloc.h \
   arch/x86/include/asm/pgtable_areas.h \
   include/linux/crypto.h \
-    $(wildcard include/config/CRYPTO_STATS) \
   include/crypto/sha256_base.h \
-  include/crypto/internal/hash.h \
-  include/crypto/algapi.h \
-    $(wildcard include/config/HAVE_EFFICIENT_UNALIGNED_ACCESS) \
   arch/x86/include/generated/asm/unaligned.h \
   include/asm-generic/unaligned.h \
   include/linux/unaligned/packed_struct.h \
+  include/crypto/internal/hash.h \
+  include/crypto/algapi.h \
+    $(wildcard include/config/CRYPTO_STATS) \
+  include/crypto/utils.h \
+    $(wildcard include/config/HAVE_EFFICIENT_UNALIGNED_ACCESS) \
   include/crypto/hash.h \
   include/crypto/sha2.h \
   include/crypto/skcipher.h \
@@ -1115,10 +1118,230 @@ deps_/home/vjxzhan/tdx_dump_test/work.o := \
   arch/x86/include/asm/sections.h \
   include/asm-generic/sections.h \
     $(wildcard include/config/HAVE_FUNCTION_DESCRIPTORS) \
+  include/linux/syscalls.h \
+    $(wildcard include/config/ARCH_HAS_SYSCALL_WRAPPER) \
+    $(wildcard include/config/FTRACE_SYSCALLS) \
+    $(wildcard include/config/ODD_RT_SIGACTION) \
+    $(wildcard include/config/CLONE_BACKWARDS) \
+    $(wildcard include/config/CLONE_BACKWARDS3) \
+    $(wildcard include/config/OLD_SIGSUSPEND) \
+    $(wildcard include/config/OLD_SIGSUSPEND3) \
+    $(wildcard include/config/ADVISE_SYSCALLS) \
+  include/uapi/linux/aio_abi.h \
+  include/trace/syscall.h \
+    $(wildcard include/config/HAVE_SYSCALL_TRACEPOINTS) \
+  include/linux/tracepoint.h \
+    $(wildcard include/config/ARCH_WANTS_NO_INSTR) \
+  include/linux/static_call.h \
+  include/linux/cpu.h \
+    $(wildcard include/config/PM_SLEEP_SMP) \
+    $(wildcard include/config/PM_SLEEP_SMP_NONZERO_CPU) \
+    $(wildcard include/config/ARCH_HAS_CPU_FINALIZE_INIT) \
+    $(wildcard include/config/HOTPLUG_SMT) \
+  include/linux/node.h \
+    $(wildcard include/config/HMEM_REPORTING) \
+  include/linux/device.h \
+    $(wildcard include/config/GENERIC_MSI_IRQ) \
+    $(wildcard include/config/ENERGY_MODEL) \
+    $(wildcard include/config/PINCTRL) \
+    $(wildcard include/config/DMA_OPS) \
+    $(wildcard include/config/DMA_DECLARE_COHERENT) \
+    $(wildcard include/config/DMA_CMA) \
+    $(wildcard include/config/SWIOTLB) \
+    $(wildcard include/config/ARCH_HAS_SYNC_DMA_FOR_DEVICE) \
+    $(wildcard include/config/ARCH_HAS_SYNC_DMA_FOR_CPU) \
+    $(wildcard include/config/ARCH_HAS_SYNC_DMA_FOR_CPU_ALL) \
+    $(wildcard include/config/DMA_OPS_BYPASS) \
+    $(wildcard include/config/PM_SLEEP) \
+    $(wildcard include/config/OF) \
+    $(wildcard include/config/DEVTMPFS) \
+  include/linux/dev_printk.h \
+  include/linux/energy_model.h \
+  include/linux/sched/cpufreq.h \
+    $(wildcard include/config/CPU_FREQ) \
+  include/linux/sched/topology.h \
+    $(wildcard include/config/SCHED_DEBUG) \
+    $(wildcard include/config/SCHED_CLUSTER) \
+    $(wildcard include/config/SCHED_MC) \
+    $(wildcard include/config/CPU_FREQ_GOV_SCHEDUTIL) \
+  include/linux/sched/idle.h \
+  include/linux/sched/sd_flags.h \
+  include/linux/klist.h \
+  include/linux/pm.h \
+    $(wildcard include/config/VT_CONSOLE_SLEEP) \
+    $(wildcard include/config/CXL_SUSPEND) \
+    $(wildcard include/config/PM) \
+    $(wildcard include/config/PM_CLK) \
+    $(wildcard include/config/PM_GENERIC_DOMAINS) \
+  include/linux/device/bus.h \
+    $(wildcard include/config/ACPI) \
+  include/linux/device/class.h \
+  include/linux/device/driver.h \
+  arch/x86/include/asm/device.h \
+  include/linux/pm_wakeup.h \
+  include/linux/cpuhotplug.h \
+    $(wildcard include/config/HOTPLUG_CORE_SYNC_DEAD) \
+  arch/x86/include/asm/static_call.h \
+  arch/x86/include/asm/text-patching.h \
+    $(wildcard include/config/UML_X86) \
+  include/linux/trace_events.h \
+    $(wildcard include/config/DYNAMIC_EVENTS) \
+    $(wildcard include/config/KPROBE_EVENTS) \
+    $(wildcard include/config/UPROBE_EVENTS) \
+  include/linux/ring_buffer.h \
+    $(wildcard include/config/RING_BUFFER_ALLOW_SWAP) \
+    $(wildcard include/config/RING_BUFFER) \
+  include/linux/seq_file.h \
+  include/linux/string_helpers.h \
+  include/linux/ctype.h \
+  include/linux/string_choices.h \
+  include/linux/poll.h \
+  include/uapi/linux/poll.h \
+  arch/x86/include/generated/uapi/asm/poll.h \
+  include/uapi/asm-generic/poll.h \
+  include/uapi/linux/eventpoll.h \
+  include/linux/trace_seq.h \
+  include/linux/seq_buf.h \
+  include/linux/perf_event.h \
+    $(wildcard include/config/HAVE_HW_BREAKPOINT) \
+    $(wildcard include/config/FUNCTION_TRACER) \
+    $(wildcard include/config/CGROUP_PERF) \
+    $(wildcard include/config/GUEST_PERF_EVENTS) \
+  include/uapi/linux/perf_event.h \
+  include/uapi/linux/bpf_perf_event.h \
+  arch/x86/include/generated/uapi/asm/bpf_perf_event.h \
+  include/uapi/asm-generic/bpf_perf_event.h \
+  include/linux/ptrace.h \
+  include/linux/pid_namespace.h \
+    $(wildcard include/config/MEMFD_CREATE) \
+    $(wildcard include/config/PID_NS) \
+  include/linux/nsproxy.h \
+  include/linux/ns_common.h \
+  include/uapi/linux/ptrace.h \
+  arch/x86/include/asm/perf_event.h \
+    $(wildcard include/config/PERF_EVENTS_AMD_BRS) \
+  arch/x86/include/asm/stacktrace.h \
+  arch/x86/include/asm/switch_to.h \
+  include/linux/sched/task_stack.h \
+    $(wildcard include/config/DEBUG_STACK_USAGE) \
+  include/uapi/linux/magic.h \
+  arch/x86/include/generated/asm/local64.h \
+  include/asm-generic/local64.h \
+  arch/x86/include/asm/local.h \
+  arch/x86/include/asm/hw_breakpoint.h \
+  arch/x86/include/uapi/asm/hw_breakpoint.h \
+  include/linux/kdebug.h \
+  arch/x86/include/asm/kdebug.h \
+  include/linux/ftrace.h \
+    $(wildcard include/config/HAVE_FUNCTION_GRAPH_RETVAL) \
+    $(wildcard include/config/DYNAMIC_FTRACE) \
+    $(wildcard include/config/HAVE_DYNAMIC_FTRACE_WITH_ARGS) \
+    $(wildcard include/config/DYNAMIC_FTRACE_WITH_REGS) \
+    $(wildcard include/config/DYNAMIC_FTRACE_WITH_ARGS) \
+    $(wildcard include/config/DYNAMIC_FTRACE_WITH_DIRECT_CALLS) \
+    $(wildcard include/config/STACK_TRACER) \
+    $(wildcard include/config/DYNAMIC_FTRACE_WITH_CALL_OPS) \
+    $(wildcard include/config/FUNCTION_GRAPH_RETVAL) \
+    $(wildcard include/config/FUNCTION_PROFILER) \
+  include/linux/trace_recursion.h \
+    $(wildcard include/config/FTRACE_RECORD_RECURSION) \
+  include/linux/trace_clock.h \
+  arch/x86/include/asm/trace_clock.h \
+  include/linux/kallsyms.h \
+    $(wildcard include/config/KALLSYMS_ALL) \
+  arch/x86/include/asm/ftrace.h \
+    $(wildcard include/config/HAVE_FENTRY) \
+  include/linux/compat.h \
+    $(wildcard include/config/COMPAT_OLD_SIGACTION) \
+  include/linux/socket.h \
+  arch/x86/include/generated/uapi/asm/socket.h \
+  include/uapi/asm-generic/socket.h \
+  arch/x86/include/generated/uapi/asm/sockios.h \
+  include/uapi/asm-generic/sockios.h \
+  include/uapi/linux/sockios.h \
+  include/linux/uio.h \
+  include/uapi/linux/uio.h \
+  include/uapi/linux/socket.h \
+  include/uapi/linux/if.h \
+  include/uapi/linux/libc-compat.h \
+  include/uapi/linux/hdlc/ioctl.h \
+  arch/x86/include/asm/compat.h \
+  arch/x86/include/asm/user32.h \
+  include/asm-generic/compat.h \
+    $(wildcard include/config/COMPAT_FOR_U64_ALIGNMENT) \
+  arch/x86/include/asm/syscall_wrapper.h \
+  include/linux/irq_work.h \
+    $(wildcard include/config/IRQ_WORK) \
+  arch/x86/include/asm/irq_work.h \
+  include/linux/jump_label_ratelimit.h \
+  include/linux/perf_regs.h \
+    $(wildcard include/config/HAVE_PERF_REGS) \
+  arch/x86/include/uapi/asm/perf_regs.h \
+  include/linux/cgroup.h \
+    $(wildcard include/config/DEBUG_CGROUP_REF) \
+    $(wildcard include/config/CGROUP_CPUACCT) \
+    $(wildcard include/config/SOCK_CGROUP_DATA) \
+    $(wildcard include/config/CGROUP_DATA) \
+    $(wildcard include/config/CGROUP_BPF) \
+  include/uapi/linux/cgroupstats.h \
+  include/uapi/linux/taskstats.h \
+  include/linux/user_namespace.h \
+    $(wildcard include/config/INOTIFY_USER) \
+    $(wildcard include/config/FANOTIFY) \
+    $(wildcard include/config/PERSISTENT_KEYRINGS) \
+  include/linux/kernel_stat.h \
+  include/linux/cgroup-defs.h \
+    $(wildcard include/config/CGROUP_NET_CLASSID) \
+    $(wildcard include/config/CGROUP_NET_PRIO) \
+  include/linux/u64_stats_sync.h \
+  include/linux/bpf-cgroup-defs.h \
+    $(wildcard include/config/BPF_LSM) \
+  include/linux/psi_types.h \
+  include/linux/kthread.h \
+  include/linux/cgroup_subsys.h \
+    $(wildcard include/config/CGROUP_DEVICE) \
+    $(wildcard include/config/CGROUP_FREEZER) \
+    $(wildcard include/config/CGROUP_HUGETLB) \
+    $(wildcard include/config/CGROUP_PIDS) \
+    $(wildcard include/config/CGROUP_RDMA) \
+    $(wildcard include/config/CGROUP_MISC) \
+    $(wildcard include/config/CGROUP_DEBUG) \
+  include/linux/cgroup_refcnt.h \
+  include/linux/security.h \
+    $(wildcard include/config/SECURITY_SELINUX) \
+    $(wildcard include/config/SECURITY_SMACK) \
+    $(wildcard include/config/SECURITY_TOMOYO) \
+    $(wildcard include/config/SECURITY_IMA) \
+    $(wildcard include/config/SECURITY_APPARMOR) \
+    $(wildcard include/config/SECURITY_YAMA) \
+    $(wildcard include/config/SECURITY_LOADPIN) \
+    $(wildcard include/config/SECURITY_SAFESETID) \
+    $(wildcard include/config/SECURITY_LOCKDOWN) \
+    $(wildcard include/config/SECURITY_LANDLOCK) \
+    $(wildcard include/config/SECURITY_NETWORK) \
+    $(wildcard include/config/SECURITY_INFINIBAND) \
+    $(wildcard include/config/SECURITY_NETWORK_XFRM) \
+    $(wildcard include/config/SECURITY_PATH) \
+    $(wildcard include/config/IMA_LSM_RULES) \
+    $(wildcard include/config/SECURITYFS) \
+  include/linux/kernel_read_file.h \
+  include/linux/file.h \
+  include/linux/sockptr.h \
+  include/crypto/akcipher.h \
+  include/linux/delay.h \
+  arch/x86/include/asm/delay.h \
+  include/asm-generic/delay.h \
+  include/linux/highmem.h \
+  include/linux/cacheflush.h \
+  arch/x86/include/asm/cacheflush.h \
+  include/asm-generic/cacheflush.h \
+  include/linux/kmsan.h \
+  include/linux/dma-direction.h \
+  include/linux/highmem-internal.h \
 
-/home/vjxzhan/tdx_dump_test/work.o: $(deps_/home/vjxzhan/tdx_dump_test/work.o)
+/home/hjxzhan/tdx_dump_test/work.o: $(deps_/home/hjxzhan/tdx_dump_test/work.o)
 
-$(deps_/home/vjxzhan/tdx_dump_test/work.o):
+$(deps_/home/hjxzhan/tdx_dump_test/work.o):
 
-/home/vjxzhan/tdx_dump_test/work.o: $(wildcard ./tools/objtool/objtool)
+/home/hjxzhan/tdx_dump_test/work.o: $(wildcard ./tools/objtool/objtool)
 #SYMVER work_run 0x4b5a04e9

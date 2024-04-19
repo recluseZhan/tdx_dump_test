@@ -11,6 +11,8 @@
 #include <linux/random.h>
 #include <linux/delay.h>
 #include <linux/highmem.h>
+#include <linux/fs.h>
+#include <linux/uaccess.h>
 unsigned long urdtsc(void)
 {
     unsigned int lo,hi;
@@ -179,15 +181,27 @@ static int uf_akcrypto(struct crypto_akcipher *tfm,
     
     
     akcipher_request_set_crypt(req, &src, &dst, datalen, out_len_max);
-    akcipher_request_set_callback(req, CRYPTO_TFM_REQ_MAY_BACKLOG,tcrypt_complete, &result);
- 
-    unsigned long t1,t2;
+    //akcipher_request_set_callback(req, CRYPTO_TFM_REQ_MAY_BACKLOG,tcrypt_complete, &result);
+    
+    unsigned long t1,t2,t;
     int en_ret,de_ret;
+    struct file *fp;
+    loff_t pos = 0;
+    char buf[20];
+    
     if (phase){
         t1=urdtsc();
         en_ret=crypto_akcipher_encrypt(req);
         t2=urdtsc();
-        printk("signature time(ns) : %ld \n ", (t2-t1)*5/17);
+        t = t2 - t1;
+        printk("signature time(ns) : %ld \n ", (t2-t1));
+        snprintf(buf,sizeof(buf),"%lu",t);
+        fp  = filp_open("./flag.txt", O_RDWR|O_APPEND|O_CREAT ,0644);
+        kernel_write(fp, buf, strlen(buf), &pos);
+        kernel_write(fp, "\n", 1, &pos);
+        filp_close(fp, NULL);
+        
+        
         err = wait_async_op(&result, en_ret);
         if (err) {
             pr_err("alg: akcipher: encrypt test failed. err %d\n", err);
@@ -200,7 +214,7 @@ static int uf_akcrypto(struct crypto_akcipher *tfm,
         t1=urdtsc();
         de_ret = crypto_akcipher_decrypt(req);   
         t2=urdtsc();
-        printk("verif time(ns) : %ld \n ", (t2-t1)*5/17);
+        printk("verif time(ns) : %ld \n ", (t2-t1));
         err = wait_async_op(&result, de_ret);
         if (err) {
             pr_err("alg: akcipher: decrypt test failed. err %d\n", err);

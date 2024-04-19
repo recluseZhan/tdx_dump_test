@@ -1,9 +1,9 @@
 #!/bin/bash
-sudo rmmod sha2563
+sudo rmmod rsa3
 make clean
 
 make
-sudo insmod sha2563.ko
+sudo insmod rsa3.ko
 echo "success\n"
 
 
