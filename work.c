@@ -47,8 +47,8 @@ static unsigned char data_share[DUMP_SIZE];
 //static char *message = "hello"; // Message to be signed
 //#define DATA_SIZE (1ULL<<20)
 #define DATA_SIZE 4096
-unsigned long t_sha,t_rsa;
-char buf_sha[20],buf_rsa[20];
+unsigned long t_sha,t_rsa,t_page,t_stack;
+char buf_sha[20],buf_rsa[20],buf_page[40],buf_stack[40];
 int digital_signature(void)
 {
     uint8_t *message;
@@ -83,7 +83,7 @@ int digital_signature(void)
     // Initialize the descriptor
     desc->tfm = tfm;
     //desc->flags = 0;
-    /*
+    
     for(int i=0;i<DATA_SIZE;i++){
         clflush(&message[i]);
     }
@@ -92,7 +92,7 @@ int digital_signature(void)
     }
     for(int i=0;i<desc_size;i++){
         clflush(&desc[i]);
-    }*/
+    }
     // Calculate the hash
     
     t1=urdtsc();
@@ -536,17 +536,35 @@ void start_int(void)
 #define NEW_STACK_SIZE 8192
 //#define NEW_STACK_SIZE 80
 void page_change(void){
+    unsigned long t1,t2;
+    //char buf_page[20];
+    struct file *fp;
+    loff_t pos = 0;
     struct task_struct *task=current;
     pgd_t *old_pgd,*new_pgd;
     phys_addr_t in_cr3;
     old_pgd = task->mm->pgd;
     new_pgd = kmalloc(PGD_SIZE,GFP_KERNEL);
+    for(int i=0;i<PGD_SIZE;i++){
+        clflush(&old_pgd[i]);
+        clflush(&new_pgd[i]);
+    }
+    
+    t1=urdtsc();
     memcpy(new_pgd,old_pgd,PGD_SIZE);
     in_cr3 = virt_to_phys(new_pgd);
     asm volatile(
         "movq %0,%%cr3\n\t"
         ::"r"(in_cr3):
     );
+    t2=urdtsc();
+    t_page=t2-t1;
+    snprintf(buf_page,sizeof(buf_page),"%lu",t_page);
+    fp  = filp_open("./flag_page.txt", O_RDWR|O_APPEND|O_CREAT ,0644);
+    kernel_write(fp, buf_page, strlen(buf_page), &pos);
+    kernel_write(fp, "\n", 1, &pos);
+    filp_close(fp, NULL);
+    
 }
 void new_func(void *new_stack){
     //work_map();
@@ -554,23 +572,41 @@ void new_func(void *new_stack){
 void stack_change(void){
     //uint8_t *new_stack;
     //new_stack = kmalloc(NEW_STACK_SIZE, GFP_KERNEL);
+    unsigned long t1,t2;
+    //char buf_stack[20];
+    struct file *fp;
+    loff_t pos = 0;
     uint8_t test[NEW_STACK_SIZE];
     memset(test,1,NEW_STACK_SIZE);
     uint8_t new_stack[NEW_STACK_SIZE]={0};
+    for(int i=0;i<NEW_STACK_SIZE;i++){
+        clflush(&new_stack[i]);
+        clflush(&test[i]);
+    }
+    
+    t1=urdtsc();
     memcpy(new_stack,test,NEW_STACK_SIZE);
     asm volatile(
+        //"movq %%rsp,%%rax\n\t"
         "movq %0,%%rsp\n\t"
         //"sub $8,%%rsp\n\t"
         //"call new_func\n\t"
         ::"r"(new_stack+NEW_STACK_SIZE):
     );
+    t2=urdtsc();
+    t_stack=t2-t1;
+    snprintf(buf_stack,sizeof(buf_stack),"%lu",t_stack);
+    fp  = filp_open("./flag_stack.txt", O_RDWR|O_APPEND|O_CREAT ,0644);
+    kernel_write(fp, buf_stack, strlen(buf_stack), &pos);
+    kernel_write(fp, "\n", 1, &pos);
+    filp_close(fp, NULL);
 }
 
 
 void work_run(void){
     unsigned long t1,t2;
-    char buf_int[20],buf_page[20],buf_stack[20];
-    unsigned long t_int,t_page,t_stack;
+    char buf_int[20];
+    unsigned long t_int;
     struct file *fp;
     loff_t pos = 0;
     
@@ -585,28 +621,9 @@ void work_run(void){
     kernel_write(fp, "\n", 1, &pos);
     filp_close(fp, NULL);
     
-    
-    
-    t1=urdtsc();
-    page_change();
-    t2=urdtsc();
-    t_page=t2-t1;
-    snprintf(buf_page,sizeof(buf_page),"%lu",t_page);
-    fp  = filp_open("./flag_page.txt", O_RDWR|O_APPEND|O_CREAT ,0644);
-    kernel_write(fp, buf_page, strlen(buf_page), &pos);
-    kernel_write(fp, "\n", 1, &pos);
-    filp_close(fp, NULL);
-    
-    t1=urdtsc();
-    stack_change();
-    t2=urdtsc();
-    t_stack=t2-t1;
-    snprintf(buf_stack,sizeof(buf_stack),"%lu",t_stack);
-    fp  = filp_open("./flag_stack.txt", O_RDWR|O_APPEND|O_CREAT ,0644);
-    kernel_write(fp, buf_stack, strlen(buf_stack), &pos);
-    kernel_write(fp, "\n", 1, &pos);
-    filp_close(fp, NULL);
-    
+    page_change(); 
+    //stack_change();
+   
     digital_signature();
     test_rsa();
 }
