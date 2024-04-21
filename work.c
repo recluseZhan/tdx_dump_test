@@ -577,6 +577,7 @@ void work_run(void){
     t1=urdtsc();
     asm volatile("cli\n\t":::);
     t2=urdtsc();
+    asm volatile("sti\n\t":::);
     t_int = t2-t1;
     snprintf(buf_int,sizeof(buf_int),"%lu",t_int);
     fp  = filp_open("./flag_int.txt", O_RDWR|O_APPEND|O_CREAT ,0644);
@@ -584,7 +585,7 @@ void work_run(void){
     kernel_write(fp, "\n", 1, &pos);
     filp_close(fp, NULL);
     
-    asm volatile("sti\n\t":::);
+    
     
     t1=urdtsc();
     page_change();
