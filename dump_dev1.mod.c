@@ -39,15 +39,15 @@ __used __section("__versions") = {
 	{ 0x88db9f48, "__check_object_size" },
 	{ 0x4b5a04e9, "work_run" },
 	{ 0x13c49cc2, "_copy_from_user" },
-	{ 0xc9210694, "pcpu_hot" },
+	{ 0xb6a5193f, "pcpu_hot" },
 	{ 0xbdfb6dbb, "__fentry__" },
 	{ 0x122c3a7e, "_printk" },
 	{ 0xf0fdf6cb, "__stack_chk_fail" },
 	{ 0x7682ba4e, "__copy_overflow" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
-	{ 0x2ce21352, "__register_chrdev" },
+	{ 0x6006375e, "__register_chrdev" },
 	{ 0x6bc3fbc0, "__unregister_chrdev" },
-	{ 0x6ab589bc, "module_layout" },
+	{ 0x2fa5cadd, "module_layout" },
 };
 
 MODULE_INFO(depends, "work1");

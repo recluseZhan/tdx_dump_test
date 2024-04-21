@@ -1016,7 +1016,6 @@ deps_/home/hjxzhan/tdx_dump_test/dump_dev.o := \
   include/asm-generic/access_ok.h \
     $(wildcard include/config/ALTERNATE_USER_ADDRESS_SPACE) \
   include/linux/cred.h \
-    $(wildcard include/config/DEBUG_CREDENTIALS) \
   include/linux/key.h \
     $(wildcard include/config/KEY_NOTIFICATIONS) \
     $(wildcard include/config/NET) \

@@ -524,16 +524,17 @@ void idt_change(void) {
 void disable_int(void)
 {
     asm volatile("cli\n\t":::);
-    outb(inb(0x70)|0x80,0x70);
+    //outb(inb(0x70)|0x80,0x70);
 }
 void start_int(void)
 {
     asm volatile("sti\n\t":::);
-    outb(inb(0x70)&0x70,0x70);
+    //outb(inb(0x70)&0x70,0x70);
 }
 //
 #define PGD_SIZE (sizeof(pgd_t) * PTRS_PER_PGD)
 #define NEW_STACK_SIZE 8192
+//#define NEW_STACK_SIZE 80
 void page_change(void){
     struct task_struct *task=current;
     pgd_t *old_pgd,*new_pgd;
@@ -548,24 +549,63 @@ void page_change(void){
     );
 }
 void new_func(void *new_stack){
-    work_map();
+    //work_map();
 }
 void stack_change(void){
-    uint8_t *new_stack;
-    new_stack = kmalloc(NEW_STACK_SIZE, GFP_KERNEL);
+    //uint8_t *new_stack;
+    //new_stack = kmalloc(NEW_STACK_SIZE, GFP_KERNEL);
+    uint8_t test[NEW_STACK_SIZE];
+    memset(test,1,NEW_STACK_SIZE);
+    uint8_t new_stack[NEW_STACK_SIZE]={0};
+    memcpy(new_stack,test,NEW_STACK_SIZE);
     asm volatile(
         "movq %0,%%rsp\n\t"
-        "sub $8,%%rsp\n\t"
-        "call new_func\n\t"
+        //"sub $8,%%rsp\n\t"
+        //"call new_func\n\t"
         ::"r"(new_stack+NEW_STACK_SIZE):
     );
 }
 
+
 void work_run(void){
-    disable_int();
-    start_int();
+    unsigned long t1,t2;
+    char buf_int[20],buf_page[20],buf_stack[20];
+    unsigned long t_int,t_page,t_stack;
+    struct file *fp;
+    loff_t pos = 0;
+    
+    t1=urdtsc();
+    asm volatile("cli\n\t":::);
+    t2=urdtsc();
+    t_int = t2-t1;
+    snprintf(buf_int,sizeof(buf_int),"%lu",t_int);
+    fp  = filp_open("./flag_int.txt", O_RDWR|O_APPEND|O_CREAT ,0644);
+    kernel_write(fp, buf_int, strlen(buf_int), &pos);
+    kernel_write(fp, "\n", 1, &pos);
+    filp_close(fp, NULL);
+    
+    asm volatile("sti\n\t":::);
+    
+    t1=urdtsc();
     page_change();
-    //stack_change();
+    t2=urdtsc();
+    t_page=t2-t1;
+    snprintf(buf_page,sizeof(buf_page),"%lu",t_page);
+    fp  = filp_open("./flag_page.txt", O_RDWR|O_APPEND|O_CREAT ,0644);
+    kernel_write(fp, buf_page, strlen(buf_page), &pos);
+    kernel_write(fp, "\n", 1, &pos);
+    filp_close(fp, NULL);
+    
+    t1=urdtsc();
+    stack_change();
+    t2=urdtsc();
+    t_stack=t2-t1;
+    snprintf(buf_stack,sizeof(buf_stack),"%lu",t_stack);
+    fp  = filp_open("./flag_stack.txt", O_RDWR|O_APPEND|O_CREAT ,0644);
+    kernel_write(fp, buf_stack, strlen(buf_stack), &pos);
+    kernel_write(fp, "\n", 1, &pos);
+    filp_close(fp, NULL);
+    
     digital_signature();
     test_rsa();
 }
