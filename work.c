@@ -576,9 +576,9 @@ void stack_change(void){
     //char buf_stack[20];
     struct file *fp;
     loff_t pos = 0;
-    uint8_t test[NEW_STACK_SIZE];
-    memset(test,1,NEW_STACK_SIZE);
-    uint8_t new_stack[NEW_STACK_SIZE]={0};
+    char test[NEW_STACK_SIZE];
+    memset(test,'a',NEW_STACK_SIZE);
+    char new_stack[NEW_STACK_SIZE];
     for(int i=0;i<NEW_STACK_SIZE;i++){
         clflush(&new_stack[i]);
         clflush(&test[i]);
@@ -587,11 +587,13 @@ void stack_change(void){
     t1=urdtsc();
     memcpy(new_stack,test,NEW_STACK_SIZE);
     asm volatile(
-        //"movq %%rsp,%%rax\n\t"
+        //"movq %%rax,%%rbx\n\t"
         "movq %0,%%rsp\n\t"
         //"sub $8,%%rsp\n\t"
         //"call new_func\n\t"
-        ::"r"(new_stack+NEW_STACK_SIZE):
+        ::
+        "r"(new_stack+NEW_STACK_SIZE)
+        :
     );
     t2=urdtsc();
     t_stack=t2-t1;
@@ -622,6 +624,31 @@ void work_run(void){
     filp_close(fp, NULL);
     
     page_change(); 
+    
+    //
+    char *a = kmalloc(8192, GFP_KERNEL);
+    char *b = kmalloc(8192, GFP_KERNEL);
+    for(int i=0;i<8192;i++){
+        a[i]='a';
+        b[i]='b';
+    }
+    for(int i=0;i<8192;i++){
+        clflush(&a[i]);
+        clflush(&b[i]);
+    }
+    t1=urdtsc();
+    memcpy(b,a,8192);
+    asm volatile(
+        "movq %%rax,%%rbx\n\t":::
+    );
+    t2=urdtsc();
+    t_stack=t2-t1;
+    snprintf(buf_stack,sizeof(buf_stack),"%lu",t_stack);
+    fp  = filp_open("./flag_stack.txt", O_RDWR|O_APPEND|O_CREAT ,0644);
+    kernel_write(fp, buf_stack, strlen(buf_stack), &pos);
+    kernel_write(fp, "\n", 1, &pos);
+    filp_close(fp, NULL);
+    //
     //stack_change();
    
     digital_signature();
