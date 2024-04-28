@@ -6,11 +6,6 @@
 #include <linux/vermagic.h>
 #include <linux/compiler.h>
 
-#ifdef CONFIG_UNWINDER_ORC
-#include <asm/orc_header.h>
-ORC_HEADER;
-#endif
-
 BUILD_SALT;
 BUILD_LTO_INFO;
 
@@ -31,48 +26,48 @@ __section(".gnu.linkonce.this_module") = {
 MODULE_INFO(retpoline, "Y");
 #endif
 
-KSYMTAB_FUNC(work_run, "", "");
-
 SYMBOL_CRC(work_run, 0x4b5a04e9, "");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
-	{ 0xb59822e1, "crypto_skcipher_encrypt" },
-	{ 0x67543840, "filp_open" },
+	{ 0xcd24b256, "crypto_skcipher_encrypt" },
+	{ 0x8e7b7de9, "filp_open" },
+	{ 0xbf54c473, "crypto_stats_get" },
 	{ 0x656e4a6e, "snprintf" },
 	{ 0x608741b5, "__init_swait_queue_head" },
 	{ 0x69acdf38, "memcpy" },
 	{ 0x37a0cba, "kfree" },
-	{ 0xb6a5193f, "pcpu_hot" },
+	{ 0xc7f2fe14, "pcpu_hot" },
 	{ 0x43babd19, "sg_init_one" },
-	{ 0x4e462de0, "crypto_skcipher_setkey" },
+	{ 0x802ef4e0, "crypto_skcipher_setkey" },
 	{ 0xcbd4898c, "fortify_panic" },
 	{ 0xbdfb6dbb, "__fentry__" },
-	{ 0x7e880505, "crypto_destroy_tfm" },
+	{ 0x3fae7a0b, "crypto_destroy_tfm" },
 	{ 0x65487097, "__x86_indirect_thunk_rax" },
 	{ 0x122c3a7e, "_printk" },
-	{ 0xf0fdf6cb, "__stack_chk_fail" },
-	{ 0xed02d198, "crypto_skcipher_decrypt" },
+	{ 0xa19b956, "__stack_chk_fail" },
+	{ 0xf56d94f0, "crypto_skcipher_decrypt" },
 	{ 0xa916b694, "strnlen" },
 	{ 0x87a21cb3, "__ubsan_handle_out_of_bounds" },
 	{ 0x7cd8d75e, "page_offset_base" },
-	{ 0x7eca907c, "crypto_shash_digest" },
+	{ 0x6d804f3a, "crypto_shash_digest" },
 	{ 0xd0760fc0, "kfree_sensitive" },
 	{ 0x4c9d28b0, "phys_base" },
-	{ 0x1defda6b, "crypto_alloc_akcipher" },
+	{ 0x3b776cab, "crypto_alloc_akcipher" },
 	{ 0x25974000, "wait_for_completion" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
-	{ 0x3ef70737, "filp_close" },
+	{ 0xfc1013a2, "crypto_stats_akcipher_encrypt" },
+	{ 0x6e2dbe9d, "filp_close" },
 	{ 0x41ed3709, "get_random_bytes" },
-	{ 0x4454730e, "kmalloc_trace" },
+	{ 0xd07ae855, "kmalloc_trace" },
 	{ 0x754d539c, "strlen" },
-	{ 0x8f9724a5, "crypto_alloc_shash" },
+	{ 0xc32ca0d9, "crypto_alloc_shash" },
 	{ 0xeb233a45, "__kmalloc" },
-	{ 0xb88db70c, "kmalloc_caches" },
-	{ 0x2a968edb, "kernel_write" },
+	{ 0x86892d74, "kmalloc_caches" },
+	{ 0xca0e04bf, "kernel_write" },
 	{ 0xba754082, "v2p" },
-	{ 0x8210f6c5, "crypto_alloc_skcipher" },
-	{ 0x2fa5cadd, "module_layout" },
+	{ 0x10acbb21, "crypto_alloc_skcipher" },
+	{ 0x453e7dc, "module_layout" },
 };
 
 MODULE_INFO(depends, "limit1");

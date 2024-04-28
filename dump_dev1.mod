@@ -1,1 +1,1 @@
-/home/hjxzhan/tdx_dump_test/dump_dev.o
+/home/vjxzhan/tdx_dump_test/dump_dev.o
