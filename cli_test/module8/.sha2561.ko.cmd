@@ -1,1 +1,0 @@
-cmd_/home/vjxzhan/tdx_dump_test/cli_test/module8/sha2561.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/vjxzhan/tdx_dump_test/cli_test/module8/sha2561.ko /home/vjxzhan/tdx_dump_test/cli_test/module8/sha2561.o /home/vjxzhan/tdx_dump_test/cli_test/module8/sha2561.mod.o;  true

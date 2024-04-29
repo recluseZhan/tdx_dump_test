@@ -53,10 +53,12 @@ __used __section("__versions") = {
 	{ 0x6d804f3a, "crypto_shash_digest" },
 	{ 0xd0760fc0, "kfree_sensitive" },
 	{ 0x4c9d28b0, "phys_base" },
+	{ 0x9ed12e20, "kmalloc_large" },
 	{ 0x3b776cab, "crypto_alloc_akcipher" },
 	{ 0x25974000, "wait_for_completion" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
 	{ 0xfc1013a2, "crypto_stats_akcipher_encrypt" },
+	{ 0xa648e561, "__ubsan_handle_shift_out_of_bounds" },
 	{ 0x6e2dbe9d, "filp_close" },
 	{ 0x41ed3709, "get_random_bytes" },
 	{ 0xd07ae855, "kmalloc_trace" },
@@ -73,4 +75,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "limit1");
 
 
-MODULE_INFO(srcversion, "4BAD4EEE48084FC2280B0CF");
+MODULE_INFO(srcversion, "6643B9455FCE5AC39E25C51");

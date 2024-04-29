@@ -153,7 +153,7 @@ int main(int argc, char* argv[])
     };
     //unsigned long t1,t2;
     //t1=urdtsc();
-    for(int i=0;i<64;i++)
+    for(int i=0;i<16384;i++)
         sha256_process(state, message, sizeof(message));
     printf("%ld\n",(t01+t02)*5/17);
     //t2=urdtsc();
