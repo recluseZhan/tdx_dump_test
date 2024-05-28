@@ -1,0 +1,2312 @@
+
+work.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <__pfx_uf_akcrypto.constprop.0.isra.0>:
+       0:	90                   	nop
+       1:	90                   	nop
+       2:	90                   	nop
+       3:	90                   	nop
+       4:	90                   	nop
+       5:	90                   	nop
+       6:	90                   	nop
+       7:	90                   	nop
+       8:	90                   	nop
+       9:	90                   	nop
+       a:	90                   	nop
+       b:	90                   	nop
+       c:	90                   	nop
+       d:	90                   	nop
+       e:	90                   	nop
+       f:	90                   	nop
+
+0000000000000010 <uf_akcrypto.constprop.0.isra.0>:
+      10:	e8 00 00 00 00       	call   15 <uf_akcrypto.constprop.0.isra.0+0x5>
+      15:	55                   	push   %rbp
+      16:	48 89 e5             	mov    %rsp,%rbp
+      19:	41 57                	push   %r15
+      1b:	49 89 ff             	mov    %rdi,%r15
+      1e:	41 56                	push   %r14
+      20:	41 89 d6             	mov    %edx,%r14d
+      23:	ba 00 10 00 00       	mov    $0x1000,%edx
+      28:	41 55                	push   %r13
+      2a:	41 54                	push   %r12
+      2c:	53                   	push   %rbx
+      2d:	48 89 f3             	mov    %rsi,%rbx
+      30:	be c0 0c 00 00       	mov    $0xcc0,%esi
+      35:	48 81 ec 98 00 00 00 	sub    $0x98,%rsp
+      3c:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 43 <uf_akcrypto.constprop.0.isra.0+0x33>
+      43:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+      4a:	00 00 
+      4c:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+      50:	31 c0                	xor    %eax,%eax
+      52:	e8 00 00 00 00       	call   57 <uf_akcrypto.constprop.0.isra.0+0x47>
+      57:	48 85 c0             	test   %rax,%rax
+      5a:	0f 84 7f 02 00 00    	je     2df <uf_akcrypto.constprop.0.isra.0+0x2cf>
+      60:	41 8b 3f             	mov    (%r15),%edi
+      63:	be c0 0c 00 00       	mov    $0xcc0,%esi
+      68:	49 89 c5             	mov    %rax,%r13
+      6b:	48 83 c7 48          	add    $0x48,%rdi
+      6f:	e8 00 00 00 00       	call   74 <uf_akcrypto.constprop.0.isra.0+0x64>
+      74:	49 89 c4             	mov    %rax,%r12
+      77:	48 85 c0             	test   %rax,%rax
+      7a:	0f 84 57 02 00 00    	je     2d7 <uf_akcrypto.constprop.0.isra.0+0x2c7>
+      80:	49 8d 47 08          	lea    0x8(%r15),%rax
+      84:	48 c7 c2 00 00 00 00 	mov    $0x0,%rdx
+      8b:	48 8d 7d b0          	lea    -0x50(%rbp),%rdi
+      8f:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+      96:	49 89 44 24 20       	mov    %rax,0x20(%r12)
+      9b:	c7 45 a8 00 00 00 00 	movl   $0x0,-0x58(%rbp)
+      a2:	e8 00 00 00 00       	call   a7 <uf_akcrypto.constprop.0.isra.0+0x97>
+      a7:	49 8b 47 18          	mov    0x18(%r15),%rax
+      ab:	ba 61 02 00 00       	mov    $0x261,%edx
+      b0:	4c 89 ff             	mov    %r15,%rdi
+      b3:	48 8b 35 00 00 00 00 	mov    0x0(%rip),%rsi        # ba <uf_akcrypto.constprop.0.isra.0+0xaa>
+      ba:	48 8b 40 e0          	mov    -0x20(%rax),%rax
+      be:	e8 00 00 00 00       	call   c3 <uf_akcrypto.constprop.0.isra.0+0xb3>
+      c3:	85 c0                	test   %eax,%eax
+      c5:	0f 85 f3 02 00 00    	jne    3be <uf_akcrypto.constprop.0.isra.0+0x3ae>
+      cb:	49 8b 47 18          	mov    0x18(%r15),%rax
+      cf:	4c 89 ff             	mov    %r15,%rdi
+      d2:	48 8b 40 e8          	mov    -0x18(%rax),%rax
+      d6:	e8 00 00 00 00       	call   db <uf_akcrypto.constprop.0.isra.0+0xcb>
+      db:	be c0 0d 00 00       	mov    $0xdc0,%esi
+      e0:	89 85 5c ff ff ff    	mov    %eax,-0xa4(%rbp)
+      e6:	89 c0                	mov    %eax,%eax
+      e8:	48 89 c7             	mov    %rax,%rdi
+      eb:	48 89 85 50 ff ff ff 	mov    %rax,-0xb0(%rbp)
+      f2:	e8 00 00 00 00       	call   f7 <uf_akcrypto.constprop.0.isra.0+0xe7>
+      f7:	49 89 c7             	mov    %rax,%r15
+      fa:	48 85 c0             	test   %rax,%rax
+      fd:	0f 84 cc 01 00 00    	je     2cf <uf_akcrypto.constprop.0.isra.0+0x2bf>
+     103:	41 83 fe 08          	cmp    $0x8,%r14d
+     107:	0f 82 05 02 00 00    	jb     312 <uf_akcrypto.constprop.0.isra.0+0x302>
+     10d:	44 89 f0             	mov    %r14d,%eax
+     110:	41 8d 4e ff          	lea    -0x1(%r14),%ecx
+     114:	48 8b 54 03 f8       	mov    -0x8(%rbx,%rax,1),%rdx
+     119:	49 89 54 05 f8       	mov    %rdx,-0x8(%r13,%rax,1)
+     11e:	83 f9 08             	cmp    $0x8,%ecx
+     121:	72 17                	jb     13a <uf_akcrypto.constprop.0.isra.0+0x12a>
+     123:	83 e1 f8             	and    $0xfffffff8,%ecx
+     126:	31 c0                	xor    %eax,%eax
+     128:	89 c2                	mov    %eax,%edx
+     12a:	83 c0 08             	add    $0x8,%eax
+     12d:	48 8b 34 13          	mov    (%rbx,%rdx,1),%rsi
+     131:	49 89 74 15 00       	mov    %rsi,0x0(%r13,%rdx,1)
+     136:	39 c8                	cmp    %ecx,%eax
+     138:	72 ee                	jb     128 <uf_akcrypto.constprop.0.isra.0+0x118>
+     13a:	48 8d 85 68 ff ff ff 	lea    -0x98(%rbp),%rax
+     141:	44 89 f2             	mov    %r14d,%edx
+     144:	48 8d 5d 88          	lea    -0x78(%rbp),%rbx
+     148:	4c 89 ee             	mov    %r13,%rsi
+     14b:	48 89 c7             	mov    %rax,%rdi
+     14e:	e8 00 00 00 00       	call   153 <uf_akcrypto.constprop.0.isra.0+0x143>
+     153:	8b 95 5c ff ff ff    	mov    -0xa4(%rbp),%edx
+     159:	4c 89 fe             	mov    %r15,%rsi
+     15c:	48 89 df             	mov    %rbx,%rdi
+     15f:	e8 00 00 00 00       	call   164 <uf_akcrypto.constprop.0.isra.0+0x154>
+     164:	48 8d 85 68 ff ff ff 	lea    -0x98(%rbp),%rax
+     16b:	49 89 5c 24 38       	mov    %rbx,0x38(%r12)
+     170:	49 89 44 24 30       	mov    %rax,0x30(%r12)
+     175:	8b 85 5c ff ff ff    	mov    -0xa4(%rbp),%eax
+     17b:	45 89 74 24 40       	mov    %r14d,0x40(%r12)
+     180:	41 89 44 24 44       	mov    %eax,0x44(%r12)
+     185:	48 c7 85 60 ff ff ff 	movq   $0x0,-0xa0(%rbp)
+     18c:	00 00 00 00 
+     190:	0f 31                	rdtsc  
+     192:	48 c1 e2 20          	shl    $0x20,%rdx
+     196:	89 c0                	mov    %eax,%eax
+     198:	48 09 c2             	or     %rax,%rdx
+     19b:	49 8b 44 24 20       	mov    0x20(%r12),%rax
+     1a0:	48 89 95 48 ff ff ff 	mov    %rdx,-0xb8(%rbp)
+     1a7:	48 8b 50 10          	mov    0x10(%rax),%rdx
+     1ab:	48 89 d7             	mov    %rdx,%rdi
+     1ae:	48 89 95 40 ff ff ff 	mov    %rdx,-0xc0(%rbp)
+     1b5:	e8 00 00 00 00       	call   1ba <uf_akcrypto.constprop.0.isra.0+0x1aa>
+     1ba:	48 8b 95 40 ff ff ff 	mov    -0xc0(%rbp),%rdx
+     1c1:	4c 89 e7             	mov    %r12,%rdi
+     1c4:	48 8b 42 c8          	mov    -0x38(%rdx),%rax
+     1c8:	e8 00 00 00 00       	call   1cd <uf_akcrypto.constprop.0.isra.0+0x1bd>
+     1cd:	48 8b 95 40 ff ff ff 	mov    -0xc0(%rbp),%rdx
+     1d4:	44 89 f7             	mov    %r14d,%edi
+     1d7:	89 c6                	mov    %eax,%esi
+     1d9:	89 c3                	mov    %eax,%ebx
+     1db:	e8 00 00 00 00       	call   1e0 <uf_akcrypto.constprop.0.isra.0+0x1d0>
+     1e0:	0f 31                	rdtsc  
+     1e2:	89 c0                	mov    %eax,%eax
+     1e4:	48 c1 e2 20          	shl    $0x20,%rdx
+     1e8:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     1ef:	48 09 c2             	or     %rax,%rdx
+     1f2:	48 89 d6             	mov    %rdx,%rsi
+     1f5:	48 2b b5 48 ff ff ff 	sub    -0xb8(%rbp),%rsi
+     1fc:	48 89 35 00 00 00 00 	mov    %rsi,0x0(%rip)        # 203 <uf_akcrypto.constprop.0.isra.0+0x1f3>
+     203:	e8 00 00 00 00       	call   208 <uf_akcrypto.constprop.0.isra.0+0x1f8>
+     208:	48 8b 0d 00 00 00 00 	mov    0x0(%rip),%rcx        # 20f <uf_akcrypto.constprop.0.isra.0+0x1ff>
+     20f:	48 c7 c2 00 00 00 00 	mov    $0x0,%rdx
+     216:	be 14 00 00 00       	mov    $0x14,%esi
+     21b:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     222:	e8 00 00 00 00       	call   227 <uf_akcrypto.constprop.0.isra.0+0x217>
+     227:	ba a4 01 00 00       	mov    $0x1a4,%edx
+     22c:	be 42 04 00 00       	mov    $0x442,%esi
+     231:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     238:	e8 00 00 00 00       	call   23d <uf_akcrypto.constprop.0.isra.0+0x22d>
+     23d:	be 14 00 00 00       	mov    $0x14,%esi
+     242:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     249:	49 89 c6             	mov    %rax,%r14
+     24c:	e8 00 00 00 00       	call   251 <uf_akcrypto.constprop.0.isra.0+0x241>
+     251:	48 89 c2             	mov    %rax,%rdx
+     254:	48 83 f8 14          	cmp    $0x14,%rax
+     258:	0f 87 a8 01 00 00    	ja     406 <uf_akcrypto.constprop.0.isra.0+0x3f6>
+     25e:	0f 84 96 01 00 00    	je     3fa <uf_akcrypto.constprop.0.isra.0+0x3ea>
+     264:	48 8d 8d 60 ff ff ff 	lea    -0xa0(%rbp),%rcx
+     26b:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+     272:	4c 89 f7             	mov    %r14,%rdi
+     275:	e8 00 00 00 00       	call   27a <uf_akcrypto.constprop.0.isra.0+0x26a>
+     27a:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+     281:	4c 89 f7             	mov    %r14,%rdi
+     284:	48 8d 8d 60 ff ff ff 	lea    -0xa0(%rbp),%rcx
+     28b:	ba 01 00 00 00       	mov    $0x1,%edx
+     290:	e8 00 00 00 00       	call   295 <uf_akcrypto.constprop.0.isra.0+0x285>
+     295:	31 f6                	xor    %esi,%esi
+     297:	4c 89 f7             	mov    %r14,%rdi
+     29a:	e8 00 00 00 00       	call   29f <uf_akcrypto.constprop.0.isra.0+0x28f>
+     29f:	83 fb 8d             	cmp    $0xffffff8d,%ebx
+     2a2:	0f 84 fe 00 00 00    	je     3a6 <uf_akcrypto.constprop.0.isra.0+0x396>
+     2a8:	83 fb f0             	cmp    $0xfffffff0,%ebx
+     2ab:	0f 84 f5 00 00 00    	je     3a6 <uf_akcrypto.constprop.0.isra.0+0x396>
+     2b1:	85 db                	test   %ebx,%ebx
+     2b3:	0f 84 90 00 00 00    	je     349 <uf_akcrypto.constprop.0.isra.0+0x339>
+     2b9:	89 de                	mov    %ebx,%esi
+     2bb:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     2c2:	e8 00 00 00 00       	call   2c7 <uf_akcrypto.constprop.0.isra.0+0x2b7>
+     2c7:	4c 89 ff             	mov    %r15,%rdi
+     2ca:	e8 00 00 00 00       	call   2cf <uf_akcrypto.constprop.0.isra.0+0x2bf>
+     2cf:	4c 89 e7             	mov    %r12,%rdi
+     2d2:	e8 00 00 00 00       	call   2d7 <uf_akcrypto.constprop.0.isra.0+0x2c7>
+     2d7:	4c 89 ef             	mov    %r13,%rdi
+     2da:	e8 00 00 00 00       	call   2df <uf_akcrypto.constprop.0.isra.0+0x2cf>
+     2df:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+     2e3:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+     2ea:	00 00 
+     2ec:	0f 85 03 01 00 00    	jne    3f5 <uf_akcrypto.constprop.0.isra.0+0x3e5>
+     2f2:	48 81 c4 98 00 00 00 	add    $0x98,%rsp
+     2f9:	5b                   	pop    %rbx
+     2fa:	41 5c                	pop    %r12
+     2fc:	41 5d                	pop    %r13
+     2fe:	41 5e                	pop    %r14
+     300:	41 5f                	pop    %r15
+     302:	5d                   	pop    %rbp
+     303:	31 c0                	xor    %eax,%eax
+     305:	31 d2                	xor    %edx,%edx
+     307:	31 c9                	xor    %ecx,%ecx
+     309:	31 f6                	xor    %esi,%esi
+     30b:	31 ff                	xor    %edi,%edi
+     30d:	e9 00 00 00 00       	jmp    312 <uf_akcrypto.constprop.0.isra.0+0x302>
+     312:	41 f6 c6 04          	test   $0x4,%r14b
+     316:	0f 85 c2 00 00 00    	jne    3de <uf_akcrypto.constprop.0.isra.0+0x3ce>
+     31c:	45 85 f6             	test   %r14d,%r14d
+     31f:	0f 84 15 fe ff ff    	je     13a <uf_akcrypto.constprop.0.isra.0+0x12a>
+     325:	0f b6 03             	movzbl (%rbx),%eax
+     328:	41 88 45 00          	mov    %al,0x0(%r13)
+     32c:	41 f6 c6 02          	test   $0x2,%r14b
+     330:	0f 84 04 fe ff ff    	je     13a <uf_akcrypto.constprop.0.isra.0+0x12a>
+     336:	44 89 f0             	mov    %r14d,%eax
+     339:	0f b7 54 03 fe       	movzwl -0x2(%rbx,%rax,1),%edx
+     33e:	66 41 89 54 05 fe    	mov    %dx,-0x2(%r13,%rax,1)
+     344:	e9 f1 fd ff ff       	jmp    13a <uf_akcrypto.constprop.0.isra.0+0x12a>
+     349:	48 8b 9d 50 ff ff ff 	mov    -0xb0(%rbp),%rbx
+     350:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 357 <uf_akcrypto.constprop.0.isra.0+0x347>
+     357:	4c 89 fe             	mov    %r15,%rsi
+     35a:	48 89 da             	mov    %rbx,%rdx
+     35d:	e8 00 00 00 00       	call   362 <uf_akcrypto.constprop.0.isra.0+0x352>
+     362:	8b 85 5c ff ff ff    	mov    -0xa4(%rbp),%eax
+     368:	4c 8b 35 00 00 00 00 	mov    0x0(%rip),%r14        # 36f <uf_akcrypto.constprop.0.isra.0+0x35f>
+     36f:	89 05 00 00 00 00    	mov    %eax,0x0(%rip)        # 375 <uf_akcrypto.constprop.0.isra.0+0x365>
+     375:	4c 01 f3             	add    %r14,%rbx
+     378:	85 c0                	test   %eax,%eax
+     37a:	74 19                	je     395 <uf_akcrypto.constprop.0.isra.0+0x385>
+     37c:	41 0f b6 36          	movzbl (%r14),%esi
+     380:	49 83 c6 01          	add    $0x1,%r14
+     384:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     38b:	e8 00 00 00 00       	call   390 <uf_akcrypto.constprop.0.isra.0+0x380>
+     390:	4c 39 f3             	cmp    %r14,%rbx
+     393:	75 e7                	jne    37c <uf_akcrypto.constprop.0.isra.0+0x36c>
+     395:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     39c:	e8 00 00 00 00       	call   3a1 <uf_akcrypto.constprop.0.isra.0+0x391>
+     3a1:	e9 21 ff ff ff       	jmp    2c7 <uf_akcrypto.constprop.0.isra.0+0x2b7>
+     3a6:	48 8d 7d a8          	lea    -0x58(%rbp),%rdi
+     3aa:	e8 00 00 00 00       	call   3af <uf_akcrypto.constprop.0.isra.0+0x39f>
+     3af:	c7 45 a8 00 00 00 00 	movl   $0x0,-0x58(%rbp)
+     3b6:	8b 5d c8             	mov    -0x38(%rbp),%ebx
+     3b9:	e9 f3 fe ff ff       	jmp    2b1 <uf_akcrypto.constprop.0.isra.0+0x2a1>
+     3be:	ba 01 00 00 00       	mov    $0x1,%edx
+     3c3:	89 c6                	mov    %eax,%esi
+     3c5:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     3cc:	e8 00 00 00 00       	call   3d1 <uf_akcrypto.constprop.0.isra.0+0x3c1>
+     3d1:	4c 89 e7             	mov    %r12,%rdi
+     3d4:	e8 00 00 00 00       	call   3d9 <uf_akcrypto.constprop.0.isra.0+0x3c9>
+     3d9:	e9 f9 fe ff ff       	jmp    2d7 <uf_akcrypto.constprop.0.isra.0+0x2c7>
+     3de:	8b 03                	mov    (%rbx),%eax
+     3e0:	41 89 45 00          	mov    %eax,0x0(%r13)
+     3e4:	44 89 f0             	mov    %r14d,%eax
+     3e7:	8b 54 03 fc          	mov    -0x4(%rbx,%rax,1),%edx
+     3eb:	41 89 54 05 fc       	mov    %edx,-0x4(%r13,%rax,1)
+     3f0:	e9 45 fd ff ff       	jmp    13a <uf_akcrypto.constprop.0.isra.0+0x12a>
+     3f5:	e8 00 00 00 00       	call   3fa <uf_akcrypto.constprop.0.isra.0+0x3ea>
+     3fa:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     401:	e8 00 00 00 00       	call   406 <uf_akcrypto.constprop.0.isra.0+0x3f6>
+     406:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     40d:	e8 00 00 00 00       	call   412 <uf_akcrypto.constprop.0.isra.0+0x402>
+     412:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+     419:	00 00 00 00 
+     41d:	0f 1f 00             	nopl   (%rax)
+
+0000000000000420 <__pfx_urdtsc>:
+     420:	90                   	nop
+     421:	90                   	nop
+     422:	90                   	nop
+     423:	90                   	nop
+     424:	90                   	nop
+     425:	90                   	nop
+     426:	90                   	nop
+     427:	90                   	nop
+     428:	90                   	nop
+     429:	90                   	nop
+     42a:	90                   	nop
+     42b:	90                   	nop
+     42c:	90                   	nop
+     42d:	90                   	nop
+     42e:	90                   	nop
+     42f:	90                   	nop
+
+0000000000000430 <urdtsc>:
+     430:	e8 00 00 00 00       	call   435 <urdtsc+0x5>
+     435:	55                   	push   %rbp
+     436:	48 89 e5             	mov    %rsp,%rbp
+     439:	0f 31                	rdtsc  
+     43b:	48 c1 e2 20          	shl    $0x20,%rdx
+     43f:	89 c0                	mov    %eax,%eax
+     441:	5d                   	pop    %rbp
+     442:	48 09 d0             	or     %rdx,%rax
+     445:	31 d2                	xor    %edx,%edx
+     447:	e9 00 00 00 00       	jmp    44c <urdtsc+0x1c>
+     44c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000000450 <__pfx_sha256_ni>:
+     450:	90                   	nop
+     451:	90                   	nop
+     452:	90                   	nop
+     453:	90                   	nop
+     454:	90                   	nop
+     455:	90                   	nop
+     456:	90                   	nop
+     457:	90                   	nop
+     458:	90                   	nop
+     459:	90                   	nop
+     45a:	90                   	nop
+     45b:	90                   	nop
+     45c:	90                   	nop
+     45d:	90                   	nop
+     45e:	90                   	nop
+     45f:	90                   	nop
+
+0000000000000460 <sha256_ni>:
+     460:	e8 00 00 00 00       	call   465 <sha256_ni+0x5>
+     465:	55                   	push   %rbp
+     466:	be c0 0c 00 00       	mov    $0xcc0,%esi
+     46b:	bf 00 00 10 00       	mov    $0x100000,%edi
+     470:	48 89 e5             	mov    %rsp,%rbp
+     473:	41 54                	push   %r12
+     475:	53                   	push   %rbx
+     476:	48 83 ec 30          	sub    $0x30,%rsp
+     47a:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+     481:	00 00 
+     483:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+     487:	31 c0                	xor    %eax,%eax
+     489:	48 c7 45 c8 00 00 00 	movq   $0x0,-0x38(%rbp)
+     490:	00 
+     491:	48 c7 45 d0 00 00 00 	movq   $0x0,-0x30(%rbp)
+     498:	00 
+     499:	48 c7 45 d8 00 00 00 	movq   $0x0,-0x28(%rbp)
+     4a0:	00 
+     4a1:	48 c7 45 e0 00 00 00 	movq   $0x0,-0x20(%rbp)
+     4a8:	00 
+     4a9:	e8 00 00 00 00       	call   4ae <sha256_ni+0x4e>
+     4ae:	be 00 00 10 00       	mov    $0x100000,%esi
+     4b3:	48 89 c7             	mov    %rax,%rdi
+     4b6:	49 89 c4             	mov    %rax,%r12
+     4b9:	e8 00 00 00 00       	call   4be <sha256_ni+0x5e>
+     4be:	48 c7 45 c0 00 00 00 	movq   $0x0,-0x40(%rbp)
+     4c5:	00 
+     4c6:	0f 31                	rdtsc  
+     4c8:	48 c1 e2 20          	shl    $0x20,%rdx
+     4cc:	89 c0                	mov    %eax,%eax
+     4ce:	48 8d 7d c8          	lea    -0x38(%rbp),%rdi
+     4d2:	4c 89 e6             	mov    %r12,%rsi
+     4d5:	48 89 d3             	mov    %rdx,%rbx
+     4d8:	ba 00 40 00 00       	mov    $0x4000,%edx
+     4dd:	48 09 c3             	or     %rax,%rbx
+     4e0:	e8 00 00 00 00       	call   4e5 <sha256_ni+0x85>
+     4e5:	0f 31                	rdtsc  
+     4e7:	48 c1 e2 20          	shl    $0x20,%rdx
+     4eb:	89 c0                	mov    %eax,%eax
+     4ed:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     4f4:	48 09 c2             	or     %rax,%rdx
+     4f7:	48 29 da             	sub    %rbx,%rdx
+     4fa:	49 89 d4             	mov    %rdx,%r12
+     4fd:	48 89 d6             	mov    %rdx,%rsi
+     500:	e8 00 00 00 00       	call   505 <sha256_ni+0xa5>
+     505:	4c 89 e1             	mov    %r12,%rcx
+     508:	48 c7 c2 00 00 00 00 	mov    $0x0,%rdx
+     50f:	be 14 00 00 00       	mov    $0x14,%esi
+     514:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     51b:	4c 89 25 00 00 00 00 	mov    %r12,0x0(%rip)        # 522 <sha256_ni+0xc2>
+     522:	e8 00 00 00 00       	call   527 <sha256_ni+0xc7>
+     527:	be 42 04 00 00       	mov    $0x442,%esi
+     52c:	ba a4 01 00 00       	mov    $0x1a4,%edx
+     531:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     538:	e8 00 00 00 00       	call   53d <sha256_ni+0xdd>
+     53d:	be 14 00 00 00       	mov    $0x14,%esi
+     542:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     549:	49 89 c4             	mov    %rax,%r12
+     54c:	e8 00 00 00 00       	call   551 <sha256_ni+0xf1>
+     551:	48 83 f8 14          	cmp    $0x14,%rax
+     555:	0f 87 a8 00 00 00    	ja     603 <sha256_ni+0x1a3>
+     55b:	0f 84 91 00 00 00    	je     5f2 <sha256_ni+0x192>
+     561:	48 89 c2             	mov    %rax,%rdx
+     564:	48 8d 4d c0          	lea    -0x40(%rbp),%rcx
+     568:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+     56f:	4c 89 e7             	mov    %r12,%rdi
+     572:	e8 00 00 00 00       	call   577 <sha256_ni+0x117>
+     577:	48 8d 4d c0          	lea    -0x40(%rbp),%rcx
+     57b:	ba 01 00 00 00       	mov    $0x1,%edx
+     580:	4c 89 e7             	mov    %r12,%rdi
+     583:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+     58a:	e8 00 00 00 00       	call   58f <sha256_ni+0x12f>
+     58f:	31 f6                	xor    %esi,%esi
+     591:	4c 89 e7             	mov    %r12,%rdi
+     594:	e8 00 00 00 00       	call   599 <sha256_ni+0x139>
+     599:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+     59c:	44 8b 4d d8          	mov    -0x28(%rbp),%r9d
+     5a0:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     5a7:	44 8b 45 d4          	mov    -0x2c(%rbp),%r8d
+     5ab:	8b 4d d0             	mov    -0x30(%rbp),%ecx
+     5ae:	8b 55 cc             	mov    -0x34(%rbp),%edx
+     5b1:	8b 75 c8             	mov    -0x38(%rbp),%esi
+     5b4:	50                   	push   %rax
+     5b5:	8b 45 e0             	mov    -0x20(%rbp),%eax
+     5b8:	50                   	push   %rax
+     5b9:	8b 45 dc             	mov    -0x24(%rbp),%eax
+     5bc:	50                   	push   %rax
+     5bd:	e8 00 00 00 00       	call   5c2 <sha256_ni+0x162>
+     5c2:	48 83 c4 18          	add    $0x18,%rsp
+     5c6:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+     5ca:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+     5d1:	00 00 
+     5d3:	75 29                	jne    5fe <sha256_ni+0x19e>
+     5d5:	48 8d 65 f0          	lea    -0x10(%rbp),%rsp
+     5d9:	5b                   	pop    %rbx
+     5da:	41 5c                	pop    %r12
+     5dc:	5d                   	pop    %rbp
+     5dd:	31 c0                	xor    %eax,%eax
+     5df:	31 d2                	xor    %edx,%edx
+     5e1:	31 c9                	xor    %ecx,%ecx
+     5e3:	31 f6                	xor    %esi,%esi
+     5e5:	31 ff                	xor    %edi,%edi
+     5e7:	45 31 c0             	xor    %r8d,%r8d
+     5ea:	45 31 c9             	xor    %r9d,%r9d
+     5ed:	e9 00 00 00 00       	jmp    5f2 <sha256_ni+0x192>
+     5f2:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     5f9:	e8 00 00 00 00       	call   5fe <sha256_ni+0x19e>
+     5fe:	e8 00 00 00 00       	call   603 <sha256_ni+0x1a3>
+     603:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     60a:	e8 00 00 00 00       	call   60f <sha256_ni+0x1af>
+     60f:	90                   	nop
+
+0000000000000610 <__pfx_B2U32>:
+     610:	90                   	nop
+     611:	90                   	nop
+     612:	90                   	nop
+     613:	90                   	nop
+     614:	90                   	nop
+     615:	90                   	nop
+     616:	90                   	nop
+     617:	90                   	nop
+     618:	90                   	nop
+     619:	90                   	nop
+     61a:	90                   	nop
+     61b:	90                   	nop
+     61c:	90                   	nop
+     61d:	90                   	nop
+     61e:	90                   	nop
+     61f:	90                   	nop
+
+0000000000000620 <B2U32>:
+     620:	e8 00 00 00 00       	call   625 <B2U32+0x5>
+     625:	40 0f b6 ce          	movzbl %sil,%ecx
+     629:	40 0f b6 c7          	movzbl %dil,%eax
+     62d:	40 80 fe 1f          	cmp    $0x1f,%sil
+     631:	0f 87 00 00 00 00    	ja     637 <B2U32+0x17>
+     637:	d3 e0                	shl    %cl,%eax
+     639:	31 d2                	xor    %edx,%edx
+     63b:	31 c9                	xor    %ecx,%ecx
+     63d:	31 f6                	xor    %esi,%esi
+     63f:	31 ff                	xor    %edi,%edi
+     641:	e9 00 00 00 00       	jmp    646 <B2U32+0x26>
+     646:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+     64d:	00 00 00 
+
+0000000000000650 <__pfx_sha256_process>:
+     650:	90                   	nop
+     651:	90                   	nop
+     652:	90                   	nop
+     653:	90                   	nop
+     654:	90                   	nop
+     655:	90                   	nop
+     656:	90                   	nop
+     657:	90                   	nop
+     658:	90                   	nop
+     659:	90                   	nop
+     65a:	90                   	nop
+     65b:	90                   	nop
+     65c:	90                   	nop
+     65d:	90                   	nop
+     65e:	90                   	nop
+     65f:	90                   	nop
+
+0000000000000660 <sha256_process>:
+     660:	e8 00 00 00 00       	call   665 <sha256_process+0x5>
+     665:	55                   	push   %rbp
+     666:	48 89 e5             	mov    %rsp,%rbp
+     669:	41 57                	push   %r15
+     66b:	41 56                	push   %r14
+     66d:	41 55                	push   %r13
+     66f:	41 54                	push   %r12
+     671:	53                   	push   %rbx
+     672:	48 81 ec b8 00 00 00 	sub    $0xb8,%rsp
+     679:	48 89 bd 50 ff ff ff 	mov    %rdi,-0xb0(%rbp)
+     680:	48 89 b5 78 ff ff ff 	mov    %rsi,-0x88(%rbp)
+     687:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+     68e:	00 00 
+     690:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+     694:	31 c0                	xor    %eax,%eax
+     696:	c1 ea 06             	shr    $0x6,%edx
+     699:	89 d0                	mov    %edx,%eax
+     69b:	48 89 85 58 ff ff ff 	mov    %rax,-0xa8(%rbp)
+     6a2:	0f 84 25 03 00 00    	je     9cd <sha256_process+0x36d>
+     6a8:	8b 5f 08             	mov    0x8(%rdi),%ebx
+     6ab:	8b 47 1c             	mov    0x1c(%rdi),%eax
+     6ae:	44 8b 37             	mov    (%rdi),%r14d
+     6b1:	8b 4f 04             	mov    0x4(%rdi),%ecx
+     6b4:	89 9d 74 ff ff ff    	mov    %ebx,-0x8c(%rbp)
+     6ba:	8b 5f 0c             	mov    0xc(%rdi),%ebx
+     6bd:	89 85 60 ff ff ff    	mov    %eax,-0xa0(%rbp)
+     6c3:	89 9d 70 ff ff ff    	mov    %ebx,-0x90(%rbp)
+     6c9:	8b 5f 10             	mov    0x10(%rdi),%ebx
+     6cc:	89 9d 6c ff ff ff    	mov    %ebx,-0x94(%rbp)
+     6d2:	8b 5f 14             	mov    0x14(%rdi),%ebx
+     6d5:	89 9d 68 ff ff ff    	mov    %ebx,-0x98(%rbp)
+     6db:	8b 5f 18             	mov    0x18(%rdi),%ebx
+     6de:	89 9d 64 ff ff ff    	mov    %ebx,-0x9c(%rbp)
+     6e4:	8b 85 60 ff ff ff    	mov    -0xa0(%rbp),%eax
+     6ea:	44 8b 9d 70 ff ff ff 	mov    -0x90(%rbp),%r11d
+     6f1:	31 db                	xor    %ebx,%ebx
+     6f3:	4c 8b 0d 00 00 00 00 	mov    0x0(%rip),%r9        # 6fa <sha256_process+0x9a>
+     6fa:	44 8b 95 68 ff ff ff 	mov    -0x98(%rbp),%r10d
+     701:	89 45 8c             	mov    %eax,-0x74(%rbp)
+     704:	8b 85 64 ff ff ff    	mov    -0x9c(%rbp),%eax
+     70a:	44 89 5d 88          	mov    %r11d,-0x78(%rbp)
+     70e:	44 8b bd 6c ff ff ff 	mov    -0x94(%rbp),%r15d
+     715:	44 8b 85 74 ff ff ff 	mov    -0x8c(%rbp),%r8d
+     71c:	41 89 c3             	mov    %eax,%r11d
+     71f:	eb 12                	jmp    733 <sha256_process+0xd3>
+     721:	45 89 d3             	mov    %r10d,%r11d
+     724:	41 89 c8             	mov    %ecx,%r8d
+     727:	45 89 fa             	mov    %r15d,%r10d
+     72a:	44 89 f1             	mov    %r14d,%ecx
+     72d:	45 89 ef             	mov    %r13d,%r15d
+     730:	45 89 e6             	mov    %r12d,%r14d
+     733:	41 89 dd             	mov    %ebx,%r13d
+     736:	0f 31                	rdtsc  
+     738:	89 c0                	mov    %eax,%eax
+     73a:	48 c1 e2 20          	shl    $0x20,%rdx
+     73e:	89 de                	mov    %ebx,%esi
+     740:	48 09 c2             	or     %rax,%rdx
+     743:	48 8b 85 78 ff ff ff 	mov    -0x88(%rbp),%rax
+     74a:	48 89 55 80          	mov    %rdx,-0x80(%rbp)
+     74e:	44 8b 24 98          	mov    (%rax,%rbx,4),%r12d
+     752:	41 0f cc             	bswap  %r12d
+     755:	83 fb 0f             	cmp    $0xf,%ebx
+     758:	0f 87 01 03 00 00    	ja     a5f <sha256_process+0x3ff>
+     75e:	44 89 fa             	mov    %r15d,%edx
+     761:	44 89 f8             	mov    %r15d,%eax
+     764:	44 89 fe             	mov    %r15d,%esi
+     767:	44 89 64 9d 90       	mov    %r12d,-0x70(%rbp,%rbx,4)
+     76c:	c1 c8 0b             	ror    $0xb,%eax
+     76f:	c1 ca 06             	ror    $0x6,%edx
+     772:	44 21 d6             	and    %r10d,%esi
+     775:	31 c2                	xor    %eax,%edx
+     777:	44 89 f8             	mov    %r15d,%eax
+     77a:	c1 c0 07             	rol    $0x7,%eax
+     77d:	31 c2                	xor    %eax,%edx
+     77f:	44 89 f8             	mov    %r15d,%eax
+     782:	f7 d0                	not    %eax
+     784:	44 21 d8             	and    %r11d,%eax
+     787:	31 f0                	xor    %esi,%eax
+     789:	44 89 ee             	mov    %r13d,%esi
+     78c:	41 83 fd 3f          	cmp    $0x3f,%r13d
+     790:	0f 87 1e 03 00 00    	ja     ab4 <sha256_process+0x454>
+     796:	44 03 24 9d 00 00 00 	add    0x0(,%rbx,4),%r12d
+     79d:	00 
+     79e:	41 01 d4             	add    %edx,%r12d
+     7a1:	41 01 c4             	add    %eax,%r12d
+     7a4:	48 83 fe 0f          	cmp    $0xf,%rsi
+     7a8:	0f 87 81 03 00 00    	ja     b2f <sha256_process+0x4cf>
+     7ae:	44 89 f2             	mov    %r14d,%edx
+     7b1:	44 89 f0             	mov    %r14d,%eax
+     7b4:	89 ce                	mov    %ecx,%esi
+     7b6:	44 8b 6d 88          	mov    -0x78(%rbp),%r13d
+     7ba:	c1 c8 0d             	ror    $0xd,%eax
+     7bd:	c1 ca 02             	ror    $0x2,%edx
+     7c0:	44 21 c6             	and    %r8d,%esi
+     7c3:	44 03 65 8c          	add    -0x74(%rbp),%r12d
+     7c7:	31 c2                	xor    %eax,%edx
+     7c9:	44 89 f0             	mov    %r14d,%eax
+     7cc:	45 01 e5             	add    %r12d,%r13d
+     7cf:	c1 c0 0a             	rol    $0xa,%eax
+     7d2:	31 c2                	xor    %eax,%edx
+     7d4:	89 c8                	mov    %ecx,%eax
+     7d6:	44 31 c0             	xor    %r8d,%eax
+     7d9:	44 21 f0             	and    %r14d,%eax
+     7dc:	31 f0                	xor    %esi,%eax
+     7de:	01 d0                	add    %edx,%eax
+     7e0:	41 01 c4             	add    %eax,%r12d
+     7e3:	0f 31                	rdtsc  
+     7e5:	48 c1 e2 20          	shl    $0x20,%rdx
+     7e9:	89 c0                	mov    %eax,%eax
+     7eb:	48 83 c3 01          	add    $0x1,%rbx
+     7ef:	44 89 45 88          	mov    %r8d,-0x78(%rbp)
+     7f3:	48 09 c2             	or     %rax,%rdx
+     7f6:	48 2b 55 80          	sub    -0x80(%rbp),%rdx
+     7fa:	44 89 5d 8c          	mov    %r11d,-0x74(%rbp)
+     7fe:	49 01 d1             	add    %rdx,%r9
+     801:	4c 89 0d 00 00 00 00 	mov    %r9,0x0(%rip)        # 808 <sha256_process+0x1a8>
+     808:	48 83 fb 10          	cmp    $0x10,%rbx
+     80c:	0f 85 0f ff ff ff    	jne    721 <sha256_process+0xc1>
+     812:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 819 <sha256_process+0x1b9>
+     819:	44 89 45 8c          	mov    %r8d,-0x74(%rbp)
+     81d:	45 89 f1             	mov    %r14d,%r9d
+     820:	41 89 c8             	mov    %ecx,%r8d
+     823:	48 83 85 78 ff ff ff 	addq   $0x40,-0x88(%rbp)
+     82a:	40 
+     82b:	44 89 5d 88          	mov    %r11d,-0x78(%rbp)
+     82f:	49 89 c6             	mov    %rax,%r14
+     832:	eb 12                	jmp    846 <sha256_process+0x1e6>
+     834:	45 89 fa             	mov    %r15d,%r10d
+     837:	45 89 c8             	mov    %r9d,%r8d
+     83a:	45 89 ef             	mov    %r13d,%r15d
+     83d:	45 89 e1             	mov    %r12d,%r9d
+     840:	41 89 f5             	mov    %esi,%r13d
+     843:	41 89 cc             	mov    %ecx,%r12d
+     846:	0f 31                	rdtsc  
+     848:	89 c0                	mov    %eax,%eax
+     84a:	48 c1 e2 20          	shl    $0x20,%rdx
+     84e:	49 89 db             	mov    %rbx,%r11
+     851:	48 09 c2             	or     %rax,%rdx
+     854:	8d 43 01             	lea    0x1(%rbx),%eax
+     857:	41 83 e3 0f          	and    $0xf,%r11d
+     85b:	83 e0 0f             	and    $0xf,%eax
+     85e:	48 89 55 80          	mov    %rdx,-0x80(%rbp)
+     862:	8b 74 85 90          	mov    -0x70(%rbp,%rax,4),%esi
+     866:	89 f0                	mov    %esi,%eax
+     868:	89 f2                	mov    %esi,%edx
+     86a:	c1 ee 03             	shr    $0x3,%esi
+     86d:	c1 c2 0e             	rol    $0xe,%edx
+     870:	c1 c8 07             	ror    $0x7,%eax
+     873:	31 d0                	xor    %edx,%eax
+     875:	8d 53 0e             	lea    0xe(%rbx),%edx
+     878:	83 e2 0f             	and    $0xf,%edx
+     87b:	31 f0                	xor    %esi,%eax
+     87d:	44 89 ee             	mov    %r13d,%esi
+     880:	8b 4c 95 90          	mov    -0x70(%rbp,%rdx,4),%ecx
+     884:	44 21 fe             	and    %r15d,%esi
+     887:	89 ca                	mov    %ecx,%edx
+     889:	89 cf                	mov    %ecx,%edi
+     88b:	c1 e9 0a             	shr    $0xa,%ecx
+     88e:	c1 c7 0d             	rol    $0xd,%edi
+     891:	c1 c2 0f             	rol    $0xf,%edx
+     894:	31 fa                	xor    %edi,%edx
+     896:	8d 7b 09             	lea    0x9(%rbx),%edi
+     899:	83 e7 0f             	and    $0xf,%edi
+     89c:	31 ca                	xor    %ecx,%edx
+     89e:	44 89 e9             	mov    %r13d,%ecx
+     8a1:	8b 7c bd 90          	mov    -0x70(%rbp,%rdi,4),%edi
+     8a5:	42 03 7c 9d 90       	add    -0x70(%rbp,%r11,4),%edi
+     8aa:	c1 c9 06             	ror    $0x6,%ecx
+     8ad:	01 f8                	add    %edi,%eax
+     8af:	01 c2                	add    %eax,%edx
+     8b1:	44 89 e8             	mov    %r13d,%eax
+     8b4:	c1 c8 0b             	ror    $0xb,%eax
+     8b7:	42 89 54 9d 90       	mov    %edx,-0x70(%rbp,%r11,4)
+     8bc:	31 c1                	xor    %eax,%ecx
+     8be:	44 89 e8             	mov    %r13d,%eax
+     8c1:	c1 c0 07             	rol    $0x7,%eax
+     8c4:	31 c1                	xor    %eax,%ecx
+     8c6:	44 89 e8             	mov    %r13d,%eax
+     8c9:	f7 d0                	not    %eax
+     8cb:	44 21 d0             	and    %r10d,%eax
+     8ce:	31 f0                	xor    %esi,%eax
+     8d0:	89 de                	mov    %ebx,%esi
+     8d2:	01 c8                	add    %ecx,%eax
+     8d4:	83 fb 3f             	cmp    $0x3f,%ebx
+     8d7:	0f 87 2f 01 00 00    	ja     a0c <sha256_process+0x3ac>
+     8dd:	03 04 9d 00 00 00 00 	add    0x0(,%rbx,4),%eax
+     8e4:	44 89 e1             	mov    %r12d,%ecx
+     8e7:	44 89 ce             	mov    %r9d,%esi
+     8ea:	01 d0                	add    %edx,%eax
+     8ec:	44 89 e2             	mov    %r12d,%edx
+     8ef:	c1 c9 0d             	ror    $0xd,%ecx
+     8f2:	44 21 c6             	and    %r8d,%esi
+     8f5:	c1 ca 02             	ror    $0x2,%edx
+     8f8:	03 45 88             	add    -0x78(%rbp),%eax
+     8fb:	31 ca                	xor    %ecx,%edx
+     8fd:	44 89 e1             	mov    %r12d,%ecx
+     900:	c1 c1 0a             	rol    $0xa,%ecx
+     903:	31 ca                	xor    %ecx,%edx
+     905:	44 89 c9             	mov    %r9d,%ecx
+     908:	44 31 c1             	xor    %r8d,%ecx
+     90b:	44 21 e1             	and    %r12d,%ecx
+     90e:	31 f1                	xor    %esi,%ecx
+     910:	8b 75 8c             	mov    -0x74(%rbp),%esi
+     913:	01 ca                	add    %ecx,%edx
+     915:	01 c6                	add    %eax,%esi
+     917:	8d 0c 10             	lea    (%rax,%rdx,1),%ecx
+     91a:	0f 31                	rdtsc  
+     91c:	48 c1 e2 20          	shl    $0x20,%rdx
+     920:	89 c0                	mov    %eax,%eax
+     922:	48 83 c3 01          	add    $0x1,%rbx
+     926:	44 89 45 8c          	mov    %r8d,-0x74(%rbp)
+     92a:	48 09 c2             	or     %rax,%rdx
+     92d:	48 2b 55 80          	sub    -0x80(%rbp),%rdx
+     931:	44 89 55 88          	mov    %r10d,-0x78(%rbp)
+     935:	49 01 d6             	add    %rdx,%r14
+     938:	4c 89 35 00 00 00 00 	mov    %r14,0x0(%rip)        # 93f <sha256_process+0x2df>
+     93f:	48 83 fb 40          	cmp    $0x40,%rbx
+     943:	0f 85 eb fe ff ff    	jne    834 <sha256_process+0x1d4>
+     949:	48 8b 85 50 ff ff ff 	mov    -0xb0(%rbp),%rax
+     950:	44 01 8d 74 ff ff ff 	add    %r9d,-0x8c(%rbp)
+     957:	8b 9d 74 ff ff ff    	mov    -0x8c(%rbp),%ebx
+     95d:	44 01 85 70 ff ff ff 	add    %r8d,-0x90(%rbp)
+     964:	01 b5 6c ff ff ff    	add    %esi,-0x94(%rbp)
+     96a:	03 08                	add    (%rax),%ecx
+     96c:	89 58 08             	mov    %ebx,0x8(%rax)
+     96f:	8b 9d 70 ff ff ff    	mov    -0x90(%rbp),%ebx
+     975:	41 89 ce             	mov    %ecx,%r14d
+     978:	44 01 ad 68 ff ff ff 	add    %r13d,-0x98(%rbp)
+     97f:	89 58 0c             	mov    %ebx,0xc(%rax)
+     982:	8b 9d 6c ff ff ff    	mov    -0x94(%rbp),%ebx
+     988:	89 08                	mov    %ecx,(%rax)
+     98a:	8b 48 04             	mov    0x4(%rax),%ecx
+     98d:	89 58 10             	mov    %ebx,0x10(%rax)
+     990:	8b 9d 68 ff ff ff    	mov    -0x98(%rbp),%ebx
+     996:	44 01 bd 64 ff ff ff 	add    %r15d,-0x9c(%rbp)
+     99d:	44 01 e1             	add    %r12d,%ecx
+     9a0:	44 01 95 60 ff ff ff 	add    %r10d,-0xa0(%rbp)
+     9a7:	89 58 14             	mov    %ebx,0x14(%rax)
+     9aa:	8b 9d 64 ff ff ff    	mov    -0x9c(%rbp),%ebx
+     9b0:	48 83 ad 58 ff ff ff 	subq   $0x1,-0xa8(%rbp)
+     9b7:	01 
+     9b8:	89 58 18             	mov    %ebx,0x18(%rax)
+     9bb:	8b 9d 60 ff ff ff    	mov    -0xa0(%rbp),%ebx
+     9c1:	89 48 04             	mov    %ecx,0x4(%rax)
+     9c4:	89 58 1c             	mov    %ebx,0x1c(%rax)
+     9c7:	0f 85 17 fd ff ff    	jne    6e4 <sha256_process+0x84>
+     9cd:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+     9d1:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+     9d8:	00 00 
+     9da:	0f 85 a4 01 00 00    	jne    b84 <sha256_process+0x524>
+     9e0:	48 81 c4 b8 00 00 00 	add    $0xb8,%rsp
+     9e7:	5b                   	pop    %rbx
+     9e8:	41 5c                	pop    %r12
+     9ea:	41 5d                	pop    %r13
+     9ec:	41 5e                	pop    %r14
+     9ee:	41 5f                	pop    %r15
+     9f0:	5d                   	pop    %rbp
+     9f1:	31 c0                	xor    %eax,%eax
+     9f3:	31 d2                	xor    %edx,%edx
+     9f5:	31 c9                	xor    %ecx,%ecx
+     9f7:	31 f6                	xor    %esi,%esi
+     9f9:	31 ff                	xor    %edi,%edi
+     9fb:	45 31 c0             	xor    %r8d,%r8d
+     9fe:	45 31 c9             	xor    %r9d,%r9d
+     a01:	45 31 d2             	xor    %r10d,%r10d
+     a04:	45 31 db             	xor    %r11d,%r11d
+     a07:	e9 00 00 00 00       	jmp    a0c <sha256_process+0x3ac>
+     a0c:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     a13:	44 89 85 30 ff ff ff 	mov    %r8d,-0xd0(%rbp)
+     a1a:	44 89 95 38 ff ff ff 	mov    %r10d,-0xc8(%rbp)
+     a21:	44 89 8d 3c ff ff ff 	mov    %r9d,-0xc4(%rbp)
+     a28:	89 95 40 ff ff ff    	mov    %edx,-0xc0(%rbp)
+     a2e:	89 85 48 ff ff ff    	mov    %eax,-0xb8(%rbp)
+     a34:	e8 00 00 00 00       	call   a39 <sha256_process+0x3d9>
+     a39:	44 8b 85 30 ff ff ff 	mov    -0xd0(%rbp),%r8d
+     a40:	44 8b 95 38 ff ff ff 	mov    -0xc8(%rbp),%r10d
+     a47:	44 8b 8d 3c ff ff ff 	mov    -0xc4(%rbp),%r9d
+     a4e:	8b 95 40 ff ff ff    	mov    -0xc0(%rbp),%edx
+     a54:	8b 85 48 ff ff ff    	mov    -0xb8(%rbp),%eax
+     a5a:	e9 7e fe ff ff       	jmp    8dd <sha256_process+0x27d>
+     a5f:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     a66:	44 89 9d 30 ff ff ff 	mov    %r11d,-0xd0(%rbp)
+     a6d:	44 89 95 38 ff ff ff 	mov    %r10d,-0xc8(%rbp)
+     a74:	44 89 85 3c ff ff ff 	mov    %r8d,-0xc4(%rbp)
+     a7b:	4c 89 8d 40 ff ff ff 	mov    %r9,-0xc0(%rbp)
+     a82:	89 8d 48 ff ff ff    	mov    %ecx,-0xb8(%rbp)
+     a88:	e8 00 00 00 00       	call   a8d <sha256_process+0x42d>
+     a8d:	44 8b 9d 30 ff ff ff 	mov    -0xd0(%rbp),%r11d
+     a94:	44 8b 95 38 ff ff ff 	mov    -0xc8(%rbp),%r10d
+     a9b:	44 8b 85 3c ff ff ff 	mov    -0xc4(%rbp),%r8d
+     aa2:	4c 8b 8d 40 ff ff ff 	mov    -0xc0(%rbp),%r9
+     aa9:	8b 8d 48 ff ff ff    	mov    -0xb8(%rbp),%ecx
+     aaf:	e9 aa fc ff ff       	jmp    75e <sha256_process+0xfe>
+     ab4:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     abb:	44 89 9d 24 ff ff ff 	mov    %r11d,-0xdc(%rbp)
+     ac2:	44 89 95 28 ff ff ff 	mov    %r10d,-0xd8(%rbp)
+     ac9:	44 89 85 2c ff ff ff 	mov    %r8d,-0xd4(%rbp)
+     ad0:	4c 89 8d 30 ff ff ff 	mov    %r9,-0xd0(%rbp)
+     ad7:	89 8d 38 ff ff ff    	mov    %ecx,-0xc8(%rbp)
+     add:	89 85 3c ff ff ff    	mov    %eax,-0xc4(%rbp)
+     ae3:	89 95 40 ff ff ff    	mov    %edx,-0xc0(%rbp)
+     ae9:	48 89 b5 48 ff ff ff 	mov    %rsi,-0xb8(%rbp)
+     af0:	e8 00 00 00 00       	call   af5 <sha256_process+0x495>
+     af5:	44 8b 9d 24 ff ff ff 	mov    -0xdc(%rbp),%r11d
+     afc:	44 8b 95 28 ff ff ff 	mov    -0xd8(%rbp),%r10d
+     b03:	44 8b 85 2c ff ff ff 	mov    -0xd4(%rbp),%r8d
+     b0a:	4c 8b 8d 30 ff ff ff 	mov    -0xd0(%rbp),%r9
+     b11:	8b 8d 38 ff ff ff    	mov    -0xc8(%rbp),%ecx
+     b17:	8b 85 3c ff ff ff    	mov    -0xc4(%rbp),%eax
+     b1d:	8b 95 40 ff ff ff    	mov    -0xc0(%rbp),%edx
+     b23:	48 8b b5 48 ff ff ff 	mov    -0xb8(%rbp),%rsi
+     b2a:	e9 67 fc ff ff       	jmp    796 <sha256_process+0x136>
+     b2f:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     b36:	44 89 9d 30 ff ff ff 	mov    %r11d,-0xd0(%rbp)
+     b3d:	44 89 95 38 ff ff ff 	mov    %r10d,-0xc8(%rbp)
+     b44:	44 89 85 3c ff ff ff 	mov    %r8d,-0xc4(%rbp)
+     b4b:	4c 89 8d 40 ff ff ff 	mov    %r9,-0xc0(%rbp)
+     b52:	89 8d 48 ff ff ff    	mov    %ecx,-0xb8(%rbp)
+     b58:	e8 00 00 00 00       	call   b5d <sha256_process+0x4fd>
+     b5d:	44 8b 9d 30 ff ff ff 	mov    -0xd0(%rbp),%r11d
+     b64:	44 8b 95 38 ff ff ff 	mov    -0xc8(%rbp),%r10d
+     b6b:	44 8b 85 3c ff ff ff 	mov    -0xc4(%rbp),%r8d
+     b72:	4c 8b 8d 40 ff ff ff 	mov    -0xc0(%rbp),%r9
+     b79:	8b 8d 48 ff ff ff    	mov    -0xb8(%rbp),%ecx
+     b7f:	e9 2a fc ff ff       	jmp    7ae <sha256_process+0x14e>
+     b84:	e8 00 00 00 00       	call   b89 <sha256_process+0x529>
+     b89:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000000b90 <__pfx_sha256_common>:
+     b90:	90                   	nop
+     b91:	90                   	nop
+     b92:	90                   	nop
+     b93:	90                   	nop
+     b94:	90                   	nop
+     b95:	90                   	nop
+     b96:	90                   	nop
+     b97:	90                   	nop
+     b98:	90                   	nop
+     b99:	90                   	nop
+     b9a:	90                   	nop
+     b9b:	90                   	nop
+     b9c:	90                   	nop
+     b9d:	90                   	nop
+     b9e:	90                   	nop
+     b9f:	90                   	nop
+
+0000000000000ba0 <sha256_common>:
+     ba0:	e8 00 00 00 00       	call   ba5 <sha256_common+0x5>
+     ba5:	55                   	push   %rbp
+     ba6:	b9 08 00 00 00       	mov    $0x8,%ecx
+     bab:	48 89 e5             	mov    %rsp,%rbp
+     bae:	41 54                	push   %r12
+     bb0:	53                   	push   %rbx
+     bb1:	4c 8d 65 a8          	lea    -0x58(%rbp),%r12
+     bb5:	bb 00 40 00 00       	mov    $0x4000,%ebx
+     bba:	4c 89 e7             	mov    %r12,%rdi
+     bbd:	48 83 ec 70          	sub    $0x70,%rsp
+     bc1:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+     bc8:	00 00 
+     bca:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+     bce:	31 c0                	xor    %eax,%eax
+     bd0:	48 c7 45 80 00 00 00 	movq   $0x0,-0x80(%rbp)
+     bd7:	00 
+     bd8:	f3 48 ab             	rep stos %rax,%es:(%rdi)
+     bdb:	c6 45 a8 80          	movb   $0x80,-0x58(%rbp)
+     bdf:	48 b8 67 e6 09 6a 85 	movabs $0xbb67ae856a09e667,%rax
+     be6:	ae 67 bb 
+     be9:	48 89 45 88          	mov    %rax,-0x78(%rbp)
+     bed:	48 b8 72 f3 6e 3c 3a 	movabs $0xa54ff53a3c6ef372,%rax
+     bf4:	f5 4f a5 
+     bf7:	48 89 45 90          	mov    %rax,-0x70(%rbp)
+     bfb:	48 b8 7f 52 0e 51 8c 	movabs $0x9b05688c510e527f,%rax
+     c02:	68 05 9b 
+     c05:	48 89 45 98          	mov    %rax,-0x68(%rbp)
+     c09:	48 b8 ab d9 83 1f 19 	movabs $0x5be0cd191f83d9ab,%rax
+     c10:	cd e0 5b 
+     c13:	48 89 45 a0          	mov    %rax,-0x60(%rbp)
+     c17:	ba 40 00 00 00       	mov    $0x40,%edx
+     c1c:	4c 89 e6             	mov    %r12,%rsi
+     c1f:	48 8d 7d 88          	lea    -0x78(%rbp),%rdi
+     c23:	e8 00 00 00 00       	call   c28 <sha256_common+0x88>
+     c28:	83 eb 01             	sub    $0x1,%ebx
+     c2b:	75 ea                	jne    c17 <sha256_common+0x77>
+     c2d:	48 8b 35 00 00 00 00 	mov    0x0(%rip),%rsi        # c34 <sha256_common+0x94>
+     c34:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     c3b:	48 03 35 00 00 00 00 	add    0x0(%rip),%rsi        # c42 <sha256_common+0xa2>
+     c42:	e8 00 00 00 00       	call   c47 <sha256_common+0xa7>
+     c47:	48 8b 0d 00 00 00 00 	mov    0x0(%rip),%rcx        # c4e <sha256_common+0xae>
+     c4e:	48 c7 c2 00 00 00 00 	mov    $0x0,%rdx
+     c55:	48 03 0d 00 00 00 00 	add    0x0(%rip),%rcx        # c5c <sha256_common+0xbc>
+     c5c:	be 14 00 00 00       	mov    $0x14,%esi
+     c61:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     c68:	48 89 0d 00 00 00 00 	mov    %rcx,0x0(%rip)        # c6f <sha256_common+0xcf>
+     c6f:	e8 00 00 00 00       	call   c74 <sha256_common+0xd4>
+     c74:	ba a4 01 00 00       	mov    $0x1a4,%edx
+     c79:	be 42 04 00 00       	mov    $0x442,%esi
+     c7e:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     c85:	e8 00 00 00 00       	call   c8a <sha256_common+0xea>
+     c8a:	be 14 00 00 00       	mov    $0x14,%esi
+     c8f:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     c96:	49 89 c4             	mov    %rax,%r12
+     c99:	e8 00 00 00 00       	call   c9e <sha256_common+0xfe>
+     c9e:	48 89 c2             	mov    %rax,%rdx
+     ca1:	48 83 f8 14          	cmp    $0x14,%rax
+     ca5:	0f 87 bb 00 00 00    	ja     d66 <sha256_common+0x1c6>
+     cab:	0f 84 c6 00 00 00    	je     d77 <sha256_common+0x1d7>
+     cb1:	4c 89 e7             	mov    %r12,%rdi
+     cb4:	48 8d 4d 80          	lea    -0x80(%rbp),%rcx
+     cb8:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+     cbf:	e8 00 00 00 00       	call   cc4 <sha256_common+0x124>
+     cc4:	48 8d 4d 80          	lea    -0x80(%rbp),%rcx
+     cc8:	4c 89 e7             	mov    %r12,%rdi
+     ccb:	ba 01 00 00 00       	mov    $0x1,%edx
+     cd0:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+     cd7:	e8 00 00 00 00       	call   cdc <sha256_common+0x13c>
+     cdc:	31 f6                	xor    %esi,%esi
+     cde:	4c 89 e7             	mov    %r12,%rdi
+     ce1:	e8 00 00 00 00       	call   ce6 <sha256_common+0x146>
+     ce6:	44 8b 65 8c          	mov    -0x74(%rbp),%r12d
+     cea:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     cf1:	8b 5d 88             	mov    -0x78(%rbp),%ebx
+     cf4:	e8 00 00 00 00       	call   cf9 <sha256_common+0x159>
+     cf9:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     d00:	41 0f b6 c4          	movzbl %r12b,%eax
+     d04:	89 da                	mov    %ebx,%edx
+     d06:	89 de                	mov    %ebx,%esi
+     d08:	45 89 e1             	mov    %r12d,%r9d
+     d0b:	50                   	push   %rax
+     d0c:	44 89 e0             	mov    %r12d,%eax
+     d0f:	c1 ea 10             	shr    $0x10,%edx
+     d12:	0f b6 cf             	movzbl %bh,%ecx
+     d15:	0f b6 c4             	movzbl %ah,%eax
+     d18:	0f b6 d2             	movzbl %dl,%edx
+     d1b:	c1 ee 18             	shr    $0x18,%esi
+     d1e:	44 0f b6 c3          	movzbl %bl,%r8d
+     d22:	50                   	push   %rax
+     d23:	44 89 e0             	mov    %r12d,%eax
+     d26:	41 c1 e9 18          	shr    $0x18,%r9d
+     d2a:	c1 e8 10             	shr    $0x10,%eax
+     d2d:	0f b6 c0             	movzbl %al,%eax
+     d30:	50                   	push   %rax
+     d31:	e8 00 00 00 00       	call   d36 <sha256_common+0x196>
+     d36:	48 83 c4 18          	add    $0x18,%rsp
+     d3a:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+     d3e:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+     d45:	00 00 
+     d47:	75 29                	jne    d72 <sha256_common+0x1d2>
+     d49:	48 8d 65 f0          	lea    -0x10(%rbp),%rsp
+     d4d:	5b                   	pop    %rbx
+     d4e:	41 5c                	pop    %r12
+     d50:	5d                   	pop    %rbp
+     d51:	31 c0                	xor    %eax,%eax
+     d53:	31 d2                	xor    %edx,%edx
+     d55:	31 c9                	xor    %ecx,%ecx
+     d57:	31 f6                	xor    %esi,%esi
+     d59:	31 ff                	xor    %edi,%edi
+     d5b:	45 31 c0             	xor    %r8d,%r8d
+     d5e:	45 31 c9             	xor    %r9d,%r9d
+     d61:	e9 00 00 00 00       	jmp    d66 <sha256_common+0x1c6>
+     d66:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     d6d:	e8 00 00 00 00       	call   d72 <sha256_common+0x1d2>
+     d72:	e8 00 00 00 00       	call   d77 <sha256_common+0x1d7>
+     d77:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     d7e:	e8 00 00 00 00       	call   d83 <sha256_common+0x1e3>
+     d83:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+     d8a:	00 00 00 00 
+     d8e:	66 90                	xchg   %ax,%ax
+
+0000000000000d90 <__pfx_digital_signature>:
+     d90:	90                   	nop
+     d91:	90                   	nop
+     d92:	90                   	nop
+     d93:	90                   	nop
+     d94:	90                   	nop
+     d95:	90                   	nop
+     d96:	90                   	nop
+     d97:	90                   	nop
+     d98:	90                   	nop
+     d99:	90                   	nop
+     d9a:	90                   	nop
+     d9b:	90                   	nop
+     d9c:	90                   	nop
+     d9d:	90                   	nop
+     d9e:	90                   	nop
+     d9f:	90                   	nop
+
+0000000000000da0 <digital_signature>:
+     da0:	e8 00 00 00 00       	call   da5 <digital_signature+0x5>
+     da5:	55                   	push   %rbp
+     da6:	ba 00 10 00 00       	mov    $0x1000,%edx
+     dab:	be c0 0c 00 00       	mov    $0xcc0,%esi
+     db0:	48 89 e5             	mov    %rsp,%rbp
+     db3:	41 57                	push   %r15
+     db5:	41 56                	push   %r14
+     db7:	41 55                	push   %r13
+     db9:	41 54                	push   %r12
+     dbb:	53                   	push   %rbx
+     dbc:	48 83 ec 30          	sub    $0x30,%rsp
+     dc0:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # dc7 <digital_signature+0x27>
+     dc7:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+     dce:	00 00 
+     dd0:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+     dd4:	31 c0                	xor    %eax,%eax
+     dd6:	e8 00 00 00 00       	call   ddb <digital_signature+0x3b>
+     ddb:	be 00 10 00 00       	mov    $0x1000,%esi
+     de0:	48 89 c7             	mov    %rax,%rdi
+     de3:	49 89 c6             	mov    %rax,%r14
+     de6:	e8 00 00 00 00       	call   deb <digital_signature+0x4b>
+     deb:	31 d2                	xor    %edx,%edx
+     ded:	31 f6                	xor    %esi,%esi
+     def:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     df6:	48 c7 45 a8 00 00 00 	movq   $0x0,-0x58(%rbp)
+     dfd:	00 
+     dfe:	e8 00 00 00 00       	call   e03 <digital_signature+0x63>
+     e03:	49 89 c5             	mov    %rax,%r13
+     e06:	48 3d 00 f0 ff ff    	cmp    $0xfffffffffffff000,%rax
+     e0c:	0f 87 f6 01 00 00    	ja     1008 <digital_signature+0x268>
+     e12:	44 8b 38             	mov    (%rax),%r15d
+     e15:	be c0 0c 00 00       	mov    $0xcc0,%esi
+     e1a:	49 83 c7 08          	add    $0x8,%r15
+     e1e:	4c 89 ff             	mov    %r15,%rdi
+     e21:	e8 00 00 00 00       	call   e26 <digital_signature+0x86>
+     e26:	49 89 c4             	mov    %rax,%r12
+     e29:	48 85 c0             	test   %rax,%rax
+     e2c:	0f 84 15 02 00 00    	je     1047 <digital_signature+0x2a7>
+     e32:	4c 89 28             	mov    %r13,(%rax)
+     e35:	49 8d 96 00 10 00 00 	lea    0x1000(%r14),%rdx
+     e3c:	4c 89 f0             	mov    %r14,%rax
+     e3f:	0f ae 38             	clflush (%rax)
+     e42:	48 83 c0 01          	add    $0x1,%rax
+     e46:	48 39 d0             	cmp    %rdx,%rax
+     e49:	75 f4                	jne    e3f <digital_signature+0x9f>
+     e4b:	31 db                	xor    %ebx,%ebx
+     e4d:	48 63 f3             	movslq %ebx,%rsi
+     e50:	48 83 fe 20          	cmp    $0x20,%rsi
+     e54:	0f 87 bf 01 00 00    	ja     1019 <digital_signature+0x279>
+     e5a:	48 8d 45 b0          	lea    -0x50(%rbp),%rax
+     e5e:	48 01 d8             	add    %rbx,%rax
+     e61:	0f ae 38             	clflush (%rax)
+     e64:	48 83 c3 01          	add    $0x1,%rbx
+     e68:	48 83 fb 20          	cmp    $0x20,%rbx
+     e6c:	75 df                	jne    e4d <digital_signature+0xad>
+     e6e:	31 d2                	xor    %edx,%edx
+     e70:	31 c0                	xor    %eax,%eax
+     e72:	49 8d 04 c4          	lea    (%r12,%rax,8),%rax
+     e76:	0f ae 38             	clflush (%rax)
+     e79:	83 c2 01             	add    $0x1,%edx
+     e7c:	48 63 c2             	movslq %edx,%rax
+     e7f:	4c 39 f8             	cmp    %r15,%rax
+     e82:	72 ee                	jb     e72 <digital_signature+0xd2>
+     e84:	0f 31                	rdtsc  
+     e86:	48 c1 e2 20          	shl    $0x20,%rdx
+     e8a:	89 c0                	mov    %eax,%eax
+     e8c:	4c 89 f6             	mov    %r14,%rsi
+     e8f:	4c 89 e7             	mov    %r12,%rdi
+     e92:	48 09 c2             	or     %rax,%rdx
+     e95:	48 8d 4d b0          	lea    -0x50(%rbp),%rcx
+     e99:	48 89 d3             	mov    %rdx,%rbx
+     e9c:	ba 00 10 00 00       	mov    $0x1000,%edx
+     ea1:	e8 00 00 00 00       	call   ea6 <digital_signature+0x106>
+     ea6:	41 89 c6             	mov    %eax,%r14d
+     ea9:	0f 31                	rdtsc  
+     eab:	89 c0                	mov    %eax,%eax
+     ead:	48 c1 e2 20          	shl    $0x20,%rdx
+     eb1:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     eb8:	48 09 c2             	or     %rax,%rdx
+     ebb:	48 29 da             	sub    %rbx,%rdx
+     ebe:	48 89 d6             	mov    %rdx,%rsi
+     ec1:	48 89 15 00 00 00 00 	mov    %rdx,0x0(%rip)        # ec8 <digital_signature+0x128>
+     ec8:	e8 00 00 00 00       	call   ecd <digital_signature+0x12d>
+     ecd:	48 8b 0d 00 00 00 00 	mov    0x0(%rip),%rcx        # ed4 <digital_signature+0x134>
+     ed4:	48 c7 c2 00 00 00 00 	mov    $0x0,%rdx
+     edb:	be 14 00 00 00       	mov    $0x14,%esi
+     ee0:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     ee7:	e8 00 00 00 00       	call   eec <digital_signature+0x14c>
+     eec:	ba a4 01 00 00       	mov    $0x1a4,%edx
+     ef1:	be 42 04 00 00       	mov    $0x442,%esi
+     ef6:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     efd:	e8 00 00 00 00       	call   f02 <digital_signature+0x162>
+     f02:	be 14 00 00 00       	mov    $0x14,%esi
+     f07:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     f0e:	49 89 c7             	mov    %rax,%r15
+     f11:	e8 00 00 00 00       	call   f16 <digital_signature+0x176>
+     f16:	48 89 c2             	mov    %rax,%rdx
+     f19:	48 83 f8 14          	cmp    $0x14,%rax
+     f1d:	0f 87 18 01 00 00    	ja     103b <digital_signature+0x29b>
+     f23:	0f 84 3a 01 00 00    	je     1063 <digital_signature+0x2c3>
+     f29:	48 8d 4d a8          	lea    -0x58(%rbp),%rcx
+     f2d:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+     f34:	4c 89 ff             	mov    %r15,%rdi
+     f37:	e8 00 00 00 00       	call   f3c <digital_signature+0x19c>
+     f3c:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+     f43:	4c 89 ff             	mov    %r15,%rdi
+     f46:	48 8d 4d a8          	lea    -0x58(%rbp),%rcx
+     f4a:	ba 01 00 00 00       	mov    $0x1,%edx
+     f4f:	e8 00 00 00 00       	call   f54 <digital_signature+0x1b4>
+     f54:	31 f6                	xor    %esi,%esi
+     f56:	4c 89 ff             	mov    %r15,%rdi
+     f59:	e8 00 00 00 00       	call   f5e <digital_signature+0x1be>
+     f5e:	45 85 f6             	test   %r14d,%r14d
+     f61:	0f 85 93 00 00 00    	jne    ffa <digital_signature+0x25a>
+     f67:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     f6e:	31 db                	xor    %ebx,%ebx
+     f70:	e8 00 00 00 00       	call   f75 <digital_signature+0x1d5>
+     f75:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     f7c:	e8 00 00 00 00       	call   f81 <digital_signature+0x1e1>
+     f81:	48 63 f3             	movslq %ebx,%rsi
+     f84:	48 83 fe 1f          	cmp    $0x1f,%rsi
+     f88:	0f 87 9c 00 00 00    	ja     102a <digital_signature+0x28a>
+     f8e:	0f b6 74 1d b0       	movzbl -0x50(%rbp,%rbx,1),%esi
+     f93:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     f9a:	48 83 c3 01          	add    $0x1,%rbx
+     f9e:	e8 00 00 00 00       	call   fa3 <digital_signature+0x203>
+     fa3:	48 83 fb 20          	cmp    $0x20,%rbx
+     fa7:	75 d8                	jne    f81 <digital_signature+0x1e1>
+     fa9:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+     fb0:	e8 00 00 00 00       	call   fb5 <digital_signature+0x215>
+     fb5:	4c 89 e7             	mov    %r12,%rdi
+     fb8:	e8 00 00 00 00       	call   fbd <digital_signature+0x21d>
+     fbd:	49 8d 75 08          	lea    0x8(%r13),%rsi
+     fc1:	4c 89 ef             	mov    %r13,%rdi
+     fc4:	e8 00 00 00 00       	call   fc9 <digital_signature+0x229>
+     fc9:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+     fcd:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+     fd4:	00 00 
+     fd6:	0f 85 82 00 00 00    	jne    105e <digital_signature+0x2be>
+     fdc:	48 83 c4 30          	add    $0x30,%rsp
+     fe0:	44 89 f0             	mov    %r14d,%eax
+     fe3:	5b                   	pop    %rbx
+     fe4:	41 5c                	pop    %r12
+     fe6:	41 5d                	pop    %r13
+     fe8:	41 5e                	pop    %r14
+     fea:	41 5f                	pop    %r15
+     fec:	5d                   	pop    %rbp
+     fed:	31 d2                	xor    %edx,%edx
+     fef:	31 c9                	xor    %ecx,%ecx
+     ff1:	31 f6                	xor    %esi,%esi
+     ff3:	31 ff                	xor    %edi,%edi
+     ff5:	e9 00 00 00 00       	jmp    ffa <digital_signature+0x25a>
+     ffa:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1001:	e8 00 00 00 00       	call   1006 <digital_signature+0x266>
+    1006:	eb ad                	jmp    fb5 <digital_signature+0x215>
+    1008:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    100f:	45 89 ee             	mov    %r13d,%r14d
+    1012:	e8 00 00 00 00       	call   1017 <digital_signature+0x277>
+    1017:	eb b0                	jmp    fc9 <digital_signature+0x229>
+    1019:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1020:	e8 00 00 00 00       	call   1025 <digital_signature+0x285>
+    1025:	e9 30 fe ff ff       	jmp    e5a <digital_signature+0xba>
+    102a:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1031:	e8 00 00 00 00       	call   1036 <digital_signature+0x296>
+    1036:	e9 53 ff ff ff       	jmp    f8e <digital_signature+0x1ee>
+    103b:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1042:	e8 00 00 00 00       	call   1047 <digital_signature+0x2a7>
+    1047:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    104e:	41 be f4 ff ff ff    	mov    $0xfffffff4,%r14d
+    1054:	e8 00 00 00 00       	call   1059 <digital_signature+0x2b9>
+    1059:	e9 5f ff ff ff       	jmp    fbd <digital_signature+0x21d>
+    105e:	e8 00 00 00 00       	call   1063 <digital_signature+0x2c3>
+    1063:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    106a:	e8 00 00 00 00       	call   106f <digital_signature+0x2cf>
+    106f:	90                   	nop
+
+0000000000001070 <__pfx_test_rsa>:
+    1070:	90                   	nop
+    1071:	90                   	nop
+    1072:	90                   	nop
+    1073:	90                   	nop
+    1074:	90                   	nop
+    1075:	90                   	nop
+    1076:	90                   	nop
+    1077:	90                   	nop
+    1078:	90                   	nop
+    1079:	90                   	nop
+    107a:	90                   	nop
+    107b:	90                   	nop
+    107c:	90                   	nop
+    107d:	90                   	nop
+    107e:	90                   	nop
+    107f:	90                   	nop
+
+0000000000001080 <test_rsa>:
+    1080:	e8 00 00 00 00       	call   1085 <test_rsa+0x5>
+    1085:	55                   	push   %rbp
+    1086:	ba 00 10 00 00       	mov    $0x1000,%edx
+    108b:	be c0 0c 00 00       	mov    $0xcc0,%esi
+    1090:	48 89 e5             	mov    %rsp,%rbp
+    1093:	41 55                	push   %r13
+    1095:	41 54                	push   %r12
+    1097:	48 83 ec 30          	sub    $0x30,%rsp
+    109b:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 10a2 <test_rsa+0x22>
+    10a2:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+    10a9:	00 00 
+    10ab:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+    10af:	31 c0                	xor    %eax,%eax
+    10b1:	e8 00 00 00 00       	call   10b6 <test_rsa+0x36>
+    10b6:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 10bd <test_rsa+0x3d>
+    10bd:	48 85 c0             	test   %rax,%rax
+    10c0:	0f 84 ab 00 00 00    	je     1171 <test_rsa+0xf1>
+    10c6:	48 b8 61 61 61 61 61 	movabs $0x6161616161616161,%rax
+    10cd:	61 61 61 
+    10d0:	48 8d 7d c7          	lea    -0x39(%rbp),%rdi
+    10d4:	c6 45 e7 00          	movb   $0x0,-0x19(%rbp)
+    10d8:	48 89 45 c7          	mov    %rax,-0x39(%rbp)
+    10dc:	48 89 45 cf          	mov    %rax,-0x31(%rbp)
+    10e0:	48 89 45 d7          	mov    %rax,-0x29(%rbp)
+    10e4:	48 89 45 df          	mov    %rax,-0x21(%rbp)
+    10e8:	e8 00 00 00 00       	call   10ed <test_rsa+0x6d>
+    10ed:	31 d2                	xor    %edx,%edx
+    10ef:	be 00 20 00 00       	mov    $0x2000,%esi
+    10f4:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    10fb:	41 89 c5             	mov    %eax,%r13d
+    10fe:	e8 00 00 00 00       	call   1103 <test_rsa+0x83>
+    1103:	49 89 c4             	mov    %rax,%r12
+    1106:	48 3d 00 f0 ff ff    	cmp    $0xfffffffffffff000,%rax
+    110c:	77 4d                	ja     115b <test_rsa+0xdb>
+    110e:	48 8d 75 c7          	lea    -0x39(%rbp),%rsi
+    1112:	48 89 c7             	mov    %rax,%rdi
+    1115:	44 89 ea             	mov    %r13d,%edx
+    1118:	e8 f3 ee ff ff       	call   10 <uf_akcrypto.constprop.0.isra.0>
+    111d:	49 8d 74 24 08       	lea    0x8(%r12),%rsi
+    1122:	4c 89 e7             	mov    %r12,%rdi
+    1125:	e8 00 00 00 00       	call   112a <test_rsa+0xaa>
+    112a:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 1131 <test_rsa+0xb1>
+    1131:	e8 00 00 00 00       	call   1136 <test_rsa+0xb6>
+    1136:	31 c0                	xor    %eax,%eax
+    1138:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+    113c:	65 48 2b 14 25 28 00 	sub    %gs:0x28,%rdx
+    1143:	00 00 
+    1145:	75 25                	jne    116c <test_rsa+0xec>
+    1147:	48 83 c4 30          	add    $0x30,%rsp
+    114b:	41 5c                	pop    %r12
+    114d:	41 5d                	pop    %r13
+    114f:	5d                   	pop    %rbp
+    1150:	31 d2                	xor    %edx,%edx
+    1152:	31 f6                	xor    %esi,%esi
+    1154:	31 ff                	xor    %edi,%edi
+    1156:	e9 00 00 00 00       	jmp    115b <test_rsa+0xdb>
+    115b:	48 89 c6             	mov    %rax,%rsi
+    115e:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1165:	e8 00 00 00 00       	call   116a <test_rsa+0xea>
+    116a:	eb be                	jmp    112a <test_rsa+0xaa>
+    116c:	e8 00 00 00 00       	call   1171 <test_rsa+0xf1>
+    1171:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1178:	e8 00 00 00 00       	call   117d <test_rsa+0xfd>
+    117d:	83 c8 ff             	or     $0xffffffff,%eax
+    1180:	eb b6                	jmp    1138 <test_rsa+0xb8>
+    1182:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    1189:	00 00 00 00 
+    118d:	0f 1f 00             	nopl   (%rax)
+
+0000000000001190 <__pfx_work_encrypt>:
+    1190:	90                   	nop
+    1191:	90                   	nop
+    1192:	90                   	nop
+    1193:	90                   	nop
+    1194:	90                   	nop
+    1195:	90                   	nop
+    1196:	90                   	nop
+    1197:	90                   	nop
+    1198:	90                   	nop
+    1199:	90                   	nop
+    119a:	90                   	nop
+    119b:	90                   	nop
+    119c:	90                   	nop
+    119d:	90                   	nop
+    119e:	90                   	nop
+    119f:	90                   	nop
+
+00000000000011a0 <work_encrypt>:
+    11a0:	e8 00 00 00 00       	call   11a5 <work_encrypt+0x5>
+    11a5:	55                   	push   %rbp
+    11a6:	48 89 e5             	mov    %rsp,%rbp
+    11a9:	41 57                	push   %r15
+    11ab:	41 56                	push   %r14
+    11ad:	41 55                	push   %r13
+    11af:	49 89 f5             	mov    %rsi,%r13
+    11b2:	41 54                	push   %r12
+    11b4:	53                   	push   %rbx
+    11b5:	48 89 fb             	mov    %rdi,%rbx
+    11b8:	48 83 ec 50          	sub    $0x50,%rsp
+    11bc:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+    11c3:	00 00 
+    11c5:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+    11c9:	31 c0                	xor    %eax,%eax
+    11cb:	48 8d 87 00 10 00 00 	lea    0x1000(%rdi),%rax
+    11d2:	48 89 45 88          	mov    %rax,-0x78(%rbp)
+    11d6:	e9 81 00 00 00       	jmp    125c <work_encrypt+0xbc>
+    11db:	ba 10 00 00 00       	mov    $0x10,%edx
+    11e0:	48 89 de             	mov    %rbx,%rsi
+    11e3:	48 8d 7d 90          	lea    -0x70(%rbp),%rdi
+    11e7:	e8 00 00 00 00       	call   11ec <work_encrypt+0x4c>
+    11ec:	48 8d 45 b0          	lea    -0x50(%rbp),%rax
+    11f0:	ba 10 00 00 00       	mov    $0x10,%edx
+    11f5:	4c 89 ee             	mov    %r13,%rsi
+    11f8:	48 89 c7             	mov    %rax,%rdi
+    11fb:	e8 00 00 00 00       	call   1200 <work_encrypt+0x60>
+    1200:	48 8d 45 90          	lea    -0x70(%rbp),%rax
+    1204:	4c 89 f7             	mov    %r14,%rdi
+    1207:	41 c7 06 10 00 00 00 	movl   $0x10,(%r14)
+    120e:	49 89 46 10          	mov    %rax,0x10(%r14)
+    1212:	48 8d 45 b0          	lea    -0x50(%rbp),%rax
+    1216:	49 89 46 18          	mov    %rax,0x18(%r14)
+    121a:	49 c7 46 08 00 00 00 	movq   $0x0,0x8(%r14)
+    1221:	00 
+    1222:	e8 00 00 00 00       	call   1227 <work_encrypt+0x87>
+    1227:	85 c0                	test   %eax,%eax
+    1229:	74 0c                	je     1237 <work_encrypt+0x97>
+    122b:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1232:	e8 00 00 00 00       	call   1237 <work_encrypt+0x97>
+    1237:	4c 89 f7             	mov    %r14,%rdi
+    123a:	e8 00 00 00 00       	call   123f <work_encrypt+0x9f>
+    123f:	4c 89 e6             	mov    %r12,%rsi
+    1242:	4c 89 ff             	mov    %r15,%rdi
+    1245:	e8 00 00 00 00       	call   124a <work_encrypt+0xaa>
+    124a:	48 83 c3 10          	add    $0x10,%rbx
+    124e:	49 83 c5 10          	add    $0x10,%r13
+    1252:	48 39 5d 88          	cmp    %rbx,-0x78(%rbp)
+    1256:	0f 84 86 00 00 00    	je     12e2 <work_encrypt+0x142>
+    125c:	31 d2                	xor    %edx,%edx
+    125e:	31 f6                	xor    %esi,%esi
+    1260:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1267:	e8 00 00 00 00       	call   126c <work_encrypt+0xcc>
+    126c:	49 89 c7             	mov    %rax,%r15
+    126f:	48 3d 00 f0 ff ff    	cmp    $0xfffffffffffff000,%rax
+    1275:	77 4d                	ja     12c4 <work_encrypt+0x124>
+    1277:	8b 38                	mov    (%rax),%edi
+    1279:	be c0 0c 00 00       	mov    $0xcc0,%esi
+    127e:	4d 8d 67 08          	lea    0x8(%r15),%r12
+    1282:	48 83 c7 50          	add    $0x50,%rdi
+    1286:	e8 00 00 00 00       	call   128b <work_encrypt+0xeb>
+    128b:	49 89 c6             	mov    %rax,%r14
+    128e:	48 85 c0             	test   %rax,%rax
+    1291:	74 79                	je     130c <work_encrypt+0x16c>
+    1293:	4c 89 60 40          	mov    %r12,0x40(%rax)
+    1297:	ba 10 00 00 00       	mov    $0x10,%edx
+    129c:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+    12a3:	4c 89 ff             	mov    %r15,%rdi
+    12a6:	e8 00 00 00 00       	call   12ab <work_encrypt+0x10b>
+    12ab:	85 c0                	test   %eax,%eax
+    12ad:	0f 84 28 ff ff ff    	je     11db <work_encrypt+0x3b>
+    12b3:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    12ba:	e8 00 00 00 00       	call   12bf <work_encrypt+0x11f>
+    12bf:	e9 73 ff ff ff       	jmp    1237 <work_encrypt+0x97>
+    12c4:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    12cb:	48 83 c3 10          	add    $0x10,%rbx
+    12cf:	49 83 c5 10          	add    $0x10,%r13
+    12d3:	e8 00 00 00 00       	call   12d8 <work_encrypt+0x138>
+    12d8:	48 39 5d 88          	cmp    %rbx,-0x78(%rbp)
+    12dc:	0f 85 7a ff ff ff    	jne    125c <work_encrypt+0xbc>
+    12e2:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+    12e6:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+    12ed:	00 00 
+    12ef:	75 37                	jne    1328 <work_encrypt+0x188>
+    12f1:	48 83 c4 50          	add    $0x50,%rsp
+    12f5:	5b                   	pop    %rbx
+    12f6:	41 5c                	pop    %r12
+    12f8:	41 5d                	pop    %r13
+    12fa:	41 5e                	pop    %r14
+    12fc:	41 5f                	pop    %r15
+    12fe:	5d                   	pop    %rbp
+    12ff:	31 c0                	xor    %eax,%eax
+    1301:	31 d2                	xor    %edx,%edx
+    1303:	31 f6                	xor    %esi,%esi
+    1305:	31 ff                	xor    %edi,%edi
+    1307:	e9 00 00 00 00       	jmp    130c <work_encrypt+0x16c>
+    130c:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1313:	e8 00 00 00 00       	call   1318 <work_encrypt+0x178>
+    1318:	4c 89 e6             	mov    %r12,%rsi
+    131b:	4c 89 ff             	mov    %r15,%rdi
+    131e:	e8 00 00 00 00       	call   1323 <work_encrypt+0x183>
+    1323:	e9 22 ff ff ff       	jmp    124a <work_encrypt+0xaa>
+    1328:	e8 00 00 00 00       	call   132d <work_encrypt+0x18d>
+    132d:	0f 1f 00             	nopl   (%rax)
+
+0000000000001330 <__pfx_work_decrypt>:
+    1330:	90                   	nop
+    1331:	90                   	nop
+    1332:	90                   	nop
+    1333:	90                   	nop
+    1334:	90                   	nop
+    1335:	90                   	nop
+    1336:	90                   	nop
+    1337:	90                   	nop
+    1338:	90                   	nop
+    1339:	90                   	nop
+    133a:	90                   	nop
+    133b:	90                   	nop
+    133c:	90                   	nop
+    133d:	90                   	nop
+    133e:	90                   	nop
+    133f:	90                   	nop
+
+0000000000001340 <work_decrypt>:
+    1340:	e8 00 00 00 00       	call   1345 <work_decrypt+0x5>
+    1345:	55                   	push   %rbp
+    1346:	48 89 e5             	mov    %rsp,%rbp
+    1349:	41 57                	push   %r15
+    134b:	41 56                	push   %r14
+    134d:	41 55                	push   %r13
+    134f:	49 89 f5             	mov    %rsi,%r13
+    1352:	41 54                	push   %r12
+    1354:	53                   	push   %rbx
+    1355:	48 89 fb             	mov    %rdi,%rbx
+    1358:	48 83 ec 50          	sub    $0x50,%rsp
+    135c:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+    1363:	00 00 
+    1365:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+    1369:	31 c0                	xor    %eax,%eax
+    136b:	48 8d 87 00 10 00 00 	lea    0x1000(%rdi),%rax
+    1372:	48 89 45 88          	mov    %rax,-0x78(%rbp)
+    1376:	e9 81 00 00 00       	jmp    13fc <work_decrypt+0xbc>
+    137b:	ba 10 00 00 00       	mov    $0x10,%edx
+    1380:	48 89 de             	mov    %rbx,%rsi
+    1383:	48 8d 7d 90          	lea    -0x70(%rbp),%rdi
+    1387:	e8 00 00 00 00       	call   138c <work_decrypt+0x4c>
+    138c:	48 8d 45 b0          	lea    -0x50(%rbp),%rax
+    1390:	ba 10 00 00 00       	mov    $0x10,%edx
+    1395:	4c 89 ee             	mov    %r13,%rsi
+    1398:	48 89 c7             	mov    %rax,%rdi
+    139b:	e8 00 00 00 00       	call   13a0 <work_decrypt+0x60>
+    13a0:	48 8d 45 90          	lea    -0x70(%rbp),%rax
+    13a4:	4c 89 f7             	mov    %r14,%rdi
+    13a7:	41 c7 06 10 00 00 00 	movl   $0x10,(%r14)
+    13ae:	49 89 46 10          	mov    %rax,0x10(%r14)
+    13b2:	48 8d 45 b0          	lea    -0x50(%rbp),%rax
+    13b6:	49 89 46 18          	mov    %rax,0x18(%r14)
+    13ba:	49 c7 46 08 00 00 00 	movq   $0x0,0x8(%r14)
+    13c1:	00 
+    13c2:	e8 00 00 00 00       	call   13c7 <work_decrypt+0x87>
+    13c7:	85 c0                	test   %eax,%eax
+    13c9:	74 0c                	je     13d7 <work_decrypt+0x97>
+    13cb:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    13d2:	e8 00 00 00 00       	call   13d7 <work_decrypt+0x97>
+    13d7:	4c 89 f7             	mov    %r14,%rdi
+    13da:	e8 00 00 00 00       	call   13df <work_decrypt+0x9f>
+    13df:	4c 89 e6             	mov    %r12,%rsi
+    13e2:	4c 89 ff             	mov    %r15,%rdi
+    13e5:	e8 00 00 00 00       	call   13ea <work_decrypt+0xaa>
+    13ea:	48 83 c3 10          	add    $0x10,%rbx
+    13ee:	49 83 c5 10          	add    $0x10,%r13
+    13f2:	48 39 5d 88          	cmp    %rbx,-0x78(%rbp)
+    13f6:	0f 84 86 00 00 00    	je     1482 <work_decrypt+0x142>
+    13fc:	31 d2                	xor    %edx,%edx
+    13fe:	31 f6                	xor    %esi,%esi
+    1400:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1407:	e8 00 00 00 00       	call   140c <work_decrypt+0xcc>
+    140c:	49 89 c7             	mov    %rax,%r15
+    140f:	48 3d 00 f0 ff ff    	cmp    $0xfffffffffffff000,%rax
+    1415:	77 4d                	ja     1464 <work_decrypt+0x124>
+    1417:	8b 38                	mov    (%rax),%edi
+    1419:	be c0 0c 00 00       	mov    $0xcc0,%esi
+    141e:	4d 8d 67 08          	lea    0x8(%r15),%r12
+    1422:	48 83 c7 50          	add    $0x50,%rdi
+    1426:	e8 00 00 00 00       	call   142b <work_decrypt+0xeb>
+    142b:	49 89 c6             	mov    %rax,%r14
+    142e:	48 85 c0             	test   %rax,%rax
+    1431:	74 79                	je     14ac <work_decrypt+0x16c>
+    1433:	4c 89 60 40          	mov    %r12,0x40(%rax)
+    1437:	ba 10 00 00 00       	mov    $0x10,%edx
+    143c:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+    1443:	4c 89 ff             	mov    %r15,%rdi
+    1446:	e8 00 00 00 00       	call   144b <work_decrypt+0x10b>
+    144b:	85 c0                	test   %eax,%eax
+    144d:	0f 84 28 ff ff ff    	je     137b <work_decrypt+0x3b>
+    1453:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    145a:	e8 00 00 00 00       	call   145f <work_decrypt+0x11f>
+    145f:	e9 73 ff ff ff       	jmp    13d7 <work_decrypt+0x97>
+    1464:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    146b:	48 83 c3 10          	add    $0x10,%rbx
+    146f:	49 83 c5 10          	add    $0x10,%r13
+    1473:	e8 00 00 00 00       	call   1478 <work_decrypt+0x138>
+    1478:	48 39 5d 88          	cmp    %rbx,-0x78(%rbp)
+    147c:	0f 85 7a ff ff ff    	jne    13fc <work_decrypt+0xbc>
+    1482:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+    1486:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+    148d:	00 00 
+    148f:	75 37                	jne    14c8 <work_decrypt+0x188>
+    1491:	48 83 c4 50          	add    $0x50,%rsp
+    1495:	5b                   	pop    %rbx
+    1496:	41 5c                	pop    %r12
+    1498:	41 5d                	pop    %r13
+    149a:	41 5e                	pop    %r14
+    149c:	41 5f                	pop    %r15
+    149e:	5d                   	pop    %rbp
+    149f:	31 c0                	xor    %eax,%eax
+    14a1:	31 d2                	xor    %edx,%edx
+    14a3:	31 f6                	xor    %esi,%esi
+    14a5:	31 ff                	xor    %edi,%edi
+    14a7:	e9 00 00 00 00       	jmp    14ac <work_decrypt+0x16c>
+    14ac:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    14b3:	e8 00 00 00 00       	call   14b8 <work_decrypt+0x178>
+    14b8:	4c 89 e6             	mov    %r12,%rsi
+    14bb:	4c 89 ff             	mov    %r15,%rdi
+    14be:	e8 00 00 00 00       	call   14c3 <work_decrypt+0x183>
+    14c3:	e9 22 ff ff ff       	jmp    13ea <work_decrypt+0xaa>
+    14c8:	e8 00 00 00 00       	call   14cd <work_decrypt+0x18d>
+    14cd:	0f 1f 00             	nopl   (%rax)
+
+00000000000014d0 <__pfx_work_dump>:
+    14d0:	90                   	nop
+    14d1:	90                   	nop
+    14d2:	90                   	nop
+    14d3:	90                   	nop
+    14d4:	90                   	nop
+    14d5:	90                   	nop
+    14d6:	90                   	nop
+    14d7:	90                   	nop
+    14d8:	90                   	nop
+    14d9:	90                   	nop
+    14da:	90                   	nop
+    14db:	90                   	nop
+    14dc:	90                   	nop
+    14dd:	90                   	nop
+    14de:	90                   	nop
+    14df:	90                   	nop
+
+00000000000014e0 <work_dump>:
+    14e0:	e8 00 00 00 00       	call   14e5 <work_dump+0x5>
+    14e5:	55                   	push   %rbp
+    14e6:	65 48 8b 04 25 00 00 	mov    %gs:0x0,%rax
+    14ed:	00 00 
+    14ef:	48 63 b0 98 09 00 00 	movslq 0x998(%rax),%rsi
+    14f6:	48 89 e5             	mov    %rsp,%rbp
+    14f9:	e8 00 00 00 00       	call   14fe <work_dump+0x1e>
+    14fe:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1505:	48 89 c6             	mov    %rax,%rsi
+    1508:	e8 00 00 00 00       	call   150d <work_dump+0x2d>
+    150d:	5d                   	pop    %rbp
+    150e:	31 c0                	xor    %eax,%eax
+    1510:	31 f6                	xor    %esi,%esi
+    1512:	31 ff                	xor    %edi,%edi
+    1514:	e9 00 00 00 00       	jmp    1519 <work_dump+0x39>
+    1519:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001520 <__pfx_work_map>:
+    1520:	90                   	nop
+    1521:	90                   	nop
+    1522:	90                   	nop
+    1523:	90                   	nop
+    1524:	90                   	nop
+    1525:	90                   	nop
+    1526:	90                   	nop
+    1527:	90                   	nop
+    1528:	90                   	nop
+    1529:	90                   	nop
+    152a:	90                   	nop
+    152b:	90                   	nop
+    152c:	90                   	nop
+    152d:	90                   	nop
+    152e:	90                   	nop
+    152f:	90                   	nop
+
+0000000000001530 <work_map>:
+    1530:	e8 00 00 00 00       	call   1535 <work_map+0x5>
+    1535:	55                   	push   %rbp
+    1536:	b9 fd 01 00 00       	mov    $0x1fd,%ecx
+    153b:	48 89 e5             	mov    %rsp,%rbp
+    153e:	53                   	push   %rbx
+    153f:	31 db                	xor    %ebx,%ebx
+    1541:	48 8d bd 08 f0 ff ff 	lea    -0xff8(%rbp),%rdi
+    1548:	48 8d b5 f0 df ff ff 	lea    -0x2010(%rbp),%rsi
+    154f:	48 81 ec 08 20 00 00 	sub    $0x2008,%rsp
+    1556:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+    155d:	00 00 
+    155f:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+    1563:	48 b8 68 65 6c 6c 6f 	movabs $0x6f772c6f6c6c6568,%rax
+    156a:	2c 77 6f 
+    156d:	48 c7 85 00 f0 ff ff 	movq   $0x6b726f77,-0x1000(%rbp)
+    1574:	77 6f 72 6b 
+    1578:	48 89 85 f0 ef ff ff 	mov    %rax,-0x1010(%rbp)
+    157f:	48 b8 72 6c 64 21 74 	movabs $0x7369687421646c72,%rax
+    1586:	68 69 73 
+    1589:	48 89 85 f8 ef ff ff 	mov    %rax,-0x1008(%rbp)
+    1590:	31 c0                	xor    %eax,%eax
+    1592:	f3 48 ab             	rep stos %rax,%es:(%rdi)
+    1595:	48 8d bd f0 ef ff ff 	lea    -0x1010(%rbp),%rdi
+    159c:	e8 00 00 00 00       	call   15a1 <work_map+0x71>
+    15a1:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    15a8:	e8 00 00 00 00       	call   15ad <work_map+0x7d>
+    15ad:	48 63 f3             	movslq %ebx,%rsi
+    15b0:	48 81 fe ff 0f 00 00 	cmp    $0xfff,%rsi
+    15b7:	77 6d                	ja     1626 <work_map+0xf6>
+    15b9:	0f b6 b4 1d f0 df ff 	movzbl -0x2010(%rbp,%rbx,1),%esi
+    15c0:	ff 
+    15c1:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    15c8:	48 83 c3 01          	add    $0x1,%rbx
+    15cc:	e8 00 00 00 00       	call   15d1 <work_map+0xa1>
+    15d1:	48 81 fb 00 10 00 00 	cmp    $0x1000,%rbx
+    15d8:	75 d3                	jne    15ad <work_map+0x7d>
+    15da:	65 48 8b 04 25 00 00 	mov    %gs:0x0,%rax
+    15e1:	00 00 
+    15e3:	48 63 b0 98 09 00 00 	movslq 0x998(%rax),%rsi
+    15ea:	48 8d bd f0 df ff ff 	lea    -0x2010(%rbp),%rdi
+    15f1:	e8 00 00 00 00       	call   15f6 <work_map+0xc6>
+    15f6:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    15fd:	48 89 c6             	mov    %rax,%rsi
+    1600:	e8 00 00 00 00       	call   1605 <work_map+0xd5>
+    1605:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+    1609:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+    1610:	00 00 
+    1612:	75 20                	jne    1634 <work_map+0x104>
+    1614:	48 8b 5d f8          	mov    -0x8(%rbp),%rbx
+    1618:	c9                   	leave  
+    1619:	31 c0                	xor    %eax,%eax
+    161b:	31 c9                	xor    %ecx,%ecx
+    161d:	31 f6                	xor    %esi,%esi
+    161f:	31 ff                	xor    %edi,%edi
+    1621:	e9 00 00 00 00       	jmp    1626 <work_map+0xf6>
+    1626:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    162d:	e8 00 00 00 00       	call   1632 <work_map+0x102>
+    1632:	eb 85                	jmp    15b9 <work_map+0x89>
+    1634:	e8 00 00 00 00       	call   1639 <work_map+0x109>
+    1639:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001640 <__pfx_get_old_idt_table>:
+    1640:	90                   	nop
+    1641:	90                   	nop
+    1642:	90                   	nop
+    1643:	90                   	nop
+    1644:	90                   	nop
+    1645:	90                   	nop
+    1646:	90                   	nop
+    1647:	90                   	nop
+    1648:	90                   	nop
+    1649:	90                   	nop
+    164a:	90                   	nop
+    164b:	90                   	nop
+    164c:	90                   	nop
+    164d:	90                   	nop
+    164e:	90                   	nop
+    164f:	90                   	nop
+
+0000000000001650 <get_old_idt_table>:
+    1650:	e8 00 00 00 00       	call   1655 <get_old_idt_table+0x5>
+    1655:	55                   	push   %rbp
+    1656:	48 89 e5             	mov    %rsp,%rbp
+    1659:	48 83 ec 18          	sub    $0x18,%rsp
+    165d:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+    1664:	00 00 
+    1666:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+    166a:	31 c0                	xor    %eax,%eax
+    166c:	0f 01 4d ee          	sidt   -0x12(%rbp)
+    1670:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1677:	48 8b 75 f0          	mov    -0x10(%rbp),%rsi
+    167b:	b9 00 02 00 00       	mov    $0x200,%ecx
+    1680:	f3 48 a5             	rep movsq %ds:(%rsi),%es:(%rdi)
+    1683:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    1687:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+    168e:	00 00 
+    1690:	75 0e                	jne    16a0 <get_old_idt_table+0x50>
+    1692:	c9                   	leave  
+    1693:	31 c0                	xor    %eax,%eax
+    1695:	31 c9                	xor    %ecx,%ecx
+    1697:	31 f6                	xor    %esi,%esi
+    1699:	31 ff                	xor    %edi,%edi
+    169b:	e9 00 00 00 00       	jmp    16a0 <get_old_idt_table+0x50>
+    16a0:	e8 00 00 00 00       	call   16a5 <get_old_idt_table+0x55>
+    16a5:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    16ac:	00 00 00 00 
+
+00000000000016b0 <__pfx_init_new_idt_table>:
+    16b0:	90                   	nop
+    16b1:	90                   	nop
+    16b2:	90                   	nop
+    16b3:	90                   	nop
+    16b4:	90                   	nop
+    16b5:	90                   	nop
+    16b6:	90                   	nop
+    16b7:	90                   	nop
+    16b8:	90                   	nop
+    16b9:	90                   	nop
+    16ba:	90                   	nop
+    16bb:	90                   	nop
+    16bc:	90                   	nop
+    16bd:	90                   	nop
+    16be:	90                   	nop
+    16bf:	90                   	nop
+
+00000000000016c0 <init_new_idt_table>:
+    16c0:	e8 00 00 00 00       	call   16c5 <init_new_idt_table+0x5>
+    16c5:	55                   	push   %rbp
+    16c6:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+    16cd:	b9 00 02 00 00       	mov    $0x200,%ecx
+    16d2:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    16d9:	f3 48 a5             	rep movsq %ds:(%rsi),%es:(%rdi)
+    16dc:	48 89 e5             	mov    %rsp,%rbp
+    16df:	5d                   	pop    %rbp
+    16e0:	31 c9                	xor    %ecx,%ecx
+    16e2:	31 f6                	xor    %esi,%esi
+    16e4:	31 ff                	xor    %edi,%edi
+    16e6:	e9 00 00 00 00       	jmp    16eb <init_new_idt_table+0x2b>
+    16eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000016f0 <__pfx_idt_change>:
+    16f0:	90                   	nop
+    16f1:	90                   	nop
+    16f2:	90                   	nop
+    16f3:	90                   	nop
+    16f4:	90                   	nop
+    16f5:	90                   	nop
+    16f6:	90                   	nop
+    16f7:	90                   	nop
+    16f8:	90                   	nop
+    16f9:	90                   	nop
+    16fa:	90                   	nop
+    16fb:	90                   	nop
+    16fc:	90                   	nop
+    16fd:	90                   	nop
+    16fe:	90                   	nop
+    16ff:	90                   	nop
+
+0000000000001700 <idt_change>:
+    1700:	e8 00 00 00 00       	call   1705 <idt_change+0x5>
+    1705:	55                   	push   %rbp
+    1706:	48 89 e5             	mov    %rsp,%rbp
+    1709:	48 83 ec 18          	sub    $0x18,%rsp
+    170d:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+    1714:	00 00 
+    1716:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+    171a:	31 c0                	xor    %eax,%eax
+    171c:	0f 01 4d ee          	sidt   -0x12(%rbp)
+    1720:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1727:	48 8b 75 f0          	mov    -0x10(%rbp),%rsi
+    172b:	b9 00 02 00 00       	mov    $0x200,%ecx
+    1730:	f3 48 a5             	rep movsq %ds:(%rsi),%es:(%rdi)
+    1733:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+    173a:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1741:	b9 00 02 00 00       	mov    $0x200,%ecx
+    1746:	f3 48 a5             	rep movsq %ds:(%rsi),%es:(%rdi)
+    1749:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+    174d:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+    1754:	00 00 
+    1756:	75 0e                	jne    1766 <idt_change+0x66>
+    1758:	c9                   	leave  
+    1759:	31 c0                	xor    %eax,%eax
+    175b:	31 c9                	xor    %ecx,%ecx
+    175d:	31 f6                	xor    %esi,%esi
+    175f:	31 ff                	xor    %edi,%edi
+    1761:	e9 00 00 00 00       	jmp    1766 <idt_change+0x66>
+    1766:	e8 00 00 00 00       	call   176b <idt_change+0x6b>
+    176b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001770 <__pfx_disable_int>:
+    1770:	90                   	nop
+    1771:	90                   	nop
+    1772:	90                   	nop
+    1773:	90                   	nop
+    1774:	90                   	nop
+    1775:	90                   	nop
+    1776:	90                   	nop
+    1777:	90                   	nop
+    1778:	90                   	nop
+    1779:	90                   	nop
+    177a:	90                   	nop
+    177b:	90                   	nop
+    177c:	90                   	nop
+    177d:	90                   	nop
+    177e:	90                   	nop
+    177f:	90                   	nop
+
+0000000000001780 <disable_int>:
+    1780:	e8 00 00 00 00       	call   1785 <disable_int+0x5>
+    1785:	55                   	push   %rbp
+    1786:	48 89 e5             	mov    %rsp,%rbp
+    1789:	fa                   	cli    
+    178a:	5d                   	pop    %rbp
+    178b:	e9 00 00 00 00       	jmp    1790 <__pfx_start_int>
+
+0000000000001790 <__pfx_start_int>:
+    1790:	90                   	nop
+    1791:	90                   	nop
+    1792:	90                   	nop
+    1793:	90                   	nop
+    1794:	90                   	nop
+    1795:	90                   	nop
+    1796:	90                   	nop
+    1797:	90                   	nop
+    1798:	90                   	nop
+    1799:	90                   	nop
+    179a:	90                   	nop
+    179b:	90                   	nop
+    179c:	90                   	nop
+    179d:	90                   	nop
+    179e:	90                   	nop
+    179f:	90                   	nop
+
+00000000000017a0 <start_int>:
+    17a0:	e8 00 00 00 00       	call   17a5 <start_int+0x5>
+    17a5:	55                   	push   %rbp
+    17a6:	48 89 e5             	mov    %rsp,%rbp
+    17a9:	fb                   	sti    
+    17aa:	5d                   	pop    %rbp
+    17ab:	e9 00 00 00 00       	jmp    17b0 <__pfx_page_change>
+
+00000000000017b0 <__pfx_page_change>:
+    17b0:	90                   	nop
+    17b1:	90                   	nop
+    17b2:	90                   	nop
+    17b3:	90                   	nop
+    17b4:	90                   	nop
+    17b5:	90                   	nop
+    17b6:	90                   	nop
+    17b7:	90                   	nop
+    17b8:	90                   	nop
+    17b9:	90                   	nop
+    17ba:	90                   	nop
+    17bb:	90                   	nop
+    17bc:	90                   	nop
+    17bd:	90                   	nop
+    17be:	90                   	nop
+    17bf:	90                   	nop
+
+00000000000017c0 <page_change>:
+    17c0:	e8 00 00 00 00       	call   17c5 <page_change+0x5>
+    17c5:	55                   	push   %rbp
+    17c6:	ba 00 10 00 00       	mov    $0x1000,%edx
+    17cb:	be c0 0c 00 00       	mov    $0xcc0,%esi
+    17d0:	48 89 e5             	mov    %rsp,%rbp
+    17d3:	41 54                	push   %r12
+    17d5:	48 83 ec 10          	sub    $0x10,%rsp
+    17d9:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 17e0 <page_change+0x20>
+    17e0:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+    17e7:	00 00 
+    17e9:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+    17ed:	31 c0                	xor    %eax,%eax
+    17ef:	48 c7 45 e8 00 00 00 	movq   $0x0,-0x18(%rbp)
+    17f6:	00 
+    17f7:	65 48 8b 04 25 00 00 	mov    %gs:0x0,%rax
+    17fe:	00 00 
+    1800:	48 8b 80 20 09 00 00 	mov    0x920(%rax),%rax
+    1807:	4c 8b 60 48          	mov    0x48(%rax),%r12
+    180b:	e8 00 00 00 00       	call   1810 <page_change+0x50>
+    1810:	49 89 c0             	mov    %rax,%r8
+    1813:	49 8d 8c 24 00 80 00 	lea    0x8000(%r12),%rcx
+    181a:	00 
+    181b:	4c 89 e0             	mov    %r12,%rax
+    181e:	4c 89 c2             	mov    %r8,%rdx
+    1821:	0f ae 38             	clflush (%rax)
+    1824:	0f ae 3a             	clflush (%rdx)
+    1827:	48 83 c0 08          	add    $0x8,%rax
+    182b:	48 83 c2 08          	add    $0x8,%rdx
+    182f:	48 39 c1             	cmp    %rax,%rcx
+    1832:	75 ed                	jne    1821 <page_change+0x61>
+    1834:	0f 31                	rdtsc  
+    1836:	89 c0                	mov    %eax,%eax
+    1838:	48 c1 e2 20          	shl    $0x20,%rdx
+    183c:	b9 00 02 00 00       	mov    $0x200,%ecx
+    1841:	4c 89 c7             	mov    %r8,%rdi
+    1844:	48 09 c2             	or     %rax,%rdx
+    1847:	b8 00 00 00 80       	mov    $0x80000000,%eax
+    184c:	4c 89 e6             	mov    %r12,%rsi
+    184f:	f3 48 a5             	rep movsq %ds:(%rsi),%es:(%rdi)
+    1852:	49 89 d1             	mov    %rdx,%r9
+    1855:	49 01 c0             	add    %rax,%r8
+    1858:	0f 82 d7 00 00 00    	jb     1935 <page_change+0x175>
+    185e:	48 c7 c0 00 00 00 80 	mov    $0xffffffff80000000,%rax
+    1865:	48 2b 05 00 00 00 00 	sub    0x0(%rip),%rax        # 186c <page_change+0xac>
+    186c:	4c 01 c0             	add    %r8,%rax
+    186f:	0f 22 d8             	mov    %rax,%cr3
+    1872:	0f 31                	rdtsc  
+    1874:	89 c0                	mov    %eax,%eax
+    1876:	48 c1 e2 20          	shl    $0x20,%rdx
+    187a:	be 28 00 00 00       	mov    $0x28,%esi
+    187f:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1886:	48 09 c2             	or     %rax,%rdx
+    1889:	48 89 d1             	mov    %rdx,%rcx
+    188c:	48 c7 c2 00 00 00 00 	mov    $0x0,%rdx
+    1893:	4c 29 c9             	sub    %r9,%rcx
+    1896:	48 89 0d 00 00 00 00 	mov    %rcx,0x0(%rip)        # 189d <page_change+0xdd>
+    189d:	e8 00 00 00 00       	call   18a2 <page_change+0xe2>
+    18a2:	ba a4 01 00 00       	mov    $0x1a4,%edx
+    18a7:	be 42 04 00 00       	mov    $0x442,%esi
+    18ac:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    18b3:	e8 00 00 00 00       	call   18b8 <page_change+0xf8>
+    18b8:	be 28 00 00 00       	mov    $0x28,%esi
+    18bd:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    18c4:	49 89 c4             	mov    %rax,%r12
+    18c7:	e8 00 00 00 00       	call   18cc <page_change+0x10c>
+    18cc:	48 89 c2             	mov    %rax,%rdx
+    18cf:	48 83 f8 28          	cmp    $0x28,%rax
+    18d3:	77 7d                	ja     1952 <page_change+0x192>
+    18d5:	74 6f                	je     1946 <page_change+0x186>
+    18d7:	48 8d 4d e8          	lea    -0x18(%rbp),%rcx
+    18db:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+    18e2:	4c 89 e7             	mov    %r12,%rdi
+    18e5:	e8 00 00 00 00       	call   18ea <page_change+0x12a>
+    18ea:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+    18f1:	4c 89 e7             	mov    %r12,%rdi
+    18f4:	48 8d 4d e8          	lea    -0x18(%rbp),%rcx
+    18f8:	ba 01 00 00 00       	mov    $0x1,%edx
+    18fd:	e8 00 00 00 00       	call   1902 <page_change+0x142>
+    1902:	31 f6                	xor    %esi,%esi
+    1904:	4c 89 e7             	mov    %r12,%rdi
+    1907:	e8 00 00 00 00       	call   190c <page_change+0x14c>
+    190c:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+    1910:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+    1917:	00 00 
+    1919:	75 26                	jne    1941 <page_change+0x181>
+    191b:	4c 8b 65 f8          	mov    -0x8(%rbp),%r12
+    191f:	c9                   	leave  
+    1920:	31 c0                	xor    %eax,%eax
+    1922:	31 d2                	xor    %edx,%edx
+    1924:	31 c9                	xor    %ecx,%ecx
+    1926:	31 f6                	xor    %esi,%esi
+    1928:	31 ff                	xor    %edi,%edi
+    192a:	45 31 c0             	xor    %r8d,%r8d
+    192d:	45 31 c9             	xor    %r9d,%r9d
+    1930:	e9 00 00 00 00       	jmp    1935 <page_change+0x175>
+    1935:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 193c <page_change+0x17c>
+    193c:	e9 2b ff ff ff       	jmp    186c <page_change+0xac>
+    1941:	e8 00 00 00 00       	call   1946 <page_change+0x186>
+    1946:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    194d:	e8 00 00 00 00       	call   1952 <page_change+0x192>
+    1952:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1959:	e8 00 00 00 00       	call   195e <page_change+0x19e>
+    195e:	66 90                	xchg   %ax,%ax
+
+0000000000001960 <__pfx_work_run>:
+    1960:	90                   	nop
+    1961:	90                   	nop
+    1962:	90                   	nop
+    1963:	90                   	nop
+    1964:	90                   	nop
+    1965:	90                   	nop
+    1966:	90                   	nop
+    1967:	90                   	nop
+    1968:	90                   	nop
+    1969:	90                   	nop
+    196a:	90                   	nop
+    196b:	90                   	nop
+    196c:	90                   	nop
+    196d:	90                   	nop
+    196e:	90                   	nop
+    196f:	90                   	nop
+
+0000000000001970 <work_run>:
+    1970:	e8 00 00 00 00       	call   1975 <work_run+0x5>
+    1975:	55                   	push   %rbp
+    1976:	48 89 e5             	mov    %rsp,%rbp
+    1979:	41 54                	push   %r12
+    197b:	53                   	push   %rbx
+    197c:	48 83 ec 28          	sub    $0x28,%rsp
+    1980:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+    1987:	00 00 
+    1989:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+    198d:	31 c0                	xor    %eax,%eax
+    198f:	48 c7 45 c8 00 00 00 	movq   $0x0,-0x38(%rbp)
+    1996:	00 
+    1997:	0f 31                	rdtsc  
+    1999:	89 d1                	mov    %edx,%ecx
+    199b:	89 c6                	mov    %eax,%esi
+    199d:	fa                   	cli    
+    199e:	0f 31                	rdtsc  
+    19a0:	fb                   	sti    
+    19a1:	48 c1 e1 20          	shl    $0x20,%rcx
+    19a5:	48 c1 e2 20          	shl    $0x20,%rdx
+    19a9:	89 c0                	mov    %eax,%eax
+    19ab:	48 8d 7d d4          	lea    -0x2c(%rbp),%rdi
+    19af:	48 09 c2             	or     %rax,%rdx
+    19b2:	48 89 c8             	mov    %rcx,%rax
+    19b5:	48 09 f0             	or     %rsi,%rax
+    19b8:	48 89 d1             	mov    %rdx,%rcx
+    19bb:	be 14 00 00 00       	mov    $0x14,%esi
+    19c0:	48 c7 c2 00 00 00 00 	mov    $0x0,%rdx
+    19c7:	48 29 c1             	sub    %rax,%rcx
+    19ca:	e8 00 00 00 00       	call   19cf <work_run+0x5f>
+    19cf:	be 42 04 00 00       	mov    $0x442,%esi
+    19d4:	ba a4 01 00 00       	mov    $0x1a4,%edx
+    19d9:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    19e0:	e8 00 00 00 00       	call   19e5 <work_run+0x75>
+    19e5:	be 14 00 00 00       	mov    $0x14,%esi
+    19ea:	48 8d 7d d4          	lea    -0x2c(%rbp),%rdi
+    19ee:	49 89 c4             	mov    %rax,%r12
+    19f1:	e8 00 00 00 00       	call   19f6 <work_run+0x86>
+    19f6:	48 83 f8 14          	cmp    $0x14,%rax
+    19fa:	0f 87 b8 01 00 00    	ja     1bb8 <work_run+0x248>
+    1a00:	0f 84 c3 01 00 00    	je     1bc9 <work_run+0x259>
+    1a06:	48 89 c2             	mov    %rax,%rdx
+    1a09:	48 8d 4d c8          	lea    -0x38(%rbp),%rcx
+    1a0d:	48 8d 75 d4          	lea    -0x2c(%rbp),%rsi
+    1a11:	4c 89 e7             	mov    %r12,%rdi
+    1a14:	e8 00 00 00 00       	call   1a19 <work_run+0xa9>
+    1a19:	48 8d 4d c8          	lea    -0x38(%rbp),%rcx
+    1a1d:	ba 01 00 00 00       	mov    $0x1,%edx
+    1a22:	4c 89 e7             	mov    %r12,%rdi
+    1a25:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+    1a2c:	e8 00 00 00 00       	call   1a31 <work_run+0xc1>
+    1a31:	31 f6                	xor    %esi,%esi
+    1a33:	4c 89 e7             	mov    %r12,%rdi
+    1a36:	e8 00 00 00 00       	call   1a3b <work_run+0xcb>
+    1a3b:	e8 00 00 00 00       	call   1a40 <work_run+0xd0>
+    1a40:	ba 00 20 00 00       	mov    $0x2000,%edx
+    1a45:	be c0 0c 00 00       	mov    $0xcc0,%esi
+    1a4a:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 1a51 <work_run+0xe1>
+    1a51:	e8 00 00 00 00       	call   1a56 <work_run+0xe6>
+    1a56:	ba 00 20 00 00       	mov    $0x2000,%edx
+    1a5b:	be c0 0c 00 00       	mov    $0xcc0,%esi
+    1a60:	48 8b 3d 00 00 00 00 	mov    0x0(%rip),%rdi        # 1a67 <work_run+0xf7>
+    1a67:	48 89 c3             	mov    %rax,%rbx
+    1a6a:	e8 00 00 00 00       	call   1a6f <work_run+0xff>
+    1a6f:	b9 00 04 00 00       	mov    $0x400,%ecx
+    1a74:	48 89 df             	mov    %rbx,%rdi
+    1a77:	49 89 c0             	mov    %rax,%r8
+    1a7a:	48 b8 61 61 61 61 61 	movabs $0x6161616161616161,%rax
+    1a81:	61 61 61 
+    1a84:	f3 48 ab             	rep stos %rax,%es:(%rdi)
+    1a87:	b9 00 04 00 00       	mov    $0x400,%ecx
+    1a8c:	4c 89 c7             	mov    %r8,%rdi
+    1a8f:	4c 89 c2             	mov    %r8,%rdx
+    1a92:	48 b8 62 62 62 62 62 	movabs $0x6262626262626262,%rax
+    1a99:	62 62 62 
+    1a9c:	f3 48 ab             	rep stos %rax,%es:(%rdi)
+    1a9f:	48 89 d8             	mov    %rbx,%rax
+    1aa2:	48 8d 8b 00 20 00 00 	lea    0x2000(%rbx),%rcx
+    1aa9:	0f ae 38             	clflush (%rax)
+    1aac:	0f ae 3a             	clflush (%rdx)
+    1aaf:	48 83 c0 01          	add    $0x1,%rax
+    1ab3:	48 83 c2 01          	add    $0x1,%rdx
+    1ab7:	48 39 c8             	cmp    %rcx,%rax
+    1aba:	75 ed                	jne    1aa9 <work_run+0x139>
+    1abc:	0f 31                	rdtsc  
+    1abe:	b9 00 04 00 00       	mov    $0x400,%ecx
+    1ac3:	4c 89 c7             	mov    %r8,%rdi
+    1ac6:	48 89 de             	mov    %rbx,%rsi
+    1ac9:	41 89 d1             	mov    %edx,%r9d
+    1acc:	f3 48 a5             	rep movsq %ds:(%rsi),%es:(%rdi)
+    1acf:	41 89 c2             	mov    %eax,%r10d
+    1ad2:	48 89 c3             	mov    %rax,%rbx
+    1ad5:	0f 31                	rdtsc  
+    1ad7:	48 c1 e2 20          	shl    $0x20,%rdx
+    1adb:	89 c0                	mov    %eax,%eax
+    1add:	49 c1 e1 20          	shl    $0x20,%r9
+    1ae1:	be 28 00 00 00       	mov    $0x28,%esi
+    1ae6:	48 09 c2             	or     %rax,%rdx
+    1ae9:	4d 09 d1             	or     %r10,%r9
+    1aec:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1af3:	48 89 d1             	mov    %rdx,%rcx
+    1af6:	48 c7 c2 00 00 00 00 	mov    $0x0,%rdx
+    1afd:	4c 29 c9             	sub    %r9,%rcx
+    1b00:	48 89 0d 00 00 00 00 	mov    %rcx,0x0(%rip)        # 1b07 <work_run+0x197>
+    1b07:	e8 00 00 00 00       	call   1b0c <work_run+0x19c>
+    1b0c:	ba a4 01 00 00       	mov    $0x1a4,%edx
+    1b11:	be 42 04 00 00       	mov    $0x442,%esi
+    1b16:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1b1d:	e8 00 00 00 00       	call   1b22 <work_run+0x1b2>
+    1b22:	be 28 00 00 00       	mov    $0x28,%esi
+    1b27:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1b2e:	49 89 c4             	mov    %rax,%r12
+    1b31:	e8 00 00 00 00       	call   1b36 <work_run+0x1c6>
+    1b36:	48 89 c2             	mov    %rax,%rdx
+    1b39:	48 83 f8 28          	cmp    $0x28,%rax
+    1b3d:	77 79                	ja     1bb8 <work_run+0x248>
+    1b3f:	0f 84 84 00 00 00    	je     1bc9 <work_run+0x259>
+    1b45:	48 8d 4d c8          	lea    -0x38(%rbp),%rcx
+    1b49:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+    1b50:	4c 89 e7             	mov    %r12,%rdi
+    1b53:	e8 00 00 00 00       	call   1b58 <work_run+0x1e8>
+    1b58:	48 8d 4d c8          	lea    -0x38(%rbp),%rcx
+    1b5c:	ba 01 00 00 00       	mov    $0x1,%edx
+    1b61:	4c 89 e7             	mov    %r12,%rdi
+    1b64:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+    1b6b:	e8 00 00 00 00       	call   1b70 <work_run+0x200>
+    1b70:	31 f6                	xor    %esi,%esi
+    1b72:	4c 89 e7             	mov    %r12,%rdi
+    1b75:	e8 00 00 00 00       	call   1b7a <work_run+0x20a>
+    1b7a:	e8 00 00 00 00       	call   1b7f <work_run+0x20f>
+    1b7f:	e8 00 00 00 00       	call   1b84 <work_run+0x214>
+    1b84:	e8 00 00 00 00       	call   1b89 <work_run+0x219>
+    1b89:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+    1b8d:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+    1b94:	00 00 
+    1b96:	75 2c                	jne    1bc4 <work_run+0x254>
+    1b98:	48 83 c4 28          	add    $0x28,%rsp
+    1b9c:	5b                   	pop    %rbx
+    1b9d:	41 5c                	pop    %r12
+    1b9f:	5d                   	pop    %rbp
+    1ba0:	31 c0                	xor    %eax,%eax
+    1ba2:	31 d2                	xor    %edx,%edx
+    1ba4:	31 c9                	xor    %ecx,%ecx
+    1ba6:	31 f6                	xor    %esi,%esi
+    1ba8:	31 ff                	xor    %edi,%edi
+    1baa:	45 31 c0             	xor    %r8d,%r8d
+    1bad:	45 31 c9             	xor    %r9d,%r9d
+    1bb0:	45 31 d2             	xor    %r10d,%r10d
+    1bb3:	e9 00 00 00 00       	jmp    1bb8 <work_run+0x248>
+    1bb8:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1bbf:	e8 00 00 00 00       	call   1bc4 <work_run+0x254>
+    1bc4:	e8 00 00 00 00       	call   1bc9 <work_run+0x259>
+    1bc9:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1bd0:	e8 00 00 00 00       	call   1bd5 <work_run+0x265>
+    1bd5:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    1bdc:	00 00 00 00 
+
+0000000000001be0 <__pfx_new_func>:
+    1be0:	90                   	nop
+    1be1:	90                   	nop
+    1be2:	90                   	nop
+    1be3:	90                   	nop
+    1be4:	90                   	nop
+    1be5:	90                   	nop
+    1be6:	90                   	nop
+    1be7:	90                   	nop
+    1be8:	90                   	nop
+    1be9:	90                   	nop
+    1bea:	90                   	nop
+    1beb:	90                   	nop
+    1bec:	90                   	nop
+    1bed:	90                   	nop
+    1bee:	90                   	nop
+    1bef:	90                   	nop
+
+0000000000001bf0 <new_func>:
+    1bf0:	e8 00 00 00 00       	call   1bf5 <new_func+0x5>
+    1bf5:	55                   	push   %rbp
+    1bf6:	48 89 e5             	mov    %rsp,%rbp
+    1bf9:	5d                   	pop    %rbp
+    1bfa:	e9 00 00 00 00       	jmp    1bff <new_func+0xf>
+    1bff:	90                   	nop
+
+0000000000001c00 <__pfx_stack_change>:
+    1c00:	90                   	nop
+    1c01:	90                   	nop
+    1c02:	90                   	nop
+    1c03:	90                   	nop
+    1c04:	90                   	nop
+    1c05:	90                   	nop
+    1c06:	90                   	nop
+    1c07:	90                   	nop
+    1c08:	90                   	nop
+    1c09:	90                   	nop
+    1c0a:	90                   	nop
+    1c0b:	90                   	nop
+    1c0c:	90                   	nop
+    1c0d:	90                   	nop
+    1c0e:	90                   	nop
+    1c0f:	90                   	nop
+
+0000000000001c10 <stack_change>:
+    1c10:	e8 00 00 00 00       	call   1c15 <stack_change+0x5>
+    1c15:	55                   	push   %rbp
+    1c16:	b9 00 04 00 00       	mov    $0x400,%ecx
+    1c1b:	48 89 e5             	mov    %rsp,%rbp
+    1c1e:	41 55                	push   %r13
+    1c20:	41 54                	push   %r12
+    1c22:	4c 8d a5 e0 bf ff ff 	lea    -0x4020(%rbp),%r12
+    1c29:	4c 8d ad e0 df ff ff 	lea    -0x2020(%rbp),%r13
+    1c30:	53                   	push   %rbx
+    1c31:	4c 89 e7             	mov    %r12,%rdi
+    1c34:	31 db                	xor    %ebx,%ebx
+    1c36:	48 81 ec 18 40 00 00 	sub    $0x4018,%rsp
+    1c3d:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+    1c44:	00 00 
+    1c46:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+    1c4a:	31 c0                	xor    %eax,%eax
+    1c4c:	48 b8 61 61 61 61 61 	movabs $0x6161616161616161,%rax
+    1c53:	61 61 61 
+    1c56:	48 c7 85 d8 bf ff ff 	movq   $0x0,-0x4028(%rbp)
+    1c5d:	00 00 00 00 
+    1c61:	f3 48 ab             	rep stos %rax,%es:(%rdi)
+    1c64:	48 63 f3             	movslq %ebx,%rsi
+    1c67:	4c 63 c3             	movslq %ebx,%r8
+    1c6a:	48 81 fe 00 20 00 00 	cmp    $0x2000,%rsi
+    1c71:	0f 87 26 01 00 00    	ja     1d9d <stack_change+0x18d>
+    1c77:	49 8d 44 1d 00       	lea    0x0(%r13,%rbx,1),%rax
+    1c7c:	0f ae 38             	clflush (%rax)
+    1c7f:	49 81 f8 00 20 00 00 	cmp    $0x2000,%r8
+    1c86:	0f 87 30 01 00 00    	ja     1dbc <stack_change+0x1ac>
+    1c8c:	49 8d 04 1c          	lea    (%r12,%rbx,1),%rax
+    1c90:	0f ae 38             	clflush (%rax)
+    1c93:	48 83 c3 01          	add    $0x1,%rbx
+    1c97:	48 81 fb 00 20 00 00 	cmp    $0x2000,%rbx
+    1c9e:	75 c4                	jne    1c64 <stack_change+0x54>
+    1ca0:	0f 31                	rdtsc  
+    1ca2:	b9 00 04 00 00       	mov    $0x400,%ecx
+    1ca7:	41 89 c1             	mov    %eax,%r9d
+    1caa:	4c 89 ef             	mov    %r13,%rdi
+    1cad:	4c 89 e6             	mov    %r12,%rsi
+    1cb0:	f3 48 a5             	rep movsq %ds:(%rsi),%es:(%rdi)
+    1cb3:	41 89 d0             	mov    %edx,%r8d
+    1cb6:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+    1cba:	48 89 c4             	mov    %rax,%rsp
+    1cbd:	0f 31                	rdtsc  
+    1cbf:	48 c1 e2 20          	shl    $0x20,%rdx
+    1cc3:	89 c0                	mov    %eax,%eax
+    1cc5:	49 c1 e0 20          	shl    $0x20,%r8
+    1cc9:	be 28 00 00 00       	mov    $0x28,%esi
+    1cce:	48 09 c2             	or     %rax,%rdx
+    1cd1:	4d 09 c8             	or     %r9,%r8
+    1cd4:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1cdb:	48 89 d1             	mov    %rdx,%rcx
+    1cde:	48 c7 c2 00 00 00 00 	mov    $0x0,%rdx
+    1ce5:	4c 29 c1             	sub    %r8,%rcx
+    1ce8:	48 89 0d 00 00 00 00 	mov    %rcx,0x0(%rip)        # 1cef <stack_change+0xdf>
+    1cef:	e8 00 00 00 00       	call   1cf4 <stack_change+0xe4>
+    1cf4:	ba a4 01 00 00       	mov    $0x1a4,%edx
+    1cf9:	be 42 04 00 00       	mov    $0x442,%esi
+    1cfe:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1d05:	e8 00 00 00 00       	call   1d0a <stack_change+0xfa>
+    1d0a:	be 28 00 00 00       	mov    $0x28,%esi
+    1d0f:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1d16:	49 89 c4             	mov    %rax,%r12
+    1d19:	e8 00 00 00 00       	call   1d1e <stack_change+0x10e>
+    1d1e:	48 89 c2             	mov    %rax,%rdx
+    1d21:	48 83 f8 28          	cmp    $0x28,%rax
+    1d25:	0f 87 a5 00 00 00    	ja     1dd0 <stack_change+0x1c0>
+    1d2b:	0f 84 b0 00 00 00    	je     1de1 <stack_change+0x1d1>
+    1d31:	48 8d 8d d8 bf ff ff 	lea    -0x4028(%rbp),%rcx
+    1d38:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+    1d3f:	4c 89 e7             	mov    %r12,%rdi
+    1d42:	e8 00 00 00 00       	call   1d47 <stack_change+0x137>
+    1d47:	48 c7 c6 00 00 00 00 	mov    $0x0,%rsi
+    1d4e:	4c 89 e7             	mov    %r12,%rdi
+    1d51:	48 8d 8d d8 bf ff ff 	lea    -0x4028(%rbp),%rcx
+    1d58:	ba 01 00 00 00       	mov    $0x1,%edx
+    1d5d:	e8 00 00 00 00       	call   1d62 <stack_change+0x152>
+    1d62:	31 f6                	xor    %esi,%esi
+    1d64:	4c 89 e7             	mov    %r12,%rdi
+    1d67:	e8 00 00 00 00       	call   1d6c <stack_change+0x15c>
+    1d6c:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+    1d70:	65 48 2b 04 25 28 00 	sub    %gs:0x28,%rax
+    1d77:	00 00 
+    1d79:	75 61                	jne    1ddc <stack_change+0x1cc>
+    1d7b:	48 81 c4 18 40 00 00 	add    $0x4018,%rsp
+    1d82:	5b                   	pop    %rbx
+    1d83:	41 5c                	pop    %r12
+    1d85:	41 5d                	pop    %r13
+    1d87:	5d                   	pop    %rbp
+    1d88:	31 c0                	xor    %eax,%eax
+    1d8a:	31 d2                	xor    %edx,%edx
+    1d8c:	31 c9                	xor    %ecx,%ecx
+    1d8e:	31 f6                	xor    %esi,%esi
+    1d90:	31 ff                	xor    %edi,%edi
+    1d92:	45 31 c0             	xor    %r8d,%r8d
+    1d95:	45 31 c9             	xor    %r9d,%r9d
+    1d98:	e9 00 00 00 00       	jmp    1d9d <stack_change+0x18d>
+    1d9d:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1da4:	44 89 85 d4 bf ff ff 	mov    %r8d,-0x402c(%rbp)
+    1dab:	e8 00 00 00 00       	call   1db0 <stack_change+0x1a0>
+    1db0:	4c 63 85 d4 bf ff ff 	movslq -0x402c(%rbp),%r8
+    1db7:	e9 bb fe ff ff       	jmp    1c77 <stack_change+0x67>
+    1dbc:	4c 89 c6             	mov    %r8,%rsi
+    1dbf:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1dc6:	e8 00 00 00 00       	call   1dcb <stack_change+0x1bb>
+    1dcb:	e9 bc fe ff ff       	jmp    1c8c <stack_change+0x7c>
+    1dd0:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1dd7:	e8 00 00 00 00       	call   1ddc <stack_change+0x1cc>
+    1ddc:	e8 00 00 00 00       	call   1de1 <stack_change+0x1d1>
+    1de1:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+    1de8:	e8 00 00 00 00       	call   1ded <stack_change+0x1dd>
+
+Disassembly of section .init.text:
+
+0000000000000000 <__pfx_init_module>:
+   0:	90                   	nop
+   1:	90                   	nop
+   2:	90                   	nop
+   3:	90                   	nop
+   4:	90                   	nop
+   5:	90                   	nop
+   6:	90                   	nop
+   7:	90                   	nop
+   8:	90                   	nop
+   9:	90                   	nop
+   a:	90                   	nop
+   b:	90                   	nop
+   c:	90                   	nop
+   d:	90                   	nop
+   e:	90                   	nop
+   f:	90                   	nop
+
+0000000000000010 <init_module>:
+  10:	e8 00 00 00 00       	call   15 <init_module+0x5>
+  15:	55                   	push   %rbp
+  16:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+  1d:	48 89 e5             	mov    %rsp,%rbp
+  20:	e8 00 00 00 00       	call   25 <init_module+0x15>
+  25:	31 c0                	xor    %eax,%eax
+  27:	5d                   	pop    %rbp
+  28:	31 ff                	xor    %edi,%edi
+  2a:	e9 00 00 00 00       	jmp    2f <pub_key_len+0xb>
+
+Disassembly of section .exit.text:
+
+0000000000000000 <__pfx_cleanup_module>:
+   0:	90                   	nop
+   1:	90                   	nop
+   2:	90                   	nop
+   3:	90                   	nop
+   4:	90                   	nop
+   5:	90                   	nop
+   6:	90                   	nop
+   7:	90                   	nop
+   8:	90                   	nop
+   9:	90                   	nop
+   a:	90                   	nop
+   b:	90                   	nop
+   c:	90                   	nop
+   d:	90                   	nop
+   e:	90                   	nop
+   f:	90                   	nop
+
+0000000000000010 <cleanup_module>:
+  10:	55                   	push   %rbp
+  11:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+  18:	48 89 e5             	mov    %rsp,%rbp
+  1b:	e8 00 00 00 00       	call   20 <cleanup_module+0x10>
+  20:	5d                   	pop    %rbp
+  21:	31 c0                	xor    %eax,%eax
+  23:	31 ff                	xor    %edi,%edi
+  25:	e9 00 00 00 00       	jmp    2a <pub_key_len+0x6>
+
+Disassembly of section .text.unlikely:
+
+0000000000000000 <B2U32.cold>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	52                   	push   %rdx
+   5:	40 0f b6 d6          	movzbl %sil,%edx
+   9:	40 0f b6 f7          	movzbl %dil,%esi
+   d:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+  14:	89 45 f8             	mov    %eax,-0x8(%rbp)
+  17:	89 4d fc             	mov    %ecx,-0x4(%rbp)
+  1a:	e8 00 00 00 00       	call   1f <B2U32.cold+0x1f>
+  1f:	8b 4d fc             	mov    -0x4(%rbp),%ecx
+  22:	8b 45 f8             	mov    -0x8(%rbp),%eax
+  25:	c9                   	leave  
+  26:	d3 e0                	shl    %cl,%eax
+  28:	31 d2                	xor    %edx,%edx
+  2a:	31 c9                	xor    %ecx,%ecx
+  2c:	31 f6                	xor    %esi,%esi
+  2e:	31 ff                	xor    %edi,%edi
+  30:	e9 00 00 00 00       	jmp    35 <pub_key_len+0x11>

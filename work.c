@@ -637,11 +637,22 @@ void work_decrypt(const unsigned char *input, unsigned char *output){
     }
 }
 
+unsigned long t_dump;
+char buf_dump[20];
+#define P_SIZE 4096
+#define D_SIZE 4096
+char data_crypto[P_SIZE] __attribute__((aligned(P_SIZE)));
 void work_dump(unsigned char *data_crypto){
     unsigned long opcode = 0x10001;
     unsigned long gpa = v2p(data_crypto,(unsigned long)current->pid);
-    unsigned long ret;
+    unsigned long ret=0;
     printk("gpa=%lx\n",gpa);
+    unsigned long dump_size=D_SIZE;
+    for(int i=0;i<D_SIZE;i++){
+        clflush(&data_crypto[i]);
+    }
+    unsigned long t1,t2;
+    t1=urdtsc();
     /*
     asm(
         "movq %1,%%r11;\n\t"
@@ -650,10 +661,20 @@ void work_dump(unsigned char *data_crypto){
         "tdcall;\n\t"
         "movq %%r10,%0;\n\t"
         :"=r"(ret)
-        :"r"(opcode),"r"(gpa),"r"(DUMP_SIZE):
+        :"r"(opcode),"r"(gpa),"r"(dump_size):
     );
-    printk("ret=%lx\n",ret);
     */
+    t2=urdtsc();
+    t_dump=t2-t1;
+    printk("dump_time=%ld,ret=%lx\n",t_dump,ret);
+    
+    struct file *fp;
+    loff_t pos=0;
+    snprintf(buf_dump,sizeof(buf_dump),"%lu",t_dump);
+    fp  = filp_open("./flag_dump.txt", O_RDWR|O_APPEND|O_CREAT ,0644);
+    kernel_write(fp, buf_dump, strlen(buf_dump), &pos);
+    kernel_write(fp, "\n", 1, &pos);
+    filp_close(fp, NULL);
 }
 
 void work_map(void){
@@ -829,8 +850,11 @@ void work_run(void){
     
     sha256_ni();
     sha256_common();
-    //digital_signature();
+    digital_signature();
     test_rsa();
+    //
+    memset(data_crypto,'a',D_SIZE);
+    work_dump(data_crypto);
 }
 
 static int __init work_init(void)
