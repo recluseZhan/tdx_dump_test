@@ -1,0 +1,1 @@
+cmd_/home/vjxzhan/tdx_dump_test/log_store/log_dev1.mod := printf '%s\n'   log_dev.o | awk '!x[$$0]++ { print("/home/vjxzhan/tdx_dump_test/log_store/"$$0) }' > /home/vjxzhan/tdx_dump_test/log_store/log_dev1.mod
